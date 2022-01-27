@@ -168,7 +168,7 @@ for key in sortedkeys:
 # Convert to HTML output
 html_template = """<html>
   <body>
-  <h1>{0} Wikipedia-artikelen in {1} talen waarin afbeeldingen uit de <a href="https://commons.wikimedia.org/wiki/Category:{1}" target="_blank">Category:{2}</a> worden gebruikt, uitgesplitst per taalversie</h1>
+  <h1>{0} Wikipedia-artikelen in {1} talen waarin afbeeldingen uit de <a href="https://commons.wikimedia.org/wiki/Category:{2}" target="_blank">Category:{2}</a> worden gebruikt, uitgesplitst per taalversie</h1>
   <p>Dit overzicht is gebaseerd op <a href={3} target="_blank">deze XML-output</a> van de <a href={4} target="_blank">GLAMorous-tool</a></p>
   {5}
   </body>
