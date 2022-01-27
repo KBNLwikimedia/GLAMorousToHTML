@@ -168,20 +168,20 @@ for key in sortedkeys:
 # Convert to HTML output
 html_template = """<html>
   <body>
-  <h1>{0} Wikipedia-artikelen waarin afbeeldingen uit de <a href="https://commons.wikimedia.org/wiki/Category:{1}" target="_blank">Category:{1}</a> worden gebruikt, uitgesplitst per taalversie</h1>
-  <p>Dit overzicht is gebaseerd op <a href={2} target="_blank">deze XML-output</a> van de <a href={3} target="_blank">GLAMorous-tool</a></p>
-  {4}
+  <h1>{0} Wikipedia-artikelen in {1} talen waarin afbeeldingen uit de <a href="https://commons.wikimedia.org/wiki/Category:{1}" target="_blank">Category:{2}</a> worden gebruikt, uitgesplitst per taalversie</h1>
+  <p>Dit overzicht is gebaseerd op <a href={3} target="_blank">deze XML-output</a> van de <a href={4} target="_blank">GLAMorous-tool</a></p>
+  {5}
   </body>
 </html>"""
 
-def writeHTML(narticles,commonscat,xmlurl,obj):
-    html = html_template.format(str(narticles), commonscat.replace("_", " "), xmlurl, xmlurl.replace("&format=xml", ""), obj)
+def writeHTML(narticles,nlanguages,commonscat,xmlurl,obj):
+    html = html_template.format(str(narticles), str(nlanguages), commonscat.replace("_", " "), xmlurl, xmlurl.replace("&format=xml", ""), obj)
     with open(HTMLFILE, 'w', encoding='utf-8') as f:
         f.write(html)
 
 def main():
     """Main function of the script GLAMorousToHTML.py."""
-    writeHTML(numarticles, COMMONSCAT, XMLURL, items)
+    writeHTML(numarticles, nprojects_filtered, COMMONSCAT, XMLURL, items)
 
 if __name__ == "__main__":
     main()
