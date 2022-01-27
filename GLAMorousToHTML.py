@@ -51,9 +51,9 @@ def getxml(url):
     return data
 
 today = date.today().strftime("%d%m%Y")
-#COMMONSCAT = "Media contributed by Koninklijke Bibliotheek"
-COMMONSCAT = "Der naturen bloeme - KB KA 16"
-DEPTH = 2 # Depth of subcategories, 0=no subcats
+COMMONSCAT = "Media contributed by Koninklijke Bibliotheek"
+#COMMONSCAT = "Der naturen bloeme - KB KA 16"
+DEPTH = 0 # Depth of subcategories, 0=no subcats
 XMLURL = "https://glamtools.toolforge.org/glamorous.php?doit=1&category=%s&use_globalusage=1&ns0=1&depth=%s&show_details=1&projects[wikipedia]=1&format=xml" % (COMMONSCAT.replace(" ","_"), str(DEPTH))
 #LOCALXMLFILE = "GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.xml" # Saved xml response from XMLURL, readmode=local
 HTMLFILE = "GLAMorous_%s_Wikipedia_Mainnamespace_%s.html" % (COMMONSCAT.replace(" ",""), str(today)) # datestamped name of the HTML file
