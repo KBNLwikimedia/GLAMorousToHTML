@@ -7,6 +7,7 @@ The GLAMorous input needs to be configured so that it only lists pages from Wiki
 2) and not pages from Wikimedia Commons, Wikidata or other Wiki-projects (projects[wikipedia]=1)
 """
 import xmltodict
+from datetime import date
 
 def languageLookup(lang):
     """"Using Wikidata, retrieve list of Wikipedia language labels in specified lang:
@@ -49,12 +50,13 @@ def getxml(url):
         print("Failed to parse xml from response (%s)" % traceback.format_exc())
     return data
 
-
-COMMONSCAT = "Media contributed by Koninklijke Bibliotheek"
-DEPTH = 0 # Depth of subcategories, 0=no subcats
+today = date.today().strftime("%d%m%Y")
+#COMMONSCAT = "Media contributed by Koninklijke Bibliotheek"
+COMMONSCAT = "Der naturen bloeme - KB KA 16"
+DEPTH = 2 # Depth of subcategories, 0=no subcats
 XMLURL = "https://glamtools.toolforge.org/glamorous.php?doit=1&category=%s&use_globalusage=1&ns0=1&depth=%s&show_details=1&projects[wikipedia]=1&format=xml" % (COMMONSCAT.replace(" ","_"), str(DEPTH))
-LOCALXMLFILE = "GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.xml" # Saved xml response from XMLURL, readmode=local
-HTMLFILE = "GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.html" # Name of the HTML file as output
+#LOCALXMLFILE = "GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.xml" # Saved xml response from XMLURL, readmode=local
+HTMLFILE = "GLAMorous_%s_Wikipedia_Mainnamespace_%s.html" % (COMMONSCAT.replace(" ",""), str(today)) # datestamped name of the HTML file
 
 # Two readmodes: 1) read from local XML 2) read from http
 #readmode = "local" # Faster readmode, but can be outdated, for live/uptodate response, choose readmode=http
