@@ -11,12 +11,8 @@ The GLAMorous input needs to be configured so that it only lists pages from Wiki
 ## Examples
 ### Category:Media contributed by Koninklijke Bibliotheek
 * Input: Commons category = [Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek)
-* Output: [GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.html](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.html)
+* Output: [GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_27012022.html](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_27012022.html)
 
-### Category:Media contributed by Koninklijke Bibliotheek
-* Input: Commons category = [Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek)
-* Output: [GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.html](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.html)
-
-### Category:Media contributed by Koninklijke Bibliotheek
-* Input: Commons category = [Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek)
-* Output: [GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.html](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.html)
+### Category:Catchpenny prints from Koninklijke Bibliotheek 
+* Input: Commons category = [Catchpenny prints from Koninklijke Bibliotheek ](https://commons.wikimedia.org/wiki/Category:Catchpenny%20prints%20from%20Koninklijke%20Bibliotheek)
+* Output: [GLAMorous_CatchpennyprintsfromKoninklijkeBibliotheek_Wikipedia_Mainnamespace_27012022.html](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_CatchpennyprintsfromKoninklijkeBibliotheek_Wikipedia_Mainnamespace_27012022.html)
