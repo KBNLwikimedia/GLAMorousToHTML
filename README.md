@@ -10,18 +10,18 @@ The GLAMorous input needs to be configured so that it only lists pages from Wiki
 2) and not pages from Wikimedia Commons, Wikidata or other Wikimedia projects (*projects[wikipedia]=1*)
 
 ## What problem does it solve?
-De KB gebruikt de [https://glamtools.toolforge.org/glamorous.php GLAMorous tool] om het hergebruik van KB-mediabestanden in Wikipedia (hoofdnaamruimte) te meten. Deze tool [https://tools.wmflabs.org/glamtools/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects%5Bwikipedia%5D=1 rapporteert 4 grootheden]:
-# Het '''totaal aantal KB-mediabestanden''' in [[:c:Category:Media contributed by Koninklijke Bibliotheek|Category:Media contributed by Koninklijke Bibliotheek]] (''Category "Media contributed by Koninklijke Bibliotheek" has XXXX files.'')
-# Het '''totaal aantal keren''' dat KB-mediabestanden in WP-artikelen gebruikt worden (''Total image usages'').
-# Het '''aantal taalversies''' van Wikipedia waarin KB-mediabestanden opgenomen zijn (''lengte van de tabel'')
-# Het '''aantal unieke KB-mediabestanden''' dat in Wikipedia-artikelen in al die taalversies opgenomen is. (''Distinct images used'')
+The KB uses the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) to [measure the use of KB media files](https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief/Resultaten/KPIs/KPI4) (as stored in Wikimedia Commons) in Wikipedia articles. This tool [rapports 4 things](https://tools.wmflabs.org/glamtools/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects%5Bwikipedia%5D=1) :
 
-Wat echter nog ontbrak is
-* het '''aantal unieke Wikipedia-artikelen''' waarin KB-mediabestanden zijn opgenomen 
-* een '''manifest overzicht''' van die artikelen, uitgesplitst per taalversie
+1) The **total number of KB media files** in [Category:Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek) (*Category "Media contributed by Koninklijke Bibliotheek" has XXXX files.*)
+2) The **total number of times** that KB media files are used in WP articles (*Total image usages*).
+3) The **number of Wikipedia language versions** in which KB media files are used (*length of the table*)
+4) The **number of unique KB media files** that are used in Wikipedia articles in all those languages. (*Distinct images used*)
 
-Daarom hebben we de '''[https://github.com/KBNLwikimedia/GLAMorousToHTML GLAMorousToHTML tool]''' gemaakt. Dit script maakt o.b.v. de [https://glamtools.toolforge.org/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&format=xml XML-output van GLAMorous] een [https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16022022.html HTML-pagina waarin al die Wikipedia-artikelen, uitgesplitst per taalversie], worden opgesomd.
+What was still missing from this was
+* the **number of unique WP articles** in which KB media files are used 
+* a **manifest overview** of those articles, groued per WP language version
 
+That is why we made the GLAMorousToHTML tool. This script uses the [XML-output of GLAMorous](https://glamtools.toolforge.org/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&format=xml) to make an [HTML page listing unique WP articles](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16022022.html), grouped by language.
 
 ## Examples
 ### Category:Media contributed by Koninklijke Bibliotheek
@@ -56,3 +56,7 @@ Daarom hebben we de '''[https://github.com/KBNLwikimedia/GLAMorousToHTML GLAMoro
 ### Category:Bookbindings from Koninklijke Bibliotheek
 * Input: Commons category = [Bookbindings from Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Bookbindings%20from%20Koninklijke%20Bibliotheek)
 * Output: [GLAMorous_BookbindingsfromKoninklijkeBibliotheek_Wikipedia_Mainnamespace_27012022.html](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_BookbindingsfromKoninklijkeBibliotheek_Wikipedia_Mainnamespace_27012022.html)
+
+## Features to add
+* Add datestamp to "Dit overzicht is gebaseerd op deze XML-output van de GLAMorous-tool" --> "Dit overzicht is gebaseerd op deze XML-output van de GLAMorous-tool, d.d. dd-mm-yyyy"
+* English header + interface
