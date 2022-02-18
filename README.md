@@ -17,8 +17,10 @@ The KB uses the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) 
 * 3 The **number of Wikipedia language versions** in which KB media files are used (*length of the table*)
 * 4 The **number of unique KB media files** that are used in Wikipedia articles in all those languages. (*Distinct images used*)
 
-What was still missing from this was
-* 5 The **number of unique WP articles** in which KB media files are used 
+Please note: 'Total image usages' does NOT equal the number of unique WP articles! A single unique KB image can illustrate multiple unique WP articles, and/or the other way around, 1 unique WP article can contain multiple unique KB images. On other words: images-articles have many-to-many relationships.
+
+What was still missing was the functionality to measure
+* 5 The **number of unique WP articles** in which KB media files are used, and to make 
 * 6 A **manifest overview** of those articles, grouped per WP language version
 
 That is why we made the GLAMorousToHTML tool. This script uses the [XML-output of GLAMorous](https://glamtools.toolforge.org/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&format=xml) to make an [HTML page listing unique WP articles](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16022022.html) (in which one or more KB media files are used), grouped by language.
