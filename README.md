@@ -12,14 +12,14 @@ The GLAMorous input needs to be configured so that it only lists pages from Wiki
 ## What problem does it solve?
 The KB uses the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) to [measure the use of KB media files](https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief/Resultaten/KPIs/KPI4) (as stored in Wikimedia Commons) in Wikipedia articles. This tool [rapports 4 things](https://tools.wmflabs.org/glamtools/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects%5Bwikipedia%5D=1) :
 
-1) The **total number of KB media files** in [Category:Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek) (*Category "Media contributed by Koninklijke Bibliotheek" has XXXX files.*)
-2) The **total number of times** that KB media files are used in WP articles (*Total image usages*).
-3) The **number of Wikipedia language versions** in which KB media files are used (*length of the table*)
-4) The **number of unique KB media files** that are used in Wikipedia articles in all those languages. (*Distinct images used*)
+* 1 The **total number of KB media files** in [Category:Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek) (*Category "Media contributed by Koninklijke Bibliotheek" has XXXX files.*)
+* 2 The **total number of times** that KB media files are used in WP articles (*Total image usages*).
+* 3 The **number of Wikipedia language versions** in which KB media files are used (*length of the table*)
+* 4 The **number of unique KB media files** that are used in Wikipedia articles in all those languages. (*Distinct images used*)
 
 What was still missing from this was
-* the **number of unique WP articles** in which KB media files are used 
-* a **manifest overview** of those articles, grouped per WP language version
+* 5 The **number of unique WP articles** in which KB media files are used 
+* 6 A **manifest overview** of those articles, grouped per WP language version
 
 That is why we made the GLAMorousToHTML tool. This script uses the [XML-output of GLAMorous](https://glamtools.toolforge.org/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&format=xml) to make an [HTML page listing unique WP articles](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16022022.html) (in which one or more KB media files are used), grouped by language.
 
