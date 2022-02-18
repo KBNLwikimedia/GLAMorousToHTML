@@ -19,9 +19,9 @@ The KB uses the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) 
 
 What was still missing from this was
 * the **number of unique WP articles** in which KB media files are used 
-* a **manifest overview** of those articles, groued per WP language version
+* a **manifest overview** of those articles, grouped per WP language version
 
-That is why we made the GLAMorousToHTML tool. This script uses the [XML-output of GLAMorous](https://glamtools.toolforge.org/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&format=xml) to make an [HTML page listing unique WP articles](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16022022.html), grouped by language.
+That is why we made the GLAMorousToHTML tool. This script uses the [XML-output of GLAMorous](https://glamtools.toolforge.org/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&format=xml) to make an [HTML page listing unique WP articles](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16022022.html) (in which one or more KB media files are used), grouped by language.
 
 ## Examples
 ### Category:Media contributed by Koninklijke Bibliotheek
