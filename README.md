@@ -1,12 +1,27 @@
 # GLAMorousToHTML
- Converts the output of the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) to a HTML page.
- 
+*Converts the output of the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) to a HTML page.*
+
+## What does it do?
 The script [GLAMorousToHTML.py](GLAMorousToHTML.py) creates a HTML page listing all Wikipedia articles (in all languages) in which (one or more) images/media from a
 given category on Wikimedia Commons are used.
 
 The GLAMorous input needs to be configured so that it only lists pages from Wikipedia
 1) that are in the main namespace (a.k.a Wikipedia articles) (*&ns0=1*)
 2) and not pages from Wikimedia Commons, Wikidata or other Wikimedia projects (*projects[wikipedia]=1*)
+
+## What problem does it solve?
+De KB gebruikt de [https://glamtools.toolforge.org/glamorous.php GLAMorous tool] om het hergebruik van KB-mediabestanden in Wikipedia (hoofdnaamruimte) te meten. Deze tool [https://tools.wmflabs.org/glamtools/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects%5Bwikipedia%5D=1 rapporteert 4 grootheden]:
+# Het '''totaal aantal KB-mediabestanden''' in [[:c:Category:Media contributed by Koninklijke Bibliotheek|Category:Media contributed by Koninklijke Bibliotheek]] (''Category "Media contributed by Koninklijke Bibliotheek" has XXXX files.'')
+# Het '''totaal aantal keren''' dat KB-mediabestanden in WP-artikelen gebruikt worden (''Total image usages'').
+# Het '''aantal taalversies''' van Wikipedia waarin KB-mediabestanden opgenomen zijn (''lengte van de tabel'')
+# Het '''aantal unieke KB-mediabestanden''' dat in Wikipedia-artikelen in al die taalversies opgenomen is. (''Distinct images used'')
+
+Wat echter nog ontbrak is
+* het '''aantal unieke Wikipedia-artikelen''' waarin KB-mediabestanden zijn opgenomen 
+* een '''manifest overzicht''' van die artikelen, uitgesplitst per taalversie
+
+Daarom hebben we de '''[https://github.com/KBNLwikimedia/GLAMorousToHTML GLAMorousToHTML tool]''' gemaakt. Dit script maakt o.b.v. de [https://glamtools.toolforge.org/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&format=xml XML-output van GLAMorous] een [https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16022022.html HTML-pagina waarin al die Wikipedia-artikelen, uitgesplitst per taalversie], worden opgesomd.
+
 
 ## Examples
 ### Category:Media contributed by Koninklijke Bibliotheek
