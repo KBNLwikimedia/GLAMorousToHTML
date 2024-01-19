@@ -118,9 +118,9 @@ today2 = date.today().strftime("%d-%m-%Y")  #20-12-2022
 
 
 dictfile = "category_logo_dict.json"
-category_logo_dict = load_category_logo_dict(dictfile, 'Netherlands')
+category_logo_dict = load_category_logo_dict(dictfile, 'USA')
 #print(category_logo_dict)
-COMMONSCAT = list(category_logo_dict)[0] # First key of dict = index [0]= "Media contributed by Koninklijke Bibliotheek"
+COMMONSCAT = list(category_logo_dict)[4] # First key of dict = index [0]= "Media contributed by Koninklijke Bibliotheek"
 #COMMONSCAT = "Der naturen bloeme - KB KA 16"
 print(COMMONSCAT)
 

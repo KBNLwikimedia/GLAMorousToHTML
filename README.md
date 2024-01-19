@@ -89,15 +89,14 @@ The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&u
 * [Museum Catharijneconvent](https://commons.wikimedia.org/wiki/Category:Media%20contributed%20by%20Museum%20Catharijneconvent) :  Output on [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyMuseumCatharijneconvent_Wikipedia_Mainnamespace_17012024.html)
 * [Nationaal Museum van Wereldculturen](https://commons.wikimedia.org/wiki/Category:Files%20from%20the%20Nationaal%20Museum%20van%20Wereldculturen) : Output on [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_FilesfromtheNationaalMuseumvanWereldculturen_Wikipedia_Mainnamespace_17012024.html)
 
-
 #### USA
 <image src="logos/icon_loc.png" width="200" hspace="10" align="right"/>
 
 * [Library of Congress](https://commons.wikimedia.org/wiki/Category:Images_from_the_Library_of_Congress) : Output on [19-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromtheLibraryofCongress_Wikipedia_Mainnamespace_19012024.html)
+* [National Archives and Records Administration](https://commons.wikimedia.org/wiki/Category:Images%20from%20the%20National%20Archives%20and%20Records%20Administration) (NARA) : Output on [19-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromtheNationalArchivesandRecordsAdministration_Wikipedia_Mainnamespace_19012024.html)
 * [Metropolitan Museum of Art](https://commons.wikimedia.org/wiki/Category:Images_from_Metropolitan_Museum_of_Art) : Output on [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromMetropolitanMuseumofArt_Wikipedia_Mainnamespace_17012024.html)
 * [New York Public Library](https://commons.wikimedia.org/wiki/Category:Images_from_the_New_York_Public_Library) : Output on [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromtheNewYorkPublicLibrary_Wikipedia_Mainnamespace_17012024.html)
 * [National Gallery of Art](https://commons.wikimedia.org/wiki/Category:Images_from_the_National_Gallery_of_Art) (Washington, D.C.) : Output on [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromtheNationalGalleryofArt_Wikipedia_Mainnamespace_17012024.html)
-
 
 ## See also
 * [https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML](https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML)
