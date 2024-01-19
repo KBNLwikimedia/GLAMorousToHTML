@@ -1,0 +1,4 @@
+.gitattributes
+venv/
+.idea/
+.git

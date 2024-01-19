@@ -1,0 +1,47 @@
+body {
+    font-family: Calibri, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+}
+.content {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    width: 80%;
+    margin-top: 160px;
+}
+.image-container {
+    position: absolute; /* or use 'fixed' if you want it to stay in place while scrolling */
+    float: left;
+    top: 20px;
+    left: 0; /* Changed from 'right: 0;' to 'left: 0;' */
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the start of the container, i.e., left side */
+    align-items: center; /* Align items vertically in the center, you can also use 'flex-start' for top alignment */
+    width: auto; /* Changed from '100%' to 'auto' to fit the content */
+}
+.image-container img {
+    max-width: 150px; /* Adjust as needed */
+    height: auto;
+    margin-right: 50px; /* Adds a little space between the images */
+    padding-left: 50px;
+}
+
+h1 {
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+a {
+    color: #0011ff;
+}
+a:hover {
+    color: #dd33dd;
+}
+p {
+    padding:0 15px;
+}
