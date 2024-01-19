@@ -6,7 +6,7 @@
 ## What does it do?
 <image src="logos/icon_wp.png" width="100" hspace="10" align="right"/>
 
-The script [GLAMorousToHTML.py](https://github.com/KBNLwikimedia/GLAMorousToHTML/blob/main/GLAMorousToHTML.py) creates a HTML page listing all Wikipedia articles (in all languages) in which (one or more) images/media from a given category on Wikimedia Commons are used.
+The script [GLAMorousToHTML.py](https://github.com/KBNLwikimedia/GLAMorousToHTML/blob/master/GLAMorousToHTML.py) creates a HTML page listing all Wikipedia articles (in all languages) in which (one or more) images/media from a given category on Wikimedia Commons are used.
 
 ## What problem does it solve?
 The KB uses the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) to [measure the use of KB media files](https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief/Resultaten/KPIs/KPI4) (as stored in Wikimedia Commons) in Wikipedia articles. This tool [rapports 4 things](https://tools.wmflabs.org/glamtools/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects%5Bwikipedia%5D=1) :
