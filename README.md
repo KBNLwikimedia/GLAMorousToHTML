@@ -92,6 +92,7 @@ The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&u
 #### USA
 <image src="logos/icon_loc.png" width="200" hspace="10" align="right"/>
 
+* [Walters Art Museum](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_the_Walters_Art_Museum) : Output on [22-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/MediacontributedbytheWaltersArtMuseum_Wikipedia_NS0_22012024.html)
 * [Smithsonian Institution](https://commons.wikimedia.org/wiki/Category:Images_from_the_Smithsonian_Institution) : Output on [22-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/ImagesfromtheSmithsonianInstitution_Wikipedia_NS0_22012024.html)
 * [Library of Congress](https://commons.wikimedia.org/wiki/Category:Images_from_the_Library_of_Congress) : Output on [19-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromtheLibraryofCongress_Wikipedia_Mainnamespace_19012024.html)
 * [National Archives and Records Administration](https://commons.wikimedia.org/wiki/Category:Images%20from%20the%20National%20Archives%20and%20Records%20Administration) (NARA) : Output on [19-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromtheNationalArchivesandRecordsAdministration_Wikipedia_Mainnamespace_19012024.html)
