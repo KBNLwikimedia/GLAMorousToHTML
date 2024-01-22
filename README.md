@@ -1,7 +1,7 @@
 # GLAMorousToHTML
 *Converts the output of the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) to a HTML page.*
 
-*Latest update*: 22 Jan 2024
+*Latest update*: 23 Jan 2024
 
 ## What does it do?
 <image src="logos/icon_wp.png" width="100" hspace="10" align="right"/>
