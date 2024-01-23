@@ -92,7 +92,7 @@ The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&u
 #### USA
 <image src="logos/icon_loc.png" width="200" hspace="10" align="right"/>
 
-* [U.S. Navy Museum](https://commons.wikimedia.org/wiki/Category:Photographs_from_the_U.S._Navy_Museum) : Output on [22-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/PhotographsfromtheU.S.NavyMuseum_Wikipedia_NS0_22012024.html)
+* [U.S. Navy Museum](https://commons.wikimedia.org/wiki/Category:Photographs_from_the_U.S._Navy_Museum) : Output on [23-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/PhotographsfromtheU.S.NavyMuseum_Wikipedia_NS0_23012024.html)
 * [Walters Art Museum](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_the_Walters_Art_Museum) : Output on [22-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/MediacontributedbytheWaltersArtMuseum_Wikipedia_NS0_22012024.html)
 * [Smithsonian Institution](https://commons.wikimedia.org/wiki/Category:Images_from_the_Smithsonian_Institution) : Output on [22-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/ImagesfromtheSmithsonianInstitution_Wikipedia_NS0_22012024.html)
 * [Library of Congress](https://commons.wikimedia.org/wiki/Category:Images_from_the_Library_of_Congress) : Output on [19-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromtheLibraryofCongress_Wikipedia_Mainnamespace_19012024.html)

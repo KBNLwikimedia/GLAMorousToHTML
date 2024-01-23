@@ -275,7 +275,7 @@ def build_language_menu_item(key, fulllang, formatted_numlangarticles):
     Returns:
     str: An HTML string representing the language menu item.
     """
-    return '<a href="#{id}">{language} ({count})</a>'.format(id=key, language=fulllang.title(), count=formatted_numlangarticles)
+    return '<a href="#{id}">{language}</a> ({count})'.format(id=key, language=fulllang.title(), count=formatted_numlangarticles)
 
 def build_article_block(key, dedupdict, fulllang, formatted_numlangarticles):
     """
@@ -289,7 +289,7 @@ def build_article_block(key, dedupdict, fulllang, formatted_numlangarticles):
     str: An HTML string representing the WP articles block for the given language.
     """
     articlesline = ['<a href="{0}" target="_blank">{1}</a>'.format(url, url.split("/wiki/")[1].replace("_", " ")) for url in dedupdict[key]]
-    articlesline_joined = " -- ".join(articlesline)
+    articlesline_joined = " | ".join(articlesline)
     return '\n    <h4 id="{key}">{language} ({count})</h4>{articles}'.format(
         key=key,
         language=fulllang.title(),
@@ -336,7 +336,7 @@ def process_languages(sortedkeys, dedupdict, langdict):
 
         numarticles += numlangarticles
 
-    languagesmenu = " -- ".join(languagesmenu_items)
+    languagesmenu = " ".join(languagesmenu_items)
     formatted_numarticles = "{:,}".format(numarticles)
 
     return languagesmenu, items, formatted_numarticles
