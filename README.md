@@ -92,14 +92,16 @@ The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&u
 #### USA
 <image src="logos/icon_loc.png" width="200" hspace="10" align="right"/>
 
-* [U.S. Navy Museum](https://commons.wikimedia.org/wiki/Category:Photographs_from_the_U.S._Navy_Museum) : Output on [23-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/PhotographsfromtheU.S.NavyMuseum_Wikipedia_NS0_23012024.html)
-* [Walters Art Museum](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_the_Walters_Art_Museum) : Output on [22-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/MediacontributedbytheWaltersArtMuseum_Wikipedia_NS0_22012024.html)
-* [Smithsonian Institution](https://commons.wikimedia.org/wiki/Category:Images_from_the_Smithsonian_Institution) : Output on [22-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/ImagesfromtheSmithsonianInstitution_Wikipedia_NS0_22012024.html)
-* [Library of Congress](https://commons.wikimedia.org/wiki/Category:Images_from_the_Library_of_Congress) : Output on [19-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromtheLibraryofCongress_Wikipedia_Mainnamespace_19012024.html)
-* [National Archives and Records Administration](https://commons.wikimedia.org/wiki/Category:Images%20from%20the%20National%20Archives%20and%20Records%20Administration) (NARA) : Output on [19-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromtheNationalArchivesandRecordsAdministration_Wikipedia_Mainnamespace_19012024.html)
-* [Metropolitan Museum of Art](https://commons.wikimedia.org/wiki/Category:Images_from_Metropolitan_Museum_of_Art) : Output on [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromMetropolitanMuseumofArt_Wikipedia_Mainnamespace_17012024.html)
-* [New York Public Library](https://commons.wikimedia.org/wiki/Category:Images_from_the_New_York_Public_Library) : Output on [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromtheNewYorkPublicLibrary_Wikipedia_Mainnamespace_17012024.html)
-* [National Gallery of Art](https://commons.wikimedia.org/wiki/Category:Images_from_the_National_Gallery_of_Art) (Washington, D.C.) : Output on [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromtheNationalGalleryofArt_Wikipedia_Mainnamespace_17012024.html)
+* [Boston Public Library](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Boston_Public_Library) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/MediacontributedbyBostonPublicLibrary_Wikipedia_NS0_24012024.html)
+* [Los Angeles County Museum of Art](https://commons.wikimedia.org/wiki/Category:Public_domain_images_from_the_Los_Angeles_County_Museum_of_Art) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/PublicdomainimagesfromtheLosAngelesCountyMuseumofArt_Wikipedia_NS0_24012024.html)
+* [U.S. Navy Museum](https://commons.wikimedia.org/wiki/Category:Photographs_from_the_U.S._Navy_Museum) : Output on [24-01-2024](https://kbnlwikimedia.github.io/)
+* [Walters Art Museum](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_the_Walters_Art_Museum) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/MediacontributedbytheWaltersArtMuseum_Wikipedia_NS0_24012024.html)
+* [Smithsonian Institution](https://commons.wikimedia.org/wiki/Category:Images_from_the_Smithsonian_Institution) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/ImagesfromtheSmithsonianInstitution_Wikipedia_NS0_24012024.html)
+* [Library of Congress](https://commons.wikimedia.org/wiki/Category:Images_from_the_Library_of_Congress) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/ImagesfromtheLibraryofCongress_Wikipedia_NS0_24012024.html)
+* [National Archives and Records Administration](https://commons.wikimedia.org/wiki/Category:Images%20from%20the%20National%20Archives%20and%20Records%20Administration) (NARA) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/)
+* [Metropolitan Museum of Art](https://commons.wikimedia.org/wiki/Category:Images_from_Metropolitan_Museum_of_Art) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/)
+* [New York Public Library](https://commons.wikimedia.org/wiki/Category:Images_from_the_New_York_Public_Library) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/)
+* [National Gallery of Art](https://commons.wikimedia.org/wiki/Category:Images_from_the_National_Gallery_of_Art) (Washington, D.C.) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/)
 
 ## See also
 * [https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML](https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML)
