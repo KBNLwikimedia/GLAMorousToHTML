@@ -92,6 +92,7 @@ The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&u
 #### USA
 <image src="logos/icon_loc.png" width="200" hspace="10" align="right"/>
 
+* [National Park Service Gallery](https://commons.wikimedia.org/wiki/Category:Images_from_NPGallery) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/ImagesfromNPGallery_Wikipedia_NS0_24012024.html)
 * [Boston Public Library](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Boston_Public_Library) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/MediacontributedbyBostonPublicLibrary_Wikipedia_NS0_24012024.html)
 * [Los Angeles County Museum of Art](https://commons.wikimedia.org/wiki/Category:Public_domain_images_from_the_Los_Angeles_County_Museum_of_Art) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/PublicdomainimagesfromtheLosAngelesCountyMuseumofArt_Wikipedia_NS0_24012024.html)
 * [U.S. Navy Museum](https://commons.wikimedia.org/wiki/Category:Photographs_from_the_U.S._Navy_Museum) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/PhotographsfromtheU.S.NavyMuseum_Wikipedia_NS0_24012024.html)
