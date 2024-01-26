@@ -26,6 +26,30 @@
     "Photographs from the U.S. Navy Museum": "icon_usnavy.jpg",
     "Public domain images from the Los Angeles County Museum of Art" : "icon_lacma.png",
     "Media contributed by Boston Public Library" : "icon_bpl.jpg",
-    "Images from NPGallery" : "icon_nps.png",
+    "Images from NPGallery" : "icon_nps.png"
+  },
+  "Norway": {
+    "Images from Nasjonalbiblioteket": "icon_nbn.png",
+    "Images from The Norwegian Directorate for Cultural Heritage": "icon_ndch.png",
+    "Images from Digitalt Museum, Norway": "icon_dm.png",
+    "Media from the National Archives of Norway": "icon_nan.png",
+    "Media from Kartverket": "icon_kartverket.jpg",
+    "Media from the collection of Oslo Museum": "icon_om.png",
+    "Images from The Municipal Archives of Trondheim": "icon_tk.png"
+  },
+  "Sweden" : {
+    "Images from the Nationalmuseum Stockholm": "",
+    "Images from the National Archives of Sweden": "",
+    "Images from the National Library of Sweden": "",
+    "Media from the National Museums of World Culture": "",
+    "Images from Tekniska museet": "",
+    "Images from Livrustkammaren": ""
+  },
+  "Finland" : {
+    "Files from the Helsinki City Museum": "icon_hcm.png"
+  },
+  "Denmark" : {
+    "Images released under the CC0 1.0 Universal license by Statens Museum for Kunst" : "",
+    "Files from The Portrait Collection of Royal Danish Library": ""
   }
 }
