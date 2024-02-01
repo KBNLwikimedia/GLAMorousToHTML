@@ -132,7 +132,7 @@ DEPTH = 0 # Depth of subcategories, 0=no subcats
 XMLURL = "https://glamtools.toolforge.org/glamorous.php?doit=1&category=%s&use_globalusage=1&ns0=1&depth=%s&show_details=1&projects[wikipedia]=1&format=xml" % (COMMONSCAT.replace(" ","_"), str(DEPTH))
 print(XMLURL)
 #LOCALXMLFILE = "GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.xml" # Saved xml response from XMLURL, readmode=local
-HTMLFILE = "GLAMorous_%s_Wikipedia_Mainnamespace_%s.html" % (COMMONSCAT.replace(" ",""), str(today)) # datestamped name of the HTML file
+
 
 # Two readmodes: 1) read from local XML 2) read from http
 #readmode = "local" # Faster readmode, but can be outdated, for live/uptodate response, choose readmode=http
@@ -296,6 +296,7 @@ html_template = """<!DOCTYPE html>
 </html>
 """
 
+HTMLFILE = "GLAMorous_%s_Wikipedia_Mainnamespace_%s.html" % (COMMONSCAT.replace(" ",""), str(today)) # datestamped name of the HTML file
 def writeHTML(narticles,nlanguages,commonscat,xmlurl,date, logo, obj):
     html = html_template.format(str(narticles), str(nlanguages), commonscat.replace("_", " "), xmlurl, xmlurl.replace("&format=xml", ""), str(date), logo, obj)
     with open(HTMLFILE, 'w', encoding='utf-8') as f:

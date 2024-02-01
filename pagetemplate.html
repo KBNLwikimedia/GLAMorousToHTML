@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>{0} Wikipedia articles in {1} languages in which images from Category:{2} are used, grouped by language</title>
+</head>
+<body>
+    <div class="content">
+    <div class="image-container">
+        <img src="logos/icon_wp.png" alt="Wikipedia logo">
+        <img src="logos/{6}" alt="Logo of institute">
+       <img src="logos/icon_wmc.png" alt="Wikimedia Commons logo">
+
+    </div>
+        <h1>{0} Wikipedia articles in {1} languages in which images from <a href="https://commons.wikimedia.org/wiki/Category:{2}" target="_blank">Category:{2}</a> are used, grouped by language</h1>
+        <p>This overview is based on <a href="{3}" target="_blank">this XML output</a> of the <a href="{4}" target="_blank">GLAMorous tool</a> d.d. {5}.
+        It was generated using the <a href="https://github.com/KBNLwikimedia/GLAMorousToHTML/blob/main/GLAMorousToHTML.py" target="_blank">GLAMorousToHTML</a> Python script.
+        Also see the <a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/" target="_blank">documentation of this tool</a>.</p>
+        <p><hr><h4>Available languages</h4>{7}</p><hr>
+
+        {8}
+    </div>
+</body>
+</html>

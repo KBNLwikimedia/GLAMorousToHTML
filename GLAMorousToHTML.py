@@ -6,7 +6,7 @@ The GLAMorous input needs to be configured so that it only lists pages from Wiki
 1) that are in the main namespace (a.k.a Wikipedia articles) (&ns0=1)
 2) and not pages from Wikimedia Commons, Wikidata or other Wiki-projects (projects[wikipedia]=1)
 
-Latest update: 22 January 2024 - Olaf Janssen
+Latest update: 1 February 2024 - Olaf Janssen
 Author: Olaf Janssen, Wikimedia coordinator @KB, national library of the Netherlands
 Supported by ChatGPT
 
@@ -132,7 +132,6 @@ DEPTH = 0 # Depth of subcategories, 0=no subcats
 XMLURL = "https://glamtools.toolforge.org/glamorous.php?doit=1&category=%s&use_globalusage=1&ns0=1&depth=%s&show_details=1&projects[wikipedia]=1&format=xml" % (COMMONSCAT.replace(" ","_"), str(DEPTH))
 print(XMLURL)
 #LOCALXMLFILE = "GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.xml" # Saved xml response from XMLURL, readmode=local
-HTMLFILE = "%s_Wikipedia_NS0_%s.html" % (COMMONSCAT.replace(" ",""), str(today)) # datestamped name of the HTML file
 
 # Two readmodes: 1) read from local XML 2) read from http
 #readmode = "local" # Faster readmode, but can be outdated, for live/uptodate response, choose readmode=http
@@ -345,36 +344,19 @@ def process_languages(sortedkeys, dedupdict, langdict):
 # Example usage
 languagesmenu, items, formatted_numarticles = process_languages(sortedkeys, dedupdict, langdict)
 
+# Write the HTML file
+HTML_TEMPLATE = 'pagetemplate.html'
+HTMLFILE = "%s_Wikipedia_NS0_%s.html" % (COMMONSCAT.replace(" ", ""), str(today))  # datestamped name of the HTML output file
 
-# Convert to HTML output
-html_template = """<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <div class="content">
-    <div class="image-container">
-        <img src="logos/icon_wp.png" alt="Wikipedia logo">
-        <img src="logos/{6}" alt="Logo of institute">
-       <img src="logos/icon_wmc.png" alt="Wikimedia Commons logo">
-        
-    </div>
-        <h1>{0} Wikipedia articles in {1} languages in which images from <a href="https://commons.wikimedia.org/wiki/Category:{2}" target="_blank">Category:{2}</a> are used, grouped by language</h1>
-        <p>This overview is based on <a href="{3}" target="_blank">this XML output</a> of the <a href="{4}" target="_blank">GLAMorous tool</a> d.d. {5}. 
-        It was generated using the <a href="https://github.com/KBNLwikimedia/GLAMorousToHTML/blob/main/GLAMorousToHTML.py" target="_blank">GLAMorousToHTML</a> Python script.
-        Also see the <a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/" target="_blank">documentation of this tool</a>.</p>
-        <p><hr><h4>Available languages</h4>{7}</p><hr>
-        
-        {8}
-    </div>
-</body>
-</html>
-"""
-
-def writeHTML(narticles,nlanguages,commonscat,xmlurl,date, logo, langmenu, obj):
-    html = html_template.format(str(narticles), str(nlanguages), commonscat.replace("_", " "), xmlurl, xmlurl.replace("&format=xml", ""), str(date), logo, langmenu, obj)
-    with open(HTMLFILE, 'w', encoding='utf-8') as f:
+def writeHTML(narticles, nlanguages, commonscat, xmlurl, date, logo, langmenu, obj, template_path=HTML_TEMPLATE):
+    # Read HTML template from file
+    with open(template_path, 'r', encoding='utf-8') as file:
+        html_template = file.read()
+    # Format the template with provided arguments
+    html = html_template.format(str(narticles), str(nlanguages), commonscat.replace("_", " "), xmlurl,
+                                xmlurl.replace("&format=xml", ""), str(date), logo, langmenu, obj)
+    # Write the formatted HTML to a new file
+    with open(HTMLFILE , 'w', encoding='utf-8') as f:
         f.write(html)
 
 def main():
