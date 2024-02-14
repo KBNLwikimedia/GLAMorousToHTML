@@ -1,9 +1,49 @@
 """
-Collection of variables and functions that are used in other modules, and/or can be used generically
+This module serves as a foundational utility for various scripts and modules related to Wikimedia projects,
+providing a collection of generic functions, configurations, and utilities. It facilitates interactions
+with Wikimedia APIs, Wikidata, and other web resources, offering functionalities like loading JSON configurations,
+fetching and parsing XML data, validating URLs, and more. This versatility makes it a crucial component
+for scripts aimed at analyzing, reporting, or enhancing data related to Wikimedia Commons and Wikipedia.
 
-Latest update: 14 February 2024 - Olaf Janssen
-Author: Olaf Janssen, Wikimedia coordinator @KB, national library of the Netherlands
+Latest update: 14 February 2024
+Author: Olaf Janssen, Wikimedia coordinator at KB, the national library of the Netherlands
 Supported by ChatGPT
+
+Key Features:
+- JSON data management: Functions for loading JSON files into Python dictionaries, enabling the script to dynamically
+  access configurations and metadata stored in external files.
+- URL validation and XML data fetching: Utilities for validating URLs and fetching XML data from remote sources,
+  parsing it into Python dictionaries for further processing.
+- Wikimedia and Wikidata interaction: Functions to query Wikimedia and Wikidata for specific information, including
+  extracting Wikimedia project usage and Wikidata item IDs based on Wikipedia article titles.
+- Language label retrieval: A method for fetching Wikipedia language labels from Wikidata, facilitating the
+  internationalization and localization of output files.
+- Data transformation: Utilities to transform and reorganize data structures, making it easier to work with
+  data collected from the Glamorous tool and other sources.
+- Excel and HTML preparation: Functions to prepare data for output in Excel or HTML formats, including sorting,
+  deduplication, and adding full language names to Wikimedia project data.
+
+Usage:
+The functions within this module are designed to be reused across various scripts and modules
+(GLAMorousToHTML.py, buildHTML.py, buildExcel.py, setup.py) that require interaction with Wikimedia projects, parsing and
+transforming data, or generating reports. By centralizing these utilities, the module promotes code reuse
+and simplifies maintenance.
+
+Dependencies:
+- External libraries such as requests, SPARQLWrapper, urllib3, xmltodict, and pandas, facilitating web requests,
+  SPARQL queries, XML parsing, and data manipulation.
+- Local configurations from 'setup.py', ensuring that the module operates within the context of predefined
+  project settings and preferences.
+
+Example Use Case:
+To fetch and parse XML data from a Wikimedia Commons category, validate URLs, and load project configurations
+from a JSON file, thereby enabling the analysis or reporting scripts to efficiently access and organize
+the data needed for their operations.
+
+Note:
+While this module provides a wide range of utilities, its functions are tailored to specific use cases related
+to Wikimedia projects. Users may need to adapt these utilities or extend them based on the requirements
+of their specific projects or scripts.
 """
 
 
