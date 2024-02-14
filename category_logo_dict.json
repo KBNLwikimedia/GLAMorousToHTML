@@ -1,19 +1,19 @@
 {
   "Netherlands": {
-    "Media contributed by Koninklijke Bibliotheek": "icon_kb.png",
-    "Images from Nationaal Archief": "icon_na.jpg",
-    "Images from the Rijksmuseum": "icon_rm.png",
-    "Media from Beeld en Geluid Wiki" :"icon_beng.png",
-    "Images from the Tropenmuseum": "icon_tropenmus.jpg",
-    "Images from the African Studies Centre (Leiden)": "icon_asc.png",
-    "Images from Universiteitsbibliotheek Maastricht": "icon_um.png",
-    "Images from Het Utrechts Archief": "icon_ua.png",
-    "Images from the Rijksdienst voor het Cultureel Erfgoed": "icon_rce.png",
-    "Images from the Special Collections of the University of Amsterdam": "icon_uva.png",
-    "Media donated by Naturalis Biodiversity Center": "icon_naturalis.jpg",
-    "Photographs in the Stadsarchief Amsterdam": "icon_saadam.jpg",
-    "Media contributed by Museum Catharijneconvent": "icon_mcc.png",
-    "Files from the Nationaal Museum van Wereldculturen": "icon_nmwc.png"
+    "Media contributed by Koninklijke Bibliotheek": ["KoninklijkeBibliotheekNL", "icon_kb.png"],
+    "Images from Nationaal Archief": ["NationaalArchief", "icon_na.jpg"],
+    "Images from the Rijksmuseum": ["Rijksmuseum", "icon_rm.png"],
+    "Media from Beeld en Geluid Wiki" :["icon_beng.png", "BeeldEnGeluid"],
+    "Images from the Tropenmuseum": ["Tropenmuseum", "icon_tropenmus.jpg"],
+    "Images from the African Studies Centre (Leiden)": ["ASCLeiden", "icon_asc.png"],
+    "Images from Universiteitsbibliotheek Maastricht": ["UBMaastricht", "icon_um.png"],
+    "Images from Het Utrechts Archief": ["UtrechtsArchief", "icon_ua.png"],
+    "Images from the Rijksdienst voor het Cultureel Erfgoed": ["RCE", "icon_rce.png"],
+    "Images from the Special Collections of the University of Amsterdam": ["SpecialCollectionsUVA", "icon_uva.png"],
+    "Media donated by Naturalis Biodiversity Center": ["Naturalis", "icon_naturalis.jpg"],
+    "Photographs in the Stadsarchief Amsterdam": ["StadsarchiefAdam", "icon_saadam.jpg"],
+    "Media contributed by Museum Catharijneconvent": ["Catharijneconvent", "icon_mcc.png"],
+    "Files from the Nationaal Museum van Wereldculturen": ["MuseumWereldculturen", "icon_nmwc.png"]
   },
   "USA": {
     "Images from the Library of Congress": "icon_loc.png",

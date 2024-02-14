@@ -6,362 +6,97 @@ The GLAMorous input needs to be configured so that it only lists pages from Wiki
 1) that are in the main namespace (a.k.a Wikipedia articles) (&ns0=1)
 2) and not pages from Wikimedia Commons, Wikidata or other Wiki-projects (projects[wikipedia]=1)
 
-Latest update: 1 February 2024 - Olaf Janssen
+Latest update: 12 February 2024 - Olaf Janssen
 Author: Olaf Janssen, Wikimedia coordinator @KB, national library of the Netherlands
 Supported by ChatGPT
 
 """
-import xmltodict
-from datetime import date
-import traceback
-import urllib3
-from SPARQLWrapper import SPARQLWrapper, JSON
-import json
-import os
+#System imports
 
+# Custom project imports
+from general import *
+from setup import read_mode, wp_fulllanguagelabel_lang
+from buildHTML import build_html
+from buildExcel import build_excel
 
-def language_lookup(lang):
-    # TODO: Adapt this query because language of a Wikipedia is not always uniquely defined, see for instance
-    #   Norwegian Wikipedia, https://www.wikidata.org/wiki/Q191769#P407
-    #   --> https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_ImagesfromNationaalArchief_Wikipedia_Mainnamespace_16012024.html
-    #   has two h4-headers labeled "Nynorsk (1,531)" (associated with no.wiki) and "Nynorsk (409" (associated with nn.wiki)
-    #   TODO : query below gives back 351 results, but why is https://w.wiki/8thB only returning 339 items?
-    """
-    Retrieve a list of Wikipedia language labels in a specified language using Wikidata.
-    This function queries the Wikidata SPARQL endpoint to obtain the URLs of various Wikipedia sites
-    and their corresponding language labels in the specified language.
-    It does not yet addresses the complexity of language representation in Wikipedia, such as the Norwegian Wikipedia, which has multiple
-    language labels for the same language variant (e.g., Nynorsk).
-    Parameters:
-     - lang (str): A language code (e.g., 'nl' for Dutch) to retrieve the language labels.
-    Returns:
-    - list: A list of dictionaries, each containing the 'wikiurl' and its corresponding 'taalLabel' (language label).
-    Example:
-     - [{'wikiurl': 'https://ko.wikipedia.org/', 'taalLabel': 'Korean'}, ...]
-    """
+"""
+Read remote XML over http
+data = A dictionary representation of this XML data
+"""
+data = read_xml_data(read_mode)
 
-    endpoint_url = "https://query.wikidata.org/sparql"
-    query = """
-    SELECT ?wikiurl ?taalLabel WHERE {{
-      ?item wdt:P856 ?wikiurl.
-      ?item wdt:P407 ?taal.
-      ?wikiurl wikibase:wikiGroup "wikipedia".
-      SERVICE wikibase:label {{ bd:serviceParam wikibase:language "{0}". }}
-    }}""".format(lang)
+"""
+1) Retrieve a list of wikiprojects ['nl.wikipedia', 'en.wikipedia', ...] returned by the Glamorous tool, and 
+2) count the length of this list = number of wikiprojects
+"""
+wikiprojects = get_wikiprojects(data)[0] # List
+nwikiprojects = get_wikiprojects(data)[1] # Integer
 
-    def get_results(endpoint_url, query):
-        user_agent = "GLAMorousToHTML Python script by User:OlafJanssen"
-        sparql = SPARQLWrapper(endpoint_url, agent=user_agent)
-        sparql.setQuery(query)
-        sparql.setReturnFormat(JSON)
-        return sparql.query().convert()
+"""
+1) Filter out non-language, test, event or defunct Wikimedia projects, such as 
+'outreach.wikipedia', 'meta.wikipedia', 'incubator.wikipedia' etc.
+2) Also count the length of this list = number of filtered wikiprojects
+"""
+wikiprojects_filtered = filter_wikiprojects(wikiprojects)[0]  # List
+nwikiprojects_filtered = filter_wikiprojects(wikiprojects)[1] # Integer
 
-    results = get_results(endpoint_url, query)
-    return results["results"]["bindings"]
+""""
+Transform Glamorous data from using image names (such as 'AMH-7230-KB_Map_of_Borneo.jpg') as primary keys 
+("image key based") to using wikiprojects (such as 'fr.wikipedia') as primary keys ("wikiproject key based")
+In other words: Transforms data from an image-centric structure to a Wikimedia project-centric structure.
+"""
+projectsdict = transform_imagekeybased_to_wikiprojectkeybased(data, wikiprojects_filtered)
 
-def get_remote_xml(url):
-    """
-    Fetches and parses XML data from a given URL and converts it into a Python dictionary.
-    This function retrieves XML data from a specified URL using HTTP GET request and then
-    converts the XML data into a Python dictionary for easier manipulation and access. It
-    handles exceptions during the XML parsing process and prints an error message if the
-    parsing fails.
-    Parameters:
-     - url (str): The URL from which to fetch the XML data.
-    Returns:
-    - dict: A dictionary representation of the XML data. Returns None if parsing fails.
-    References:
-    - StackOverflow discussion on parsing XML from URL: https://stackoverflow.com/questions/24124643/parse-xml-from-url-into-python-object
-    - XML to JSON conversion method: https://www.geeksforgeeks.org/python-xml-to-json/
-    """
-    http = urllib3.PoolManager()
-    response = http.request('GET', url)
-    data = None
-    try:
-        # Convert XML to JSON (Python dictionary)
-        data = xmltodict.parse(response.data, attr_prefix='', dict_constructor=dict)
-    except Exception as e:
-        print(f"Failed to parse XML from response: {traceback.format_exc()}")
-    return data
+# Let's process & enrich 'projectsdict' and convert into a Pandas Dataframe: Steps 1-7
 
-def load_category_logo_dict(file_path, country):
-    """
-    Retrieve the Commons cats and logos of the GLAM institutions in a specified country from a .json file, and output it as a dict.
-    Parameters:
-    - file_path (str): The path to the JSON file with the Commons cats and logos
-    - country (str): The country for which to retrieve the information.
-    Returns:
-    - dict or None: A dictionary containing the Commons categories and logos for the GLAM institutions in the specified country.
-                  Returns None if the country is not found or if an error occurs.
-    Note:
-    - The function checks if the file exists before attempting to open it.
-    - It handles JSON parsing errors and file not found errors gracefully.
-    """
-    if not os.path.exists(file_path):
-        print(f"File not found: {file_path}")
-        return None
-    try:
-        with open(file_path, 'r') as file:
-            dictfile = file.read()
-            category_logo_dic = json.loads(dictfile)
-    except json.JSONDecodeError:
-        print(f"Error decoding JSON from the file: {file_path}")
-        return None
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        return None
-    return category_logo_dic.get(country)
+""" 1,2,3) Perform three operations on a dictionary mapping Wikimedia project names to lists of article URLs:
+1) Remove duplicate Wikipedia URLs per wikiproject/language.
+2) Sort the list of deduplicated Wikipedia article URLs alphabetically.
+3) Order the dictionary by the number of Wikipedia article URLs per wikiproject, in descending order.
+"""
+deduped_sorted_ordered_projectsdict = dedup_sort_order_projectsdict(projectsdict, wikiprojects_filtered)
 
+""" Helper function/step to bring full language names to the table 
+Retrieve a list of dicts containing full Wikipedia language names, from Wikidata
+"""
+langdictlist = get_languages_dict(wp_fulllanguagelabel_lang) #dict of full Wikipedia language labels in the language specified
 
-today = date.today().strftime("%d%m%Y") #20122022
-today2 = date.today().strftime("%d-%m-%Y")  #20-12-2022
+""" 4) Add full language names as new key-value pair to 'deduped_sorted_ordered_projectsdict' (short: 'dso_pdict') 
+"""
+full_language_dso_pdict = add_full_language_names_to_dict(deduped_sorted_ordered_projectsdict, langdictlist)
 
+""" 5) Sort the 'full_language_dso_pdict' dict first by the descending count of URLs associated with each project 
+and then alphabetically by the project's full language name in case of equal URL counts.
+"""
+sorted_fulllanguage_dso_pdict = sort_projects_by_urlcount_and_fulllanguage_name(full_language_dso_pdict)
 
-dictfile = "category_logo_dict.json"
-category_logo_dict = load_category_logo_dict(dictfile, 'Finland')
-#print(category_logo_dict)
-COMMONSCAT = list(category_logo_dict)[0] # First key of dict = index [0]= "Media contributed by Koninklijke Bibliotheek"
-#COMMONSCAT = "Der naturen bloeme - KB KA 16"
-print(COMMONSCAT)
-
-# Retrieve the logo of the institute
-institute_logo = category_logo_dict[COMMONSCAT]
-#print(institute_logo)
-
-DEPTH = 0 # Depth of subcategories, 0=no subcats
-XMLURL = "https://glamtools.toolforge.org/glamorous.php?doit=1&category=%s&use_globalusage=1&ns0=1&depth=%s&show_details=1&projects[wikipedia]=1&format=xml" % (COMMONSCAT.replace(" ","_"), str(DEPTH))
-print(XMLURL)
-#LOCALXMLFILE = "GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.xml" # Saved xml response from XMLURL, readmode=local
-
-# Two readmodes: 1) read from local XML 2) read from http
-#readmode = "local" # Faster readmode, but can be outdated, for live/uptodate response, choose readmode=http
-readmode = "http"
-if readmode == "local":
-    with open(LOCALXMLFILE, 'r', encoding='utf-8') as f:
-        # Convert XML to JSON
-        data = xmltodict.parse(f.read(), attr_prefix='', dict_constructor=dict)
-elif readmode == "http":
-    data = get_remote_xml(XMLURL)
-else: "ERROR: No readmode specified"
-#print(data)
-
-# Extracts project information from a nested data structure.
-# This coden navigates through a nested dictionary structure to find usage statistics.
-# It then extracts a list of projects from these statistics.
-usage = data.get('results', {}).get('stats', {}).get('usage', [])
-projects = [item.get('project', 'XX') for item in usage if isinstance(item, dict)]
-nprojects = len(projects)
-#print("%s projects: %s:" % (nprojects, projects))
-
-# Filter projects for real languages, so omit outreach, meta, simple, incubator, test, defunct wikis etc.
-# https://be_x_old.wikipedia.org/ is defunct now
-# This list might not yet be complete (dd18 Jan 2024)
-skips = ['outreach.wikipedia', 'meta.wikipedia', 'simple.wikipedia', 'incubator.wikipedia', 'be_x_old.wikipedia',
-         'test.wikipedia','test2.wikipedia','species.wikipedia','sources.wikipedia','mediawiki.wikipedia',
-         'wikimania2012.wikipedia', 'wikimania2013.wikipedia','wikimania2014.wikipedia','wikimania2015.wikipedia',
-         'wikimania2016.wikipedia', 'wikimania2017.wikipedia', 'wikimania2018.wikipedia', 'wikimania2019.wikipedia',
-         'wikimania2020.wikipedia', 'wikimania2021.wikipedia', 'wikimania2022.wikipedia', 'wikimania2023.wikipedia',
-         'wikimania2024.wikipedia','ten.wikipedia']
-projects_filtered = [s for s in projects if s not in skips]
-nprojects_filtered = len(projects_filtered) # Number of 'real' Wikipedia language versions
-#print("%s projects_filtered: %s:" % (nprojects_filtered, projects_filtered))
-
-projectdict = {x: [] for x in projects_filtered}
-
+"""6) For every Wikipedia article in this dict, add the KB images that are included in it. 
+"""
 images = data.get('results', 'XX').get('details', 'XX').get('image', 'XX')
-for index, image in enumerate(images):
-    names = image.get('project', 'XX') # can be a dict or a list of dicts
-    if isinstance(names, dict):
-        wiki = names.get('name', 'XX')
-        pages = names.get('namespace', 'XX').get('page', 'XX') # can be a dict or a list of dicts
-        if isinstance(pages, dict):
-            title = pages.get('title', 'XX')
-            wiki_url = 'https://%s.org/wiki/%s' % (wiki, title)
-            if wiki in projects_filtered:
-                projectdict[wiki].append(wiki_url)
-            else:
-                pass
-                #print("%s not in projects_filtered" % wiki)
-        elif isinstance(pages, list):
-            for page in pages:
-                title = page.get('title', 'XX')
-                wiki_url = 'https://%s.org/wiki/%s' % (wiki, title)
-                if wiki in projects_filtered:
-                    projectdict[wiki].append(wiki_url)
-                else:
-                    pass
-                    # print("%s not in projects_filtered" % wiki)
-        else:print('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
-    elif isinstance(names, list):
-        for name in names:
-            wiki = name.get('name', 'XX')
-            pages = name.get('namespace', 'XX').get('page', 'XX') # can be a dict or a list of dicts
-            if isinstance(pages, dict):
-                title = pages.get('title', 'XX')
-                wiki_url = 'https://%s.org/wiki/%s' % (wiki, title)
-                if wiki in projects_filtered:
-                    projectdict[wiki].append(wiki_url)
-                else:
-                    pass
-                    # print("%s not in projects_filtered" % wiki)
-            elif isinstance(pages, list):
-                for page in pages:
-                    title = page.get('title', 'XX')
-                    wiki_url = 'https://%s.org/wiki/%s' % (wiki, title)
-                    if wiki in projects_filtered:
-                        projectdict[wiki].append(wiki_url)
-                    else:
-                        pass
-                        # print("%s not in projects_filtered" % wiki)
-            else:
-                print('YYYYYYYYYYYYYYYYYYYYYY')
-    else:
-        print('ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ')
+images_projectdict = add_images_to_dict(sorted_fulllanguage_dso_pdict, images)
 
-# Do some processing/cleaning/ordering/filtering: 1,2,3,4:
+"""7) Turn 'images_projectdict' into Pandas Dataframe - as preparation for conversion into Excel and HTML
+"""
+wp_df = convert_to_dataframe(images_projectdict)
 
-# 1) Deduplicate projectdict per language, see https://datagy.io/python-remove-duplicates-from-list/
-# 2) For each language: Sort deduped Wikipedia article titles alphabetically
-dedupdict = {x: [] for x in projects_filtered}
-for key in projectdict.keys():
-    dedupdict[key] = sorted(list(set(projectdict.get(key, 'XX'))))
-print('dedupdict = %s' % dedupdict)
+##### So far for all data transformations and manipulations, let's now create an Excel file and a HTML page from this data
 
-# 3) Replace wiki-code with full language, eg. in Dutch: 'nl.wikipedia' --> 'Nederlands' , 'ru.wikipedia' --> 'Russisch'
-#LANG = "nl" # H4 headers in Dutch
-LANG = "en" # H4 headers in English
-langdict = language_lookup(LANG) #dict of Wikipedia language labels in the language specified
-# TODO: Note the duplicate Norwegian "no.wikipedia" and "nn.wikipedia" in this dict
-print(" "*100)
-print("-"*100)
-print('langdict = %s' % langdict)
-print("-"*100)
-print(" "*100)
+"""8) Write dataframe to Excel 
+"""
+build_excel(wp_df)
 
-# 4) Sort Wiki-languages by number of Wikipedia articles: en, nl, fr, ru, de ...
-# https://www.geeksforgeeks.org/python-sort-dictionary-by-value-list-length/
+"""9) Transform dataframe to HTML components/building blocks
+"""
+build_html(wp_df)
 
-sortedkeys = sorted(dedupdict, key=lambda key: len(dedupdict[key]), reverse=True)
-print(" "*100)
-print("-"*100)
-print('sortedkeys = %s' % sortedkeys)
-print("-"*100)
-print(" "*100)
-
-
-def extract_full_language_name(langdict, key):
-    """
-    Extracts the full language name matching the given key from the language dictionary.
-    Parameters:
-    langdict (dict): A dictionary containing language data.
-    key (str): The language code.
-    Returns:
-    str: The full language name, or 'XX' if not found.
-    """
-    for lang in langdict:
-        wiki_url = lang.get('wikiurl', {}).get('value', '')
-        if wiki_url.split("//")[1].split(".org")[0] == key.replace("_", "-"):
-            return lang.get('taalLabel', {}).get('value', 'XX')
-    return 'XX'
-
-def build_language_menu_item(key, fulllang, formatted_numlangarticles):
-    """
-    Builds a language menu item as an HTML string.
-    Parameters:
-    key (str): The language identifier. (syntax = "ru.wikipedia")
-    fulllang (str): The full language name.
-    formatted_numlangarticles (str): The formatted number of articles in this language.
-    Returns:
-    str: An HTML string representing the language menu item.
-    """
-    return '<a href="#{id}">{language}</a> ({count})'.format(id=key, language=fulllang.title(), count=formatted_numlangarticles)
-
-def build_article_block(key, dedupdict, fulllang, formatted_numlangarticles):
-    """
-    Builds an HTML block of WP articles for a specific language.
-    Parameters:
-    - key (str): The language identifier. (syntax = "ru.wikipedia")
-    - dedupdict (dict): A dictionary with language codes as keys and lists of article URLs as values.
-    - fulllang (str): The full language name.
-    - formatted_numlangarticles (str): The formatted number of WP articles in this language.
-    Returns:
-    str: An HTML string representing the WP articles block for the given language.
-    """
-    articlesline = ['<a href="{0}" target="_blank">{1}</a>'.format(url, url.split("/wiki/")[1].replace("_", " ")) for url in dedupdict[key]]
-    articlesline_joined = " | ".join(articlesline)
-    return '\n    <h4 id="{key}">{language} ({count})</h4>{articles}'.format(
-        key=key,
-        language=fulllang.title(),
-        count=formatted_numlangarticles,
-        articles=articlesline_joined
-    )
-
-
-def process_languages(sortedkeys, dedupdict, langdict):
-    """
-    Processes languages to build a menu and article blocks.
-    Parameters:
-    sortedkeys (list): Sorted language keys.
-    dedupdict (dict): A dictionary with language codes as keys and lists of article URLs as values.
-    langdict (dict): A dictionary containing language data.
-
-    Returns:
-    str: The complete HTML string for 1) the language menu and 2) the WP article blocks.
-    int: The total number of articles across all languages.
-    """
-    languagesmenu_items = []
-    items = ""
-    numarticles = 0
-
-    for key in sortedkeys:
-        print(f'aaaaaaaaaaaa {key}')
-        if key not in dedupdict:
-            print(f"Warning: Key '{key}' not found in dedupdict.")
-            continue
-
-        fulllang = extract_full_language_name(langdict, key)
-        if fulllang == 'XX':
-            print(f"Warning: Full language name not found for key '{key}'.")
-            continue
-
-        numlangarticles = len(dedupdict[key])
-        formatted_numlangarticles = "{:,}".format(numlangarticles)
-
-        langmenuitem = build_language_menu_item(key, fulllang, formatted_numlangarticles)
-        languagesmenu_items.append(langmenuitem)
-
-        item = build_article_block(key, dedupdict, fulllang, formatted_numlangarticles)
-        items += item
-
-        numarticles += numlangarticles
-
-    languagesmenu = " ".join(languagesmenu_items)
-    formatted_numarticles = "{:,}".format(numarticles)
-
-    return languagesmenu, items, formatted_numarticles
-
-
-# Example usage
-languagesmenu, items, formatted_numarticles = process_languages(sortedkeys, dedupdict, langdict)
-
-# Write the HTML file
-HTML_TEMPLATE = 'pagetemplate.html'
-HTMLFILE = "%s_Wikipedia_NS0_%s.html" % (COMMONSCAT.replace(" ", ""), str(today))  # datestamped name of the HTML output file
-
-def writeHTML(narticles, nlanguages, commonscat, xmlurl, date, logo, langmenu, obj, template_path=HTML_TEMPLATE):
-    # Read HTML template from file
-    with open(template_path, 'r', encoding='utf-8') as file:
-        html_template = file.read()
-    # Format the template with provided arguments
-    html = html_template.format(str(narticles), str(nlanguages), commonscat.replace("_", " "), xmlurl,
-                                xmlurl.replace("&format=xml", ""), str(date), logo, langmenu, obj)
-    # Write the formatted HTML to a new file
-    with open(HTMLFILE , 'w', encoding='utf-8') as f:
-        f.write(html)
+#==================================================
 
 def main():
     """Main function of the script GLAMorousToHTML.py."""
-    writeHTML(formatted_numarticles, nprojects_filtered, COMMONSCAT, XMLURL, today2, institute_logo, languagesmenu, items)
+    #TODO: move this call to builHTML.py
+    #buildHTML()
+    #write_html(formatted_numarticles, nwikiprojects_filtered, commons_cat, xml_url, today2, logo, languagesmenu, items)
+    #TODO: buildExcel.write_excel()
 
 if __name__ == "__main__":
     main()
