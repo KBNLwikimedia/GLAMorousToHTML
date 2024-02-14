@@ -3,7 +3,7 @@
     "title" : "GLAMorousToHTML",
     "description" : "This Python script creates a HTML page listing all Wikipedia articles (in all languages) in which (one or more) images/media from a given Commons category are used.",
     "url" : "https://github.com/KBNLwikimedia/GLAMorousToHTML/blob/main/GLAMorousToHTML.py",
-    "keywords" : "GLAMorous, images, Wikipedia, uptake, Commons",
+    "keywords" : "GLAMorous, images, Wikipedia, uptake, Commons, GLAMwiki"
     "author" : "Olaf Janssen",
     "repository" : "https://github.com/KBNLwikimedia/GLAMorousToHTML",
     "comment": "See https://hay.toolforge.org/directory/#addtool"

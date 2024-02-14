@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>{numarticles} Wikipedia articles in {numlanguages} languages in which images from Category:{commonscat} are used, grouped by language</title>
+</head>
+<body>
+    <div class="content">
+    <div class="image-container">
+        <img src="logos/icon_wp.png" alt="Wikipedia logo">
+        <img src="logos/{logo}" alt="Logo of institute">
+        <img src="logos/icon_wmc.png" alt="Wikimedia Commons logo">
+    </div>
+        <h1>{numarticles} Wikipedia articles in {numlanguages} languages in which images from <a href="https://commons.wikimedia.org/wiki/Category:{commonscat}" target="_blank">Category:{commonscat}</a> are used, grouped by language</h1>
+        <p>This overview is based on <a href="{xmlurl}" target="_blank">this XML output</a> of the <a href="{xmlurl_trunc}" target="_blank">GLAMorous tool</a> d.d. {date}.
+        It was generated using the <a href="https://github.com/KBNLwikimedia/GLAMorousToHTML" target="_blank">GLAMorousToHTML</a> code.
+        Also see the <a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/" target="_blank">documentation of this tool</a>.</p>
+        <p>This data is also available as an <a href="../{excelpath}" target="_blank">Excel file</a>. More structured data formats (csv, json) will be added in the future.</p>
+        <hr>
+        <p><h4>Available languages</h4>{languagesmenu}</p>
+        <hr>
+        {articlesblock}
+    </div>
+</body>
+</html>

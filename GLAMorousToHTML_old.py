@@ -6,7 +6,7 @@ The GLAMorous input needs to be configured so that it only lists pages from Wiki
 1) that are in the main namespace (a.k.a Wikipedia articles) (&ns0=1)
 2) and not pages from Wikimedia Commons, Wikidata or other Wiki-projects (projects[wikipedia]=1)
 
-Latest update: 22 January 2024 - Olaf Janssen
+Latest update: 1 February 2024 - Olaf Janssen
 Author: Olaf Janssen, Wikimedia coordinator @KB, national library of the Netherlands
 Supported by ChatGPT
 
@@ -132,7 +132,6 @@ DEPTH = 0 # Depth of subcategories, 0=no subcats
 XMLURL = "https://glamtools.toolforge.org/glamorous.php?doit=1&category=%s&use_globalusage=1&ns0=1&depth=%s&show_details=1&projects[wikipedia]=1&format=xml" % (COMMONSCAT.replace(" ","_"), str(DEPTH))
 print(XMLURL)
 #LOCALXMLFILE = "GLAMorous_MediaContributedByKB_Wikipedia_Mainnamespace_26012022.xml" # Saved xml response from XMLURL, readmode=local
-HTMLFILE = "GLAMorous_%s_Wikipedia_Mainnamespace_%s.html" % (COMMONSCAT.replace(" ",""), str(today)) # datestamped name of the HTML file
 
 # Two readmodes: 1) read from local XML 2) read from http
 #readmode = "local" # Faster readmode, but can be outdated, for live/uptodate response, choose readmode=http
@@ -226,7 +225,7 @@ for index, image in enumerate(images):
 dedupdict = {x: [] for x in projects_filtered}
 for key in projectdict.keys():
     dedupdict[key] = sorted(list(set(projectdict.get(key, 'XX'))))
-#print('dedupdict = %s' % dedupdict)
+print('dedupdict = %s' % dedupdict)
 
 # 3) Replace wiki-code with full language, eg. in Dutch: 'nl.wikipedia' --> 'Nederlands' , 'ru.wikipedia' --> 'Russisch'
 #LANG = "nl" # H4 headers in Dutch
@@ -241,84 +240,123 @@ print(" "*100)
 
 # 4) Sort Wiki-languages by number of Wikipedia articles: en, nl, fr, ru, de ...
 # https://www.geeksforgeeks.org/python-sort-dictionary-by-value-list-length/
-languagesmenu_items = []
-items = ""
-articlesline = ""
+
 sortedkeys = sorted(dedupdict, key=lambda key: len(dedupdict[key]), reverse=True)
 print(" "*100)
 print("-"*100)
 print('sortedkeys = %s' % sortedkeys)
 print("-"*100)
 print(" "*100)
-numarticles = 0  # Total number of Wikipedia articles
 
-for key in sortedkeys:
-    print(f"aaaaaaaaaaaaaaaaa {key}")
-    # Extract full language names matching the key
-    fulllang = [lang.get('taalLabel', 'XX').get('value', 'XX') for lang in langdict if lang.get('wikiurl', 'XX').get('value', 'XX').split("//")[1].split(".org")[0] == key.replace("_", "-")]
 
-    # Check if fulllang has any elements
-    if not fulllang:
-        print(f"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssssssssssssssssssssss"
-              f"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavvvvvvvvvvvvvvvvvvvvvvvvvv"
-              f"vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvaaaa {key}")
-        # You can skip the iteration or set a default value for fulllang
-        break
+def extract_full_language_name(langdict, key):
+    """
+    Extracts the full language name matching the given key from the language dictionary.
+    Parameters:
+    langdict (dict): A dictionary containing language data.
+    key (str): The language code.
+    Returns:
+    str: The full language name, or 'XX' if not found.
+    """
+    for lang in langdict:
+        wiki_url = lang.get('wikiurl', {}).get('value', '')
+        if wiki_url.split("//")[1].split(".org")[0] == key.replace("_", "-"):
+            return lang.get('taalLabel', {}).get('value', 'XX')
+    return 'XX'
 
-    langid =key.split(".")[0] #nl, en, ru, it...
-    numlangarticles = len(dedupdict[key])  # Number of Wikipedia articles in a given language
-    formatted_numlangarticles = "{:,}".format(numlangarticles)
+def build_language_menu_item(key, fulllang, formatted_numlangarticles):
+    """
+    Builds a language menu item as an HTML string.
+    Parameters:
+    key (str): The language identifier. (syntax = "ru.wikipedia")
+    fulllang (str): The full language name.
+    formatted_numlangarticles (str): The formatted number of articles in this language.
+    Returns:
+    str: An HTML string representing the language menu item.
+    """
+    return '<a href="#{id}">{language}</a> ({count})'.format(id=key, language=fulllang.title(), count=formatted_numlangarticles)
 
-    #Build languages menu
-    langmenuitem = '<a href="#%s">%s (%s)</a>' % (langid, fulllang[0].title(), formatted_numlangarticles)
-    languagesmenu_items.append(langmenuitem)
-
-    # Build block with WP articles, per language
+def build_article_block(key, dedupdict, fulllang, formatted_numlangarticles):
+    """
+    Builds an HTML block of WP articles for a specific language.
+    Parameters:
+    - key (str): The language identifier. (syntax = "ru.wikipedia")
+    - dedupdict (dict): A dictionary with language codes as keys and lists of article URLs as values.
+    - fulllang (str): The full language name.
+    - formatted_numlangarticles (str): The formatted number of WP articles in this language.
+    Returns:
+    str: An HTML string representing the WP articles block for the given language.
+    """
     articlesline = ['<a href="{0}" target="_blank">{1}</a>'.format(url, url.split("/wiki/")[1].replace("_", " ")) for url in dedupdict[key]]
-    articlesline_joined = " -- ".join(articlesline)
-    item = '\n    <h4 id="{id}">{language} ({count})</h4>{articles}'.format(
-        id=key.split(".")[0],
-        language=fulllang[0].title(),
+    articlesline_joined = " | ".join(articlesline)
+    return '\n    <h4 id="{key}">{language} ({count})</h4>{articles}'.format(
+        key=key,
+        language=fulllang.title(),
         count=formatted_numlangarticles,
         articles=articlesline_joined
     )
-    items += item
 
-    # Calculate total number of WP articles, all languages
-    numarticles += numlangarticles
 
-languagesmenu = " -- ".join(languagesmenu_items)
-formatted_numarticles = "{:,}".format(numarticles)
+def process_languages(sortedkeys, dedupdict, langdict):
+    """
+    Processes languages to build a menu and article blocks.
+    Parameters:
+    sortedkeys (list): Sorted language keys.
+    dedupdict (dict): A dictionary with language codes as keys and lists of article URLs as values.
+    langdict (dict): A dictionary containing language data.
 
-# Convert to HTML output
-html_template = """<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <div class="content">
-    <div class="image-container">
-        <img src="logos/icon_wp.png" alt="Wikipedia logo">
-        <img src="logos/{6}" alt="Logo of institute">
-       <img src="logos/icon_wmc.png" alt="Wikimedia Commons logo">
-        
-    </div>
-        <h1>{0} Wikipedia articles in {1} languages in which images from <a href="https://commons.wikimedia.org/wiki/Category:{2}" target="_blank">Category:{2}</a> are used, grouped by language</h1>
-        <p>This overview is based on <a href="{3}" target="_blank">this XML output</a> of the <a href="{4}" target="_blank">GLAMorous tool</a> d.d. {5}. 
-        It was generated using the <a href="https://github.com/KBNLwikimedia/GLAMorousToHTML/blob/main/GLAMorousToHTML.py" target="_blank">GLAMorousToHTML</a> Python script.
-        Also see the <a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/" target="_blank">documentation of this tool</a>.</p>
-        <p><hr><h4>Available languages</h4>{7}</p><hr>
-        
-        {8}
-    </div>
-</body>
-</html>
-"""
+    Returns:
+    str: The complete HTML string for 1) the language menu and 2) the WP article blocks.
+    int: The total number of articles across all languages.
+    """
+    languagesmenu_items = []
+    items = ""
+    numarticles = 0
 
-def writeHTML(narticles,nlanguages,commonscat,xmlurl,date, logo, langmenu, obj):
-    html = html_template.format(str(narticles), str(nlanguages), commonscat.replace("_", " "), xmlurl, xmlurl.replace("&format=xml", ""), str(date), logo, langmenu, obj)
-    with open(HTMLFILE, 'w', encoding='utf-8') as f:
+    for key in sortedkeys:
+        print(f'aaaaaaaaaaaa {key}')
+        if key not in dedupdict:
+            print(f"Warning: Key '{key}' not found in dedupdict.")
+            continue
+
+        fulllang = extract_full_language_name(langdict, key)
+        if fulllang == 'XX':
+            print(f"Warning: Full language name not found for key '{key}'.")
+            continue
+
+        numlangarticles = len(dedupdict[key])
+        formatted_numlangarticles = "{:,}".format(numlangarticles)
+
+        langmenuitem = build_language_menu_item(key, fulllang, formatted_numlangarticles)
+        languagesmenu_items.append(langmenuitem)
+
+        item = build_article_block(key, dedupdict, fulllang, formatted_numlangarticles)
+        items += item
+
+        numarticles += numlangarticles
+
+    languagesmenu = " ".join(languagesmenu_items)
+    formatted_numarticles = "{:,}".format(numarticles)
+
+    return languagesmenu, items, formatted_numarticles
+
+
+# Example usage
+languagesmenu, items, formatted_numarticles = process_languages(sortedkeys, dedupdict, langdict)
+
+# Write the HTML file
+HTML_TEMPLATE = 'pagetemplate.html'
+HTMLFILE = "%s_Wikipedia_NS0_%s.html" % (COMMONSCAT.replace(" ", ""), str(today))  # datestamped name of the HTML output file
+
+def writeHTML(narticles, nlanguages, commonscat, xmlurl, date, logo, langmenu, obj, template_path=HTML_TEMPLATE):
+    # Read HTML template from file
+    with open(template_path, 'r', encoding='utf-8') as file:
+        html_template = file.read()
+    # Format the template with provided arguments
+    html = html_template.format(str(narticles), str(nlanguages), commonscat.replace("_", " "), xmlurl,
+                                xmlurl.replace("&format=xml", ""), str(date), logo, langmenu, obj)
+    # Write the formatted HTML to a new file
+    with open(HTMLFILE , 'w', encoding='utf-8') as f:
         f.write(html)
 
 def main():
