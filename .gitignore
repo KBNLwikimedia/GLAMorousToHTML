@@ -1,3 +1,4 @@
 .gitattributes
 .idea/
 .git
+__pycache__
