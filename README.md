@@ -116,9 +116,9 @@ The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&u
 ## Change log
 ### 14 February 2024
 * Refactored all code into multiple separated modules: [setup.py](setup.py), [general.py](general.py), [buildHTML.py](buildHTML.py) and [buildExcel.py](buildExcel.py). This has reduced the complexity of the main script [GLAMorousToHTML.py](GLAMorousToHTML.py) significantly and made the total suite of code much more modular and easier to understand, maintain and expand.
-* Moved all HTML report pages into a separate "/site" folder. This has made the repo much cleaner, clearer and more maintainable.
+* Moved all HTML report pages into a separate [site/ folder](site/). This has made the repo much cleaner, clearer and more maintainable.
 * Created five HTML files that redirect the old KB HTML pages (from [27-01-2022](GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_27012022.html) to [16-01-2024](GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16012024.html)) to the new equivalent ones in "/site" folder. Did not implement redirection for other institutions.
-* Per 14-02-2024 added Excel outputs in "/data" folder, to be used as structured input for data applications, such as OpenRefine
+* Per 14-02-2024 added Excel outputs in [data/ folder](data/), to be used as structured input for data applications, such as OpenRefine
 * In the proces of updating the data structure in [category_logo_dict.json](category_logo_dict.json), where the new structure can be seen under the 'Netherlands' key.
 * Improved [pagetemplate.html](pagetemplate.html) to be key based (*{numarticles} Wikipedia articles*) rather than index based (*{0} Wikipedia articles*)
 
