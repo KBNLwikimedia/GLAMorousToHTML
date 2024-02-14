@@ -1,8 +1,40 @@
 """
-Global configurations
+Global configurations for generating output files for Wikimedia Commons categories associated with specific institutions.
+
+This module centralizes the configuration for selecting an institution based on country and index within the predefined
+dictionary (from 'category_logo_dict.json') of institutions. It also specifies the read mode for fetching GLAMorous tool
+data, defines base URLs for XML data retrieval, and sets up variables for Excel and HTML output customization.
 
 Latest update: 14 February 2024 - Olaf Janssen
 Author: Olaf Janssen, Wikimedia coordinator @KB, national library of the Netherlands
+Supported by ChatGPT
+
+Global Variables:
+- dict_file (str): Path to the JSON file containing a dictionary of country names and institutions.
+- country_key (str): Key representing the country of interest within the 'dict_file'.
+- institute_index (int): Index specifying the institution of interest within the country's list in 'dict_file'.
+- read_mode (str): Mode for fetching XML data ('local' for local files, 'http' for remote files).
+- commons_cat (str): Wikimedia Commons category name associated with the selected institution.
+- depth (int): Depth parameter for the GLAMorous tool, determining the subcategory depth to consider.
+- xml_base_url (str): Base URL for constructing the request to the GLAMorous tool.
+- xml_url (str): Complete URL for fetching XML data about Wikimedia Commons category usage.
+- local_xml_file (str): Filename for storing a local copy of the XML data fetched using 'xml_url'.
+- wp_full_language_label_lang (str): Language code for displaying Wikipedia language labels.
+- sheet_name (str): Name for the Excel sheet where data will be written, derived from the selected institution.
+- logo (str): Filename of the logo image associated with the selected institution, for use in HTML outputs.
+
+The module's user input section allows for easy configuration to generate outputs for different institutions
+by changing 'category_logo_dict.json', 'country_key' and 'institute_index'  as needed.
+It leverages custom project imports for loading dictionaries and fetching institution details, ensuring that
+outputs are tailored to specific institutional contributions to Wikimedia Commons.
+
+Usage:
+1. Update 'category_logo_dict.json', 'country_key' and 'institute_index' to select a different institution.
+2. Choose 'read_mode' based on the source of XML data (local file or remote URL).
+3. Run associated script 'GLAMorousToHTML.py' for generating HTML and also Excel
+
+Dependencies:
+- general module for functions like 'load_dict' and 'get_institution_details'.
 """
 
 # Custom project imports
