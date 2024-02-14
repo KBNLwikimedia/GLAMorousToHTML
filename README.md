@@ -1,12 +1,13 @@
 # GLAMorousToHTML
-*Converts the output of the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) to a HTML page.*
+
+*Creates a HTML page and a corresponding Excel file listing all Wikipedia articles (in all languages) in which (one or more) images from a given category on Wikimedia Commons are used.*
 
 *Latest update*: 14 Febraury 2024
 
 ## What does it do?
-<image src="logos/icon_wp.png" width="100" hspace="10" align="right"/>
+<image src="site/logos/icon_wp.png" width="100" hspace="10" align="right"/>
 
-The script [GLAMorousToHTML.py](https://github.com/KBNLwikimedia/GLAMorousToHTML/blob/master/GLAMorousToHTML.py) creates a HTML page and a corresponding Excel file listing all Wikipedia articles (in all languages) in which (one or more) images/media from a given category on Wikimedia Commons are used.
+The script [GLAMorousToHTML.py](https://github.com/KBNLwikimedia/GLAMorousToHTML/blob/master/GLAMorousToHTML.py) creates a HTML page and a corresponding Excel file listing all Wikipedia articles (in all languages) in which (one or more) images/media from a given category on Wikimedia Commons are used. It does so by converting the XML output of the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php). 
 
 ## What problem does it solve?
 The KB uses the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) to [measure the use of KB media files](https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief/Resultaten/KPIs/KPI4) (as stored in Wikimedia Commons) in Wikipedia articles. This tool [rapports 4 things](https://tools.wmflabs.org/glamtools/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects%5Bwikipedia%5D=1) :
@@ -19,25 +20,29 @@ The KB uses the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) 
 Please note: 'Total image usages' does NOT equal the number of unique WP articles! A single unique KB image can illustrate multiple unique WP articles, and/or the other way around, 1 unique WP article can contain multiple unique KB images. In other words: images-articles have many-to-many relationships.
 
 What was still missing was the functionality to measure
-* 5 The **number of unique WP articles** in which KB media files are used, and to make 
-* 6 A **manifest overview** of those articles, grouped per WP language version
+* 5 The **number of unique WP articles** in which KB media files are used, 
+* 6 A **manifest overview** of those articles, grouped per WP language version,
+* 7 A structured output format that can be **easily processed** by tools, such as Excel.
 
-That is why we made the GLAMorousToHTML tool. This script uses the [XML-output of GLAMorous](https://glamtools.toolforge.org/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&format=xml) to make an [HTML page listing unique WP articles](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_10012024.html) (in which one or more KB media files are used), grouped by language.
+That is why we made the GLAMorousToHTML tool. This script uses the [XML-output of GLAMorous](https://glamtools.toolforge.org/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&format=xml) to make an [HTML page listing unique WP articles](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_14022024.html) (in which one or more KB media files are used), grouped by language. 
+
+Per 14-02-2024 it also delivers an Excel file with equivalent data.
 
 ## Configuration of GLAMorous
 The script relies on the XML output of GLAMorous, which needs to be configured so that it only lists pages from Wikipedia
 1) that are in the main namespace (a.k.a Wikipedia articles) (*&ns0=1*)
-2) and not pages from Wikimedia Commons, Wikidata or other Wikimedia projects (*projects[wikipedia]=1*)
+2) and *not* pages from Wikimedia Commons, Wikidata or other Wikimedia projects (*projects[wikipedia]=1*)
 
 The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&use_globalusage=1&ns0=1&projects[wikipedia]=1&format=xml&category=](https://glamtools.toolforge.org/glamorous.php?doit=1&use_globalusage=1&ns0=1&projects[wikipedia]=1&format=xml&category=)*. The Commons category of interest needs to be added to the end, omitting the *Category:* prefix.
 
 ## Examples
 ### KB, national library of the Netherlands 
-<image src="logos/icon_kb.png" width="100" hspace="10" align="right"/>
+<image src="site/logos/icon_kb.png" width="100" hspace="10" align="right"/>
 
 #### Media contributed by Koninklijke Bibliotheek
 * Input: Commons category = [Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek)
 * Output: 
+  * [this output dd 14-02-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_14022024.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_14022024.xlsx). 
   * [this output dd 16-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16012024.html) or [this output dd 10-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_10012024.html), 
   * [this result dd 20-12-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_20122022.html), related to the article *[Public outreach and reuse of KB images via Wikipedia, 2014-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/Public%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.html)*, or
   * [this output dd 16-02-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16022022.html), related to [this analysis](https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief/Resultaten/KPIs/KPI4/KPI4_KB_16-02-2022) on Dutch Wikipedia dd 16-02-2022, or 
@@ -73,7 +78,7 @@ The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&u
 
 ### Other institutions
 #### Netherlands
-<image src="logos/icon_na.jpg" width="100" hspace="10" align="right"/>
+<image src="site/logos/icon_na.jpg" width="100" hspace="10" align="right"/>
 
 * [Nationaal Archief](https://commons.wikimedia.org/wiki/Category:Images%20from%20Nationaal%20Archief) : Output on [16-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromNationaalArchief_Wikipedia_NS0_16012024.html)
 * [Rijksmuseum Amsterdam](https://commons.wikimedia.org/wiki/Category:Images%20from%20the%20Rijksmuseum) : Output on [16-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheRijksmuseum_Wikipedia_NS0_16012024.html)
@@ -90,7 +95,7 @@ The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&u
 * [Nationaal Museum van Wereldculturen](https://commons.wikimedia.org/wiki/Category:Files%20from%20the%20Nationaal%20Museum%20van%20Wereldculturen) : Output on [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/FilesfromtheNationaalMuseumvanWereldculturen_Wikipedia_NS0_17012024.html)
 
 #### USA
-<image src="logos/icon_loc.png" width="200" hspace="10" align="right"/>
+<image src="site/logos/icon_loc.png" width="200" hspace="10" align="right"/>
 
 * [National Park Service Gallery](https://commons.wikimedia.org/wiki/Category:Images_from_NPGallery) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromNPGallery_Wikipedia_NS0_24012024.html)
 * [Boston Public Library](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Boston_Public_Library) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediacontributedbyBostonPublicLibrary_Wikipedia_NS0_24012024.html)
@@ -109,15 +114,13 @@ The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&u
 * *[Public outreach and reuse of KB images via Wikipedia, 2014-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/Public%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.html)* (20-12-2022)
 
 ## Change log
-### February 2024
-- Refactored all code into multiple separated modules: setup.py, general.py, buildHTML.py, buildExcel.py - this has reduced 
-  the complexity of the main script GLAMorousToHTML.py significantly and made it much more overzichtelijk 
-- 
-- Moved all html report pages to separate folder named "site" - to make repo cleaner / beter onderhoudbaar & meer overzichtelijk
-- Installed redirects for all KB html pages (to the new "site" folder), but not for the other institutions
-- 
-- Added Excel output in folder named "data", input for data applications (OpenRefine and others)
-- Added Wikidata column to KB Excel sheets
+### 14 February 2024
+* Refactored all code into multiple separated modules: [setup.py](setup.py), [general.py](general.py), [buildHTML.py](buildHTML.py) and [buildExcel.py](buildExcel.py). This has reduced the complexity of the main script [GLAMorousToHTML.py](GLAMorousToHTML.py) significantly and made the total suite of code much more modular and easier to understand, maintain and expand.
+* Moved all HTML report pages into a separate "/site" folder. This has made the repo much cleaner, clearer and more maintainable.
+* Created five HTML files that redirect the old KB HTML pages (from [27-01-2022](GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_27012022.html) to [16-01-2024](GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16012024.html)) to the new equivalent ones in "/site" folder. Did not implement redirection for other institutions.
+* Per 14-02-2024 added Excel outputs in "/data" folder, to be used as structured input for data applications, such as OpenRefine
+* In the proces of updating the data structure in [category_logo_dict.json](category_logo_dict.json), where the new structure can be seen under the 'Netherlands' key.
+* Improved [pagetemplate.html](pagetemplate.html) to be key based (*{numarticles} Wikipedia articles*) rather than index based (*{0} Wikipedia articles*)
 
 ## Features to add
-* ....
+* TODO: Add Wikidata column to KB Excel sheets
