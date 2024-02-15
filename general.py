@@ -635,24 +635,30 @@ def convert_to_dataframe(articles_pictures_dict):
 
 #============================================================
 #============================================================
-def get_wikidata_item(wp_title, language):
+def get_wikidata_item(wp_article_url):
     """
     Retrieves the Wikidata item ID associated with a given Wikipedia article title.
     Parameters:
-    - wp_title (str): The title of the Wikipedia article.
-    - language (str): The language edition of Wikipedia to query
+    - wp_article_url (str): The URL of the Wikipedia article, eg 'https://en.wikipedia.org/wiki/1624'
     Returns:
     - str: The Wikidata item ID associated with the Wikipedia article.
     """
     # URL to query Wikipedia for the article's associated Wikidata item
-    wikipedia_url = f'https://{language}.wikipedia.org/w/api.php'
+    wp_project_code = wp_article_url.split('://')[1].split('.org')[0] # 'en.wikipedia'
+    wp_article_title = wp_article_url.split('/wiki/')[1] # '1624'
+    wikipedia_api_url = f'https://{wp_project_code}.org/w/api.php'
+
     params = {
         'action': 'query',
         'format': 'json',
         'prop': 'pageprops',
-        'titles': wp_title
+        'titles': wp_article_title
     }
-    response = requests.get(wikipedia_url, params=params)
+
+    user_agent = "GLAMorousToHTML Python script by User:OlafJanssen - https://github.com/KBNLwikimedia/GLAMorousToHTML"
+    headers = {'User-Agent': user_agent}
+
+    response = requests.get(wikipedia_api_url, params=params, headers=headers)
     data = response.json()
     # Extract page ID
     page_id = next(iter(data['query']['pages']))
