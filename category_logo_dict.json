@@ -3,7 +3,7 @@
     "Media contributed by Koninklijke Bibliotheek": ["KoninklijkeBibliotheekNL", "icon_kb.png"],
     "Images from Nationaal Archief": ["NationaalArchief", "icon_na.jpg"],
     "Images from the Rijksmuseum": ["Rijksmuseum", "icon_rm.png"],
-    "Media from Beeld en Geluid Wiki" :["icon_beng.png", "BeeldEnGeluid"],
+    "Media from Beeld en Geluid Wiki" : ["BeeldEnGeluid", "icon_beng.png"],
     "Images from the Tropenmuseum": ["Tropenmuseum", "icon_tropenmus.jpg"],
     "Images from the African Studies Centre (Leiden)": ["ASCLeiden", "icon_asc.png"],
     "Images from Universiteitsbibliotheek Maastricht": ["UBMaastricht", "icon_um.png"],
@@ -16,40 +16,40 @@
     "Files from the Nationaal Museum van Wereldculturen": ["MuseumWereldculturen", "icon_nmwc.png"]
   },
   "USA": {
-    "Images from the Library of Congress": "icon_loc.png",
-    "Images from Metropolitan Museum of Art": "icon_mma.png",
-    "Images from the New York Public Library": "icon_nypl.png",
-    "Images from the National Gallery of Art": "icon_ngawdc.png",
-    "Images from the National Archives and Records Administration": "icon_nara.png",
-    "Images from the Smithsonian Institution": "icon_smith.png",
-    "Media contributed by the Walters Art Museum" : "icon_wam.jpg",
-    "Photographs from the U.S. Navy Museum": "icon_usnavy.jpg",
-    "Public domain images from the Los Angeles County Museum of Art" : "icon_lacma.png",
-    "Media contributed by Boston Public Library" : "icon_bpl.jpg",
-    "Images from NPGallery" : "icon_nps.png"
+    "Images from the Library of Congress": ["LibraryOfCongress", "icon_loc.png"],
+    "Images from Metropolitan Museum of Art": ["MetropolitanMuseumOfArt", "icon_mma.png"],
+    "Images from the New York Public Library": ["NYPublicLibrary", "icon_nypl.png"],
+    "Images from the National Gallery of Art": ["NationalGalleryOfArt", "icon_ngawdc.png"],
+    "Images from the National Archives and Records Administration": ["NARA", "icon_nara.png"],
+    "Images from the Smithsonian Institution": ["SmithsonianInstitution", "icon_smith.png"],
+    "Media contributed by the Walters Art Museum" : ["WaltersArtMuseum", "icon_wam.jpg"],
+    "Photographs from the U.S. Navy Museum": ["USNavyMuseum", "icon_usnavy.jpg"],
+    "Public domain images from the Los Angeles County Museum of Art" : ["LACountyMuseumOfArt", "icon_lacma.png"],
+    "Media contributed by Boston Public Library" :  ["BostonPublicLibrary", "icon_bpl.jpg"],
+    "Images from NPGallery" : ["NPGallery", "icon_nps.png"]
   },
   "Norway": {
-    "Images from Nasjonalbiblioteket": "icon_nbn.png",
-    "Images from The Norwegian Directorate for Cultural Heritage": "icon_ndch.png",
-    "Images from Digitalt Museum, Norway": "icon_dm.png",
-    "Media from the National Archives of Norway": "icon_nan.png",
-    "Media from Kartverket": "icon_kartverket.jpg",
-    "Media from the collection of Oslo Museum": "icon_om.png",
-    "Images from The Municipal Archives of Trondheim": "icon_tk.png"
+    "Images from Nasjonalbiblioteket": ["Nasjonalbiblioteket", "icon_nbn.png"],
+    "Images from The Norwegian Directorate for Cultural Heritage": ["NorwegianDirForCH", "icon_ndch.png"],
+    "Images from Digitalt Museum, Norway": ["DigitaltMuseum", "icon_dm.png"],
+    "Media from the National Archives of Norway": ["NationalArchivesNorway", "icon_nan.png"],
+    "Media from Kartverket": ["Kartverket", "icon_kartverket.jpg"],
+    "Media from the collection of Oslo Museum": ["OsloMuseum", "icon_om.png"],
+    "Images from The Municipal Archives of Trondheim": ["MunicipalArchivesTrondheim", "icon_tk.png"]
   },
   "Sweden" : {
-    "Images from the Nationalmuseum Stockholm": "",
-    "Images from the National Archives of Sweden": "",
-    "Images from the National Library of Sweden": "",
-    "Media from the National Museums of World Culture": "",
-    "Images from Tekniska museet": "",
-    "Images from Livrustkammaren": ""
+    "Images from the Nationalmuseum Stockholm": ["NationalmuseumStockholm", ""],
+    "Images from the National Archives of Sweden": ["NationalArchivesSweden", ""],
+    "Images from the National Library of Sweden": ["NationalLibrarySweden", ""],
+    "Media from the National Museums of World Culture": ["NatMuseumsWorldCultureSweden", ""],
+    "Images from Tekniska museet": ["TekniskaMuseet", ""],
+    "Images from Livrustkammaren": ["Livrustkammaren", ""]
   },
   "Finland" : {
-    "Files from the Helsinki City Museum": "icon_hcm.png"
+    "Files from the Helsinki City Museum": ["HelsinkiCityMuseum", "icon_hcm.png"]
   },
   "Denmark" : {
-    "Images released under the CC0 1.0 Universal license by Statens Museum for Kunst" : "",
-    "Files from The Portrait Collection of Royal Danish Library": ""
+    "Images released under the CC0 1.0 Universal license by Statens Museum for Kunst": ["StatensMuseumForKunst", ""],
+    "Files from The Portrait Collection of Royal Danish Library": ["RoyalDanishLibrary", ""]
   }
 }
