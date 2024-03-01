@@ -38,18 +38,20 @@
     "Images from The Municipal Archives of Trondheim": ["MunicipalArchivesTrondheim", "icon_tk.png"]
   },
   "Sweden" : {
-    "Images from the Nationalmuseum Stockholm": ["NationalmuseumStockholm", ""],
-    "Images from the National Archives of Sweden": ["NationalArchivesSweden", ""],
-    "Images from the National Library of Sweden": ["NationalLibrarySweden", ""],
-    "Media from the National Museums of World Culture": ["NatMuseumsWorldCultureSweden", ""],
-    "Images from Tekniska museet": ["TekniskaMuseet", ""],
-    "Images from Livrustkammaren": ["Livrustkammaren", ""]
+    "Images from the Nationalmuseum Stockholm": ["NationalmuseumStockholm", "icon_nm.png"],
+    "Images from the National Archives of Sweden": ["NationalArchivesSweden", "icon_nas.png"],
+    "Images from the National Library of Sweden": ["NationalLibrarySweden", "icon_kbs.png"],
+    "Media from the National Museums of World Culture": ["NatMuseumsWorldCultureSweden", "icon_vkm.jpg"],
+    "Images from Tekniska museet": ["TekniskaMuseet", "icon_tms.jpg"],
+    "Images from Livrustkammaren": ["Livrustkammaren", "icon_livkam.png"]
   },
   "Finland" : {
-    "Files from the Helsinki City Museum": ["HelsinkiCityMuseum", "icon_hcm.png"]
+    "Files from the Helsinki City Museum": ["HelsinkiCityMuseum", "icon_hcm.png"],
+    "Files from the National Archives of Finland": ["NationalArchivesFinland", "icon_nafin.png"],
+    "Files from the Society of Swedish Literature in Finland": ["SocSwedishLitFinland", "icon_sls.jpg"]
   },
   "Denmark" : {
-    "Images released under the CC0 1.0 Universal license by Statens Museum for Kunst": ["StatensMuseumForKunst", ""],
-    "Files from The Portrait Collection of Royal Danish Library": ["RoyalDanishLibrary", ""]
+    "Images released under the CC0 1.0 Universal license by Statens Museum for Kunst": ["StatensMuseumForKunst", "icon_smk.png"],
+    "Files from The Portrait Collection of Royal Danish Library": ["RoyalDanishLibrary", "icon_dkb.png"]
   }
 }
