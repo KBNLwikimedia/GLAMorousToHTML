@@ -38,7 +38,7 @@ The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&u
 The base URL is defined (and can be adapted) in the *xml_base_url* variable in [setup.py](setup.py). 
 
 ## Running the script yourself
-If you want to run this script your own Commons category and create HTML and Excel overviews for your own institution, you can clone/download the repo and run it on your own machine.
+If you want to run this script for your own Commons category and create HTML and Excel overviews for your own institution, you can clone/download the repo and run it on your own machine.
 You will need to make some simple adaptations to the existing code to make it work for the Commons category of your choice. These are: 
 1) Adapt the [category_logo_dict.json](category_logo_dict.json) for your own needs, making sure the existing syntax is maintained. 
     * If not yet available, make a new top level country key (similar to "Netherlands", "USA", "Norway" etc.) to include your country.
@@ -51,7 +51,7 @@ You will need to make some simple adaptations to the existing code to make it wo
     - the *country_key* variable to the new country key you added to the json file  (default = "Netherlands")
     - the *institute_index* to the index of the line corresponding to your institution in the json file (default = 0; first line under a country key)
  
-That's  all, you should now be able to run the script. The HTML page will be added to the [site/](site/) folder and the Excel to the [data/](data/) folder. 
+That's  all, you should now be able to run the main [GLAMorousToHTML script](GLAMorousToHTML.py). The generated HTML page will be added to the [site/](site/) folder and the Excel to the [data/](data/) folder. 
 
 In case you can't get the script up and running, please open an issue in this repo.  
 
@@ -128,6 +128,36 @@ In case you can't get the script up and running, please open an issue in this re
 * [Metropolitan Museum of Art](https://commons.wikimedia.org/wiki/Category:Images_from_Metropolitan_Museum_of_Art) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromMetropolitanMuseumofArt_Wikipedia_NS0_24012024.html)
 * [New York Public Library](https://commons.wikimedia.org/wiki/Category:Images_from_the_New_York_Public_Library) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheNewYorkPublicLibrary_Wikipedia_NS0_24012024.html)
 * [National Gallery of Art](https://commons.wikimedia.org/wiki/Category:Images_from_the_National_Gallery_of_Art) (Washington, D.C.) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheNationalGalleryofArt_Wikipedia_NS0_24012024.html)
+
+
+#### Scandinavia
+<image src="site/logos/icon_nbn.png" width="200" hspace="10" align="right"/>
+
+##### *Norway*  
+* [Nasjonalbiblioteket](https://commons.wikimedia.org/wiki/Category:Images_from_Nasjonalbiblioteket) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromNasjonalbiblioteket_Wikipedia_NS0_01032024.html)
+* [Norwegian Directorate for Cultural Heritage](https://commons.wikimedia.org/wiki/Category:Images_from_The_Norwegian_Directorate_for_Cultural_Heritage) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromTheNorwegianDirectorateforCulturalHeritage_Wikipedia_NS0_01032024.html)
+* [Digitalt Museum, Norway](https://commons.wikimedia.org/wiki/Category:Images_from_Digitalt_Museum,_Norway) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromDigitaltMuseum,Norway_Wikipedia_NS0_01032024.html)
+* [National Archives of Norway](https://commons.wikimedia.org/wiki/Category:Media_from_the_National_Archives_of_Norway) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromtheNationalArchivesofNorway_Wikipedia_NS0_01032024.html)
+* [Kartverket](https://commons.wikimedia.org/wiki/Category:Media_from_Kartverket) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromKartverket_Wikipedia_NS0_01032024.html)
+* [Oslo Museum](https://commons.wikimedia.org/wiki/Category:Media_from_the_collection_of_Oslo_Museum) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromthecollectionofOsloMuseum_Wikipedia_NS0_01032024.html)
+* [Municipal Archives of Trondheim](https://commons.wikimedia.org/wiki/Category:Images_from_The_Municipal_Archives_of_Trondheim) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromTheMunicipalArchivesofTrondheim_Wikipedia_NS0_01032024.html)
+
+##### *Sweden*
+* [Nationalmuseum Stockholm](https://commons.wikimedia.org/wiki/Category:Images_from_the_Nationalmuseum_Stockholm) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheNationalmuseumStockholm_Wikipedia_NS0_01032024.html)
+* [National Archives of Sweden](https://commons.wikimedia.org/wiki/Category:Images_from_the_National_Archives_of_Sweden) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheNationalArchivesofSweden_Wikipedia_NS0_01032024.html)
+* [National Library of Sweden](https://commons.wikimedia.org/wiki/Category:Images_from_the_National_Library_of_Sweden) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheNationalLibraryofSweden_Wikipedia_NS0_01032024.html)
+* [National Museums of World Culture](https://commons.wikimedia.org/wiki/Category:Media_from_the_National_Museums_of_World_Culture) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromtheNationalMuseumsofWorldCulture_Wikipedia_NS0_01032024.html)
+* [National Museum of Science and Technology](https://commons.wikimedia.org/wiki/Category:Images_from_Tekniska_museet) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromTekniskamuseet_Wikipedia_NS0_01032024.html)
+* [Livrustkammaren](https://commons.wikimedia.org/wiki/Category:Images_from_Livrustkammaren) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromLivrustkammaren_Wikipedia_NS0_01032024.html)
+
+##### *Finland*
+* [Helsinki City Museum](https://commons.wikimedia.org/wiki/Category:Files_from_the_Helsinki_City_Museum) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/FilesfromtheHelsinkiCityMuseum_Wikipedia_NS0_01032024.html)
+* [National Archives of Finland](https://commons.wikimedia.org/wiki/Category:Files_from_the_National_Archives_of_Finland) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/FilesfromtheNationalArchivesofFinland_Wikipedia_NS0_01032024.html)
+* [Finnish Society of Swedish Literature](https://commons.wikimedia.org/wiki/Category:Files_from_the_Society_of_Swedish_Literature_in_Finland) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/FilesfromtheSocietyofSwedishLiteratureinFinland_Wikipedia_NS0_01032024.html)
+
+##### *Denmark*
+ * [Statens Museum for Kunst](https://commons.wikimedia.org/wiki/Category:Images_released_under_the_CC0_1.0_Universal_license_by_Statens_Museum_for_Kunst) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesreleasedundertheCC01.0UniversallicensebyStatensMuseumforKunst_Wikipedia_NS0_01032024.html)
+ * [Royal Danish Library, Portraits](https://commons.wikimedia.org/wiki/Category:Files_from_The_Portrait_Collection_of_Royal_Danish_Library) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/FilesfromThePortraitCollectionofRoyalDanishLibrary_Wikipedia_NS0_01032024.html)
 
 ## See also
 * [https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML](https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML)
