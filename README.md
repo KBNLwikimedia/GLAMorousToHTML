@@ -166,7 +166,7 @@ In case you can't get the script up and running, please open an issue in this re
 
 ## Change log
 ### 29 February 2024
-* Included institutions from Norway, Sweden, Finland and .
+* Included institutions from Norway, Sweden, Finland and Sweden.
 * [README.md](README.md): Added explanations how you can run the script yourself. 
 
 ### 14 February 2024
