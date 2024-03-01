@@ -30,7 +30,9 @@ Per 14-02-2024 it also delivers an Excel file with equivalent data.
 
 ## Configuration of GLAMorous
 The script relies on the XML output of GLAMorous, which needs to be configured so that it only lists pages from Wikipedia
+
 1) that are in the main namespace (a.k.a Wikipedia articles) (*&ns0=1*)
+
 2) and *not* pages from Wikimedia Commons, Wikidata or other Wikimedia projects (*projects[wikipedia]=1*)
 
 The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&use_globalusage=1&ns0=1&projects[wikipedia]=1&format=xml&category=](https://glamtools.toolforge.org/glamorous.php?doit=1&use_globalusage=1&ns0=1&projects[wikipedia]=1&format=xml&category=)*. The Commons category of interest needs to be added to the end, omitting the *Category:* prefix.
@@ -41,14 +43,17 @@ By default the depth of the GLAMorous output is set to 0, meaning no subcategori
 ## Running the script yourself
 If you want to run this script for your own Commons category and create HTML and Excel overviews for your own institution, you can clone/download the repo and run it on your own machine.
 You will need to make some simple adaptations to the existing code to make it work for the Commons category of your choice. These are: 
+
 1) Adapt the [category_logo_dict.json](category_logo_dict.json) for your own needs, making sure the existing syntax is maintained. 
     * If not yet available, make a new top level country key (similar to "Netherlands", "USA", "Norway" etc.) to include your country.
     * Under this country key, add a line with a syntax identical to the one starting with "Media contributed by Koninklijke Bibliotheek", but with modifications for three things: 
         1) The exact name (without underscores '_') of the Wikimedia Commons category you want run the script for ("[Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek)")
         2) A shortname of the institution ("KoninklijkeBibliotheekNL"). This is used for the name of the sheet in the Excel file, so keep it shorter than 32 characters. 
         3) Name of an institutional logo file, starting with "icon_", followed by a unique and descriptive letter code for the institution, and appended with a .png or .jpg extension at the end. This logo/icon is displayed at the top of the HTML page. Don't forget the next step!
+
 2) Add a small logo of the institution (256x256 px or so) as a .png of .jpg to the [site/logos](site/logos) folder, and add the filename "icon_xxxxx.png/jpg" to the json file.
-4) In [setup.py](setup.py), change 
+
+3) In [setup.py](setup.py), change 
     - the *country_key* variable to the new country key you added to the json file  (default = "Netherlands")
     - the *institute_index* to the index of the line corresponding to your institution in the json file (default = 0; first line under a country key)
  
@@ -99,6 +104,7 @@ In case you can't get the script up and running, please open an issue in this re
 
 ### Other institutions
 #### Netherlands
+See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_wikipedia-opendata-wikimedia-activity-7153329122922917888-Tdo5?utm_source=share&utm_medium=member_desktop)
 <image src="site/logos/icon_na.jpg" width="100" hspace="10" align="right"/>
 
 * [Nationaal Archief](https://commons.wikimedia.org/wiki/Category:Images%20from%20Nationaal%20Archief) : Output on [16-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromNationaalArchief_Wikipedia_NS0_16012024.html)
@@ -116,6 +122,7 @@ In case you can't get the script up and running, please open an issue in this re
 * [Nationaal Museum van Wereldculturen](https://commons.wikimedia.org/wiki/Category:Files%20from%20the%20Nationaal%20Museum%20van%20Wereldculturen) : Output on [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/FilesfromtheNationaalMuseumvanWereldculturen_Wikipedia_NS0_17012024.html)
 
 #### USA
+See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_wikipedia-opendata-wikimedia-activity-7156420481229668352-TDmg?utm_source=share&utm_medium=member_desktop)
 <image src="site/logos/icon_loc.png" width="200" hspace="10" align="right"/>
 
 * [National Park Service Gallery](https://commons.wikimedia.org/wiki/Category:Images_from_NPGallery) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromNPGallery_Wikipedia_NS0_24012024.html)
@@ -131,7 +138,8 @@ In case you can't get the script up and running, please open an issue in this re
 * [National Gallery of Art](https://commons.wikimedia.org/wiki/Category:Images_from_the_National_Gallery_of_Art) (Washington, D.C.) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheNationalGalleryofArt_Wikipedia_NS0_24012024.html)
 
 
-#### Scandinavia
+#### Nordic countries
+See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_quite-a-few-glam-institutions-in-norway-activity-7169368820699086849-PaL-?utm_source=share&utm_medium=member_desktop)
 <image src="site/logos/icon_nbn.png" width="200" hspace="10" align="right"/>
 
 ##### *Norway*  
