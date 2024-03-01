@@ -2,7 +2,7 @@
 
 *Creates a HTML page and a corresponding Excel file listing all Wikipedia articles (in all languages) in which (one or more) images from a given category on Wikimedia Commons are used.*
 
-*Latest update*: 29 Febraury 2024
+*Latest update*: 1 March 2024
 
 ## What does it do?
 <image src="site/logos/icon_wp.png" width="100" hspace="10" align="right"/>
@@ -34,8 +34,9 @@ The script relies on the XML output of GLAMorous, which needs to be configured s
 2) and *not* pages from Wikimedia Commons, Wikidata or other Wikimedia projects (*projects[wikipedia]=1*)
 
 The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&use_globalusage=1&ns0=1&projects[wikipedia]=1&format=xml&category=](https://glamtools.toolforge.org/glamorous.php?doit=1&use_globalusage=1&ns0=1&projects[wikipedia]=1&format=xml&category=)*. The Commons category of interest needs to be added to the end, omitting the *Category:* prefix.
+It is defined (and can be adapted) in the *xml_base_url* variable in [setup.py](setup.py). 
 
-The base URL is defined (and can be adapted) in the *xml_base_url* variable in [setup.py](setup.py). 
+By default the depth of the GLAMorous output is set to 0, meaning no subcategories are read. If you want to include images from subcategories in your outputs, you can change the *depth* variable in setup.py. 
 
 ## Running the script yourself
 If you want to run this script for your own Commons category and create HTML and Excel overviews for your own institution, you can clone/download the repo and run it on your own machine.
@@ -164,8 +165,8 @@ In case you can't get the script up and running, please open an issue in this re
 * *[Public outreach and reuse of KB images via Wikipedia, 2014-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/Public%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.html)* (20-12-2022)
 
 ## Change log
-
 ### 29 February 2024
+* Included institutions from Norway, Sweden, Finland and .
 * [README.md](README.md): Added explanations how you can run the script yourself. 
 
 ### 14 February 2024
