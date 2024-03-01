@@ -66,7 +66,7 @@ category_logo_dict = load_dict(dict_file)
 
 commons_cat = get_institution_details(category_logo_dict, country_key, institute_index)[0]
 
-depth= 0 # Depth of subcategories in Glamorous tool, 0=no subcats
+depth = 0 # Depth of subcategories in Glamorous tool, 0=no subcats
 xml_base_url = "https://glamtools.toolforge.org/glamorous.php?doit=1&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&format=xml&"
 xml_url = f"{xml_base_url}category={commons_cat}&depth={depth}"
 local_xml_file = "MediaContributedByKB_Wikipedia_NS0_ddmmyyyy.xml" # Saved xml response from xml_url, readmode='local'
