@@ -2,7 +2,7 @@
 
 *Creates a HTML page and a corresponding Excel file listing all Wikipedia articles (in all languages) in which (one or more) images from a given category on Wikimedia Commons are used.*
 
-*Latest update*: 14 Febraury 2024
+*Latest update*: 29 Febraury 2024
 
 ## What does it do?
 <image src="site/logos/icon_wp.png" width="100" hspace="10" align="right"/>
@@ -34,6 +34,26 @@ The script relies on the XML output of GLAMorous, which needs to be configured s
 2) and *not* pages from Wikimedia Commons, Wikidata or other Wikimedia projects (*projects[wikipedia]=1*)
 
 The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&use_globalusage=1&ns0=1&projects[wikipedia]=1&format=xml&category=](https://glamtools.toolforge.org/glamorous.php?doit=1&use_globalusage=1&ns0=1&projects[wikipedia]=1&format=xml&category=)*. The Commons category of interest needs to be added to the end, omitting the *Category:* prefix.
+
+The base URL is defined (and can be adapted) in the *xml_base_url* variable in [setup.py](setup.py). 
+
+## Running the script yourself
+If you want to run this script your own Commons category and create HTML and Excel overviews for your own institution, you can clone/download the repo and run it on your own machine.
+You will need to make some simple adaptations to the existing code to make it work for the Commons category of your choice. These are: 
+1) Adapt the [category_logo_dict.json](category_logo_dict.json) for your own needs, making sure the existing syntax is maintained. 
+    * If not yet available, make a new top level country key (similar to "Netherlands", "USA", "Norway" etc.) to include your country.
+    * Under this country key, add a line with a syntax identical to the one starting with "Media contributed by Koninklijke Bibliotheek", but with modifications for three things: 
+        1) The exact name (without underscores '_') of the Wikimedia Commons category you want run the script for ("[Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek)")
+        2) A shortname of the institution ("KoninklijkeBibliotheekNL"). This is used for the name of the sheet in the Excel file, so keep it shorter than 32 characters. 
+        3) Name of an institutional logo file, starting with "icon_", followed by a unique and descriptive letter code for the institution, and appended with a .png or .jpg extension at the end. This logo/icon is displayed at the top of the HTML page. Don't forget the next step!
+2) Add a small logo of the institution (256x256 px or so) as a .png of .jpg to the [site/logos](site/logos) folder, and add the filename "icon_xxxxx.png/jpg" to the json file.
+4) In [setup.py](setup.py), change 
+    - the *country_key* variable to the new country key you added to the json file  (default = "Netherlands")
+    - the *institute_index* to the index of the line corresponding to your institution in the json file (default = 0; first line under a country key)
+ 
+That's  all, you should now be able to run the script. The HTML page will be added to the [site/](site/) folder and the Excel to the [data/](data/) folder. 
+
+In case you can't get the script up and running, please open an issue in this repo.  
 
 ## Examples
 ### KB, national library of the Netherlands 
@@ -114,6 +134,10 @@ The base URL looks like *[https://glamtools.toolforge.org/glamorous.php?doit=1&u
 * *[Public outreach and reuse of KB images via Wikipedia, 2014-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/Public%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.html)* (20-12-2022)
 
 ## Change log
+
+### 29 February 2024
+* [README.md](README.md): Added explanations how you can run the script yourself. 
+
 ### 14 February 2024
 * Refactored all code into multiple separated modules: [setup.py](setup.py), [general.py](general.py), [buildHTML.py](buildHTML.py) and [buildExcel.py](buildExcel.py). This has reduced the complexity of the main script [GLAMorousToHTML.py](GLAMorousToHTML.py) significantly and made the total suite of code much more modular and easier to understand, maintain and expand.
 * Moved all HTML report pages into a separate [site/ folder](site/). This has made the repo much cleaner, clearer and more maintainable.
