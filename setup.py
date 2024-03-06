@@ -56,8 +56,8 @@ dict_file = "category_logo_dict.json"
 Change these two variables if you want to generate output files for other institutions and/or in other countries
 Do not forget to also check and/or add the relevant institution data to "dict_file"
 """
-country_key = "Finland"
-institute_index = 2 # Numerical order in the category_logo_dict; eg: 0 = "Media contributed by Koninklijke Bibliotheek"
+country_key = "Netherlands"
+institute_index = 0 # Numerical order in the category_logo_dict; eg: 0 = "Media contributed by Koninklijke Bibliotheek"
 #=============== END USER INPUT ============================
 
 read_mode = "http" # Choose "local" or "http".
