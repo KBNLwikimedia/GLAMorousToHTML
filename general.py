@@ -58,6 +58,7 @@ import pandas as pd
 from typing import Optional
 from pandas import DataFrame
 import logging
+import requests
 
 today = date.today().strftime("%d%m%Y") #20122022
 today2 = date.today().strftime("%d-%m-%Y")  #20-12-2022
@@ -725,3 +726,43 @@ def write_df_to_excel(df: pd.DataFrame, datadir: str, excelpath: str, sheetname:
         logging.info(f"Successfully wrote sheet '{sheetname}' to '{excelpath}'.")
     except Exception as e:
         logging.error(f"An error occurred while writing to Excel: {e}")
+
+def get_label_from_qid(qid: str, language_code: str = 'en') -> Optional[str]:
+    """
+    Retrieves the label for a specified Wikidata item ID in a given language.
+    Parameters:
+    - qid (str): The Wikidata item ID for which the label is requested (e.g., 'Q42').
+    - language_code (str, optional): The language code of the label to retrieve. Defaults to 'en' (English).
+    Returns:
+    - Optional[str]: The label of the specified Wikidata item in the specified language, if found.
+                     Returns None if the label cannot be retrieved.
+    Raises:
+    - requests.exceptions.RequestException: If a request to the Wikidata API fails.
+    - ValueError: If there is an issue decoding the JSON response from the API.
+    """
+    api_url = f'https://www.wikidata.org/w/api.php?action=wbgetentities&ids={qid}&props=labels&languages={language_code}&format=json'
+    headers = {
+        'Accept': 'application/json',
+        'User-Agent': 'GLAMorousToHTML Python script by User:OlafJanssen'
+    }
+    try:
+        response = requests.get(api_url, headers=headers)
+        response.raise_for_status()  # Raises a HTTPError if the response is an HTTP error status.
+        data = response.json()
+        # Navigate through the JSON response to extract the label.
+        label_data = data.get('entities', {}).get(qid, {}).get('labels', {}).get(language_code, {})
+        label = label_data.get('value', None)
+
+        if label:
+            print(f'The {language_code} label for {qid} is: {label}')
+            return label
+        else:
+            print(f"No label found for {qid} in {language_code}.")
+            return None
+
+    except requests.exceptions.RequestException as e:
+        print(f"Request error: {e}")
+        return None
+    except ValueError as e:
+        print(f"JSON decoding error: {e}")
+        return None

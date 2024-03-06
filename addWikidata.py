@@ -29,7 +29,7 @@ Author: Olaf Janssen, Wikimedia coordinator at KB, the national library of the N
 Supported by ChatGPT
 """
 
-from general import load_dict, save_dict, read_excel_to_df, write_df_to_excel
+from general import load_dict, save_dict, read_excel_to_df, write_df_to_excel, get_label_from_qid
 from setup import sheet_name
 import json
 import os
@@ -195,8 +195,51 @@ def fetch_wikidata_id_from_cache(row: pd.Series, cache_file_path: str = cache_fi
     cache = update_wikidata_cache(row['ArticleURL'], cache_file_path)
     return cache.get(row['ArticleURL'], None)
 
+
+#==========================================================================
 # TODO:  Retrieve list of P31 values (in Dutch) from Wikidata items
-def():
+
+def get_wikidata_property_qids(qid: str, property_id: str) -> List[str]:
+    """
+    Retrieves a list of QIDs associated with a specific property of a given Wikidata item.
+
+    Parameters:
+    - qid (str): The Wikidata ID of the item (e.g., 'Q1234').
+    - property_id (str): The property ID to retrieve QIDs for (e.g., 'P31'). The property must have data-type = 'wikibase-item'.
+
+    Returns:
+    - List[str]: A list of QIDs associated with the specified property of the given item. If the property is not found or
+                 there's an error in fetching data, an empty list is returned.
+    """
+    api_url = f'https://www.wikidata.org/w/api.php?action=wbgetentities&props=claims&ids={qid}&format=json'
+    headers = {
+        'Accept': 'application/json',
+        'User-Agent': 'GLAMorousToHTML Python script by User:OlafJanssen'
+    }
+    q_list = []
+    try:
+        response = requests.get(api_url, headers=headers)
+        response.raise_for_status()  # Raises a HTTPError if the response is an error
+        data = response.json()
+        claims = data.get('entities', {}).get(qid, {}).get('claims', {}).get(property_id, [])
+        for claim in claims:
+            mainsnak = claim.get('mainsnak', {})
+            if mainsnak.get('snaktype') == 'value':
+                datavalue = mainsnak.get('datavalue', {})
+                datatype = datavalue.get('type')
+                if datatype == 'wikibase-entityid':
+                    entity_type = datavalue.get('value', {}).get('entity-type')
+                    if entity_type == 'item':
+                        qid_value = datavalue.get('value', {}).get('id', '')
+                        if qid_value:
+                            q_list.append(qid_value)
+
+    except requests.RequestException as e:
+        print(f"Request error: {e}")
+    except ValueError as e:
+        print(f"JSON decoding error: {e}")
+
+    return q_list
 
 #====================================================
 
@@ -210,5 +253,40 @@ df = read_excel_to_df(excel_path, sheet_name)
 # Performs an integrity check on a JSON cache file, focusing on specific aspects of the stored data.
 #check_cache_integrity(cache_file)
 
-df['WikidataQID'] = df.apply(lambda row: fetch_wikidata_id_from_cache(row, cache_file), axis=1)
-write_df_to_excel(df, data_dir, excel_path, sheetname_wikidata)
+# First, ensure the 'WikidataQID' column is updated correctly.
+#df['WikidataQID'] = df.apply(lambda row: fetch_wikidata_id_from_cache(row, cache_file), axis=1)
+# Next, to fetch the English label for each Wikidata QID and store it in a new column:
+
+#TODO: add ''WikidataQIDLabelEn' to the wikidata cache json file (now it is stored in the Excel)
+#df['WikidataQIDLabelEn'] = df['WikidataQID'].apply(lambda qid: get_label_from_qid(qid, language_code='en') if pd.notna(qid) else None)
+#print(df.head(10))
+#write_df_to_excel(df, data_dir, excel_path, sheetname_wikidata)
+
+# Open
+#f_wd = read_excel_to_df(excel_path, sheetname_wikidata)
+
+
+
+#=================================================================
+
+
+def fetch_P31_qids(row: pd.Series, property_id: str = 'P31') -> Optional[List[str]]:
+    """
+    Fetches the 'instance of' (P31) QIDs for the given Wikidata item.
+    Parameters:
+    - row (pd.Series): A row from a pandas DataFrame, which is expected to have a 'WikidataQID' field.
+    - property_id (str): The property ID for which QIDs are fetched, default is 'P31'.
+    Returns:
+    - Optional[List[str]]: A list of QIDs for the 'instance of' P31 property if available; otherwise, None.
+    """
+    wikidata_qid = row['WikidataQID']
+    if pd.notna(wikidata_qid):
+        return get_wikidata_property_qids(wikidata_qid, property_id)
+    return None
+
+
+# Apply the function to each row in the DataFrame
+# Make sure 'WikidataQID' column exists and contains valid Wikidata item IDs (e.g., 'Q1234')
+#df_wd['InstanceOfQIDs'] = df_wd.head(10).apply(fetch_P31_qids, axis=1)
+#print(df_wd.head(10))
+
