@@ -54,11 +54,13 @@ import json
 import os
 from urllib.parse import urlparse
 from datetime import date
-import pandas as pd
-from typing import Optional
+from typing import Union, Optional, List
 from pandas import DataFrame
 import logging
 import requests
+import pandas as pd
+import ast
+
 
 today = date.today().strftime("%d%m%Y") #20122022
 today2 = date.today().strftime("%d-%m-%Y")  #20-12-2022
@@ -727,42 +729,81 @@ def write_df_to_excel(df: pd.DataFrame, datadir: str, excelpath: str, sheetname:
     except Exception as e:
         logging.error(f"An error occurred while writing to Excel: {e}")
 
-def get_label_from_qid(qid: str, language_code: str = 'en') -> Optional[str]:
+def fetch_labels_for_qids(qids: Union[str, List[str]], language_code: str = 'en') -> Optional[Union[str, List[str]]]:
+    #TODO: Still to test this function
     """
-    Retrieves the label for a specified Wikidata item ID in a given language.
+    Fetches labels for given Wikidata QID(s) in the specified language using a single API call.
+    This function supports fetching labels for both a single QID and multiple QIDs by utilizing the Wikidata API's
+    capability to process multiple QIDs separated by '|'. The function returns the label(s) in the specified language.
+
     Parameters:
-    - qid (str): The Wikidata item ID for which the label is requested (e.g., 'Q42').
-    - language_code (str, optional): The language code of the label to retrieve. Defaults to 'en' (English).
+    - qids (Union[str, List[str]]): A single Wikidata item ID (QID) as a string, or a list of QIDs for which to fetch labels.
+    - language_code (str, optional): The language code for the labels to fetch. Defaults to 'en' (English).
+
     Returns:
-    - Optional[str]: The label of the specified Wikidata item in the specified language, if found.
-                     Returns None if the label cannot be retrieved.
+    - Optional[Union[str, List[str]]]: If a single QID is provided, returns a single label as a string. If multiple QIDs
+      are provided, returns a list of labels corresponding to each QID. Returns None for any QID whose label cannot be retrieved.
+
     Raises:
-    - requests.exceptions.RequestException: If a request to the Wikidata API fails.
-    - ValueError: If there is an issue decoding the JSON response from the API.
+    - requests.exceptions.RequestException: If the request to the Wikidata API fails.
+    - ValueError: If there's an issue decoding the JSON response from the API.
     """
-    api_url = f'https://www.wikidata.org/w/api.php?action=wbgetentities&ids={qid}&props=labels&languages={language_code}&format=json'
-    headers = {
-        'Accept': 'application/json',
-        'User-Agent': 'GLAMorousToHTML Python script by User:OlafJanssen'
-    }
+    # Convert qids to a single string separated by '|' if it's a list
+    qids_param = '|'.join(qids) if isinstance(qids, list) else qids
+
+    api_url = f'https://www.wikidata.org/w/api.php?action=wbgetentities&ids={qids_param}&props=labels&languages={language_code}&format=json'
+    headers = {'Accept': 'application/json', 'User-Agent': 'Wikidata Label Fetcher - by User:OlafJanssen'}
+
     try:
         response = requests.get(api_url, headers=headers)
-        response.raise_for_status()  # Raises a HTTPError if the response is an HTTP error status.
+        response.raise_for_status()  # Raises a HTTPError for bad responses
         data = response.json()
-        # Navigate through the JSON response to extract the label.
-        label_data = data.get('entities', {}).get(qid, {}).get('labels', {}).get(language_code, {})
-        label = label_data.get('value', None)
 
-        if label:
-            print(f'The {language_code} label for {qid} is: {label}')
-            return label
+        if isinstance(qids, list):
+            labels = []
+            for qid in qids:
+                label = data.get('entities', {}).get(qid, {}).get('labels', {}).get(language_code, {}).get('value', None)
+                labels.append(label if label is not None else '')
+            # Filter out None values or replace them with an empty string (or a placeholder)
+            labels_str = " -- ".join(filter(None, labels))
+            print(f'Labels for {" -- ".join(qids)} : {labels_str}')
+            return labels
+
         else:
-            print(f"No label found for {qid} in {language_code}.")
-            return None
+            label = data.get('entities', {}).get(qids, {}).get('labels', {}).get(language_code, {}).get('value', None)
+            print(f'Label for {qids} : {label}')
+            return label
 
     except requests.exceptions.RequestException as e:
         print(f"Request error: {e}")
-        return None
+        return None if isinstance(qids, list) else [None] * len(qids)
     except ValueError as e:
         print(f"JSON decoding error: {e}")
-        return None
+        return None if isinstance(qids, list) else [None] * len(qids)
+
+
+
+def safe_eval(x):
+    """
+    Safely evaluates a string that looks like a Python literal (e.g., lists, dicts, tuples) and returns its actual value.
+    If the string does not represent a literal, or if evaluating it would result in an error (ValueError, SyntaxError),
+    the function returns the input value as is.
+    This function is particularly useful when reading data that contains string representations of Python literals
+    and converting them to their actual types. It uses `ast.literal_eval`, which is safe for evaluating strings containing
+    Python literals compared to the built-in `eval` function, which can execute arbitrary code.
+    Parameters:
+    - x: A string representing a Python literal, or any value.
+    Returns:
+    - The evaluated Python literal corresponding to the input string, or the original value if the string does not
+      represent a literal or cannot be safely evaluated.
+    Examples:
+    - safe_eval("['Q486972', 'Q1852859']") would return the list ['Q486972', 'Q1852859'].
+    - safe_eval("{'key': 'value'}") would return the dictionary {'key': 'value'}.
+    - safe_eval("3.14") would return the float 3.14.
+    - safe_eval("Not a literal") would return the string "Not a literal".
+    """
+    try:
+        return ast.literal_eval(x)
+    except (ValueError, SyntaxError):
+        # Return the original value in case it's not a string representation of a list or other literal
+        return x

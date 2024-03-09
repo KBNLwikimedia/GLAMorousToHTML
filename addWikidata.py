@@ -29,7 +29,7 @@ Author: Olaf Janssen, Wikimedia coordinator at KB, the national library of the N
 Supported by ChatGPT
 """
 
-from general import load_dict, save_dict, read_excel_to_df, write_df_to_excel, get_label_from_qid
+from general import load_dict, save_dict, read_excel_to_df, write_df_to_excel, fetch_labels_for_qids, safe_eval
 from setup import sheet_name
 import json
 import os
@@ -190,18 +190,22 @@ def fetch_wikidata_id_from_cache(row: pd.Series, cache_file_path: str = cache_fi
     - row (pd.Series): A row from a pandas DataFrame, expected to contain an 'ArticleURL' field.
     - cache_file (str): The path to the JSON file used for caching Wikidata Qitem IDs.
     Returns:
-    - Optional[str]: The Wikidata Qitem ID if available; otherwise, None.
+    - Optional[str]: The Wikidata Qitem ID if available in the cache; otherwise, None.
     """
     cache = update_wikidata_cache(row['ArticleURL'], cache_file_path)
     return cache.get(row['ArticleURL'], None)
 
 
 #==========================================================================
-# TODO:  Retrieve list of P31 values (in Dutch) from Wikidata items
-
-def get_wikidata_property_qids(qid: str, property_id: str) -> List[str]:
+def get_wditem_property_qids(qid: str, property_id: str) -> List[str]:
     """
     Retrieves a list of QIDs associated with a specific property of a given Wikidata item.
+
+    For instance : based on the inputs
+    - (https://www.wikidata.org/wiki/)Q72752496 (Album amicorum of Jacobus Heyblocq) and
+    - P31 ('instance of'),
+    this function would retrieve
+    - (https://www.wikidata.org/wiki/)Q457843 (album amicorum)
 
     Parameters:
     - qid (str): The Wikidata ID of the item (e.g., 'Q1234').
@@ -241,6 +245,22 @@ def get_wikidata_property_qids(qid: str, property_id: str) -> List[str]:
 
     return q_list
 
+def fetch_Pxx_qids(row: pd.Series, property_id: str = 'P31') -> Optional[List[str]]:
+    """
+    Fetches the Pxx (such as P31, P131, P278 etc) QIDs for the given Wikidata item.
+    Parameters:
+    - row (pd.Series): A row from a pandas DataFrame, which is expected to have a 'WikidataQID' field.
+    - property_id (str): The property ID for which QIDs are fetched, default is 'P31'.
+    Returns:
+    - Optional[List[str]]: A list of QIDs for the Pxx property if available; otherwise, None.
+    """
+    wikidata_qid = row['WikidataQID']
+    if pd.notna(wikidata_qid):
+        values = get_wditem_property_qids(wikidata_qid, property_id)
+        print(f'Fetched values {values} of {property_id} in item {wikidata_qid}')
+        return values
+    return None
+
 #====================================================
 
 data_dir = "data" #Output directory containing Excel and other (structured) data outputs
@@ -255,38 +275,53 @@ df = read_excel_to_df(excel_path, sheet_name)
 
 # First, ensure the 'WikidataQID' column is updated correctly.
 #df['WikidataQID'] = df.apply(lambda row: fetch_wikidata_id_from_cache(row, cache_file), axis=1)
-# Next, to fetch the English label for each Wikidata QID and store it in a new column:
 
-#TODO: add ''WikidataQIDLabelEn' to the wikidata cache json file (now it is stored in the Excel)
-#df['WikidataQIDLabelEn'] = df['WikidataQID'].apply(lambda qid: get_label_from_qid(qid, language_code='en') if pd.notna(qid) else None)
+# Next, to fetch the English label for each Wikidata QID and store it in a new column:
+#TODO - maybe: add ''WikidataQIDLabelEn' to the wikidata cache json file (now it is stored in the Excel)
+#df['WikidataQIDLabelEn'] = df['WikidataQID'].apply(lambda qid: fetch_labels_for_qids(qid, language_code='en') if pd.notna(qid) else None)
 #print(df.head(10))
 #write_df_to_excel(df, data_dir, excel_path, sheetname_wikidata)
 
-# Open
-#f_wd = read_excel_to_df(excel_path, sheetname_wikidata)
-
-
-
-#=================================================================
-
-
-def fetch_P31_qids(row: pd.Series, property_id: str = 'P31') -> Optional[List[str]]:
-    """
-    Fetches the 'instance of' (P31) QIDs for the given Wikidata item.
-    Parameters:
-    - row (pd.Series): A row from a pandas DataFrame, which is expected to have a 'WikidataQID' field.
-    - property_id (str): The property ID for which QIDs are fetched, default is 'P31'.
-    Returns:
-    - Optional[List[str]]: A list of QIDs for the 'instance of' P31 property if available; otherwise, None.
-    """
-    wikidata_qid = row['WikidataQID']
-    if pd.notna(wikidata_qid):
-        return get_wikidata_property_qids(wikidata_qid, property_id)
-    return None
-
-
-# Apply the function to each row in the DataFrame
+#Step 1
+df_wd = read_excel_to_df(excel_path, sheetname_wikidata)
+print(df_wd.head(10))
 # Make sure 'WikidataQID' column exists and contains valid Wikidata item IDs (e.g., 'Q1234')
-#df_wd['InstanceOfQIDs'] = df_wd.head(10).apply(fetch_P31_qids, axis=1)
+#df_wd['P31_QID'] = df_wd.apply(lambda row: fetch_Pxx_qids(row, 'P31'), axis=1)
+"""
+Transform specific columns in the 'df_wd' DataFrame that may contain lists into 
+string representations. It specifically targets columns associated with Wikidata QIDs ('P31_QID') and their 
+corresponding English labels ('P31_QIDLabelEn'), ensuring that any lists present in these columns are joined into 
+a single string, with elements separated by ' -- '. This transformation is useful for preparing the data for export 
+or display, where a unified string format is preferred over list format.
+"""
+#df_wd['P31_QID_string'] = df_wd['P31_QID'].apply(lambda x: ' -- '.join(x) if isinstance(x, list) else x)
 #print(df_wd.head(10))
+# Write to Excel
+#write_df_to_excel(df_wd, data_dir, excel_path, sheetname_wikidata)
+
+
+#Step 2
+df_wd = read_excel_to_df(excel_path, sheetname_wikidata)
+print(df_wd.head(10))
+
+# Turn string such as "['Q486972', 'Q1852859'] into a real list
+df_wd['P31_QID'] = df_wd['P31_QID'].apply(safe_eval)
+
+df_wd['P31_QIDLabelEn'] = df_wd['P31_QID'].apply(lambda qids: fetch_labels_for_qids(qids, language_code='en'))
+"""
+Transform specific columns in the 'df_wd' DataFrame that may contain lists into 
+string representations. It specifically targets columns associated with Wikidata QIDs ('P31_QID') and their 
+corresponding English labels ('P31_QIDLabelEn'), ensuring that any lists present in these columns are joined into 
+a single string, with elements separated by ' -- '. This transformation is useful for preparing the data for export 
+or display, where a unified string format is preferred over list format.
+"""
+df_wd['P31_QIDLabelEn_string'] = df_wd['P31_QIDLabelEn'].apply(lambda x: ' -- '.join(x) if isinstance(x, list) else x)
+#print(df_wd.head(10))
+
+# Write to Excel
+#write_df_to_excel(df_wd, data_dir, excel_path, sheetname_wikidata)
+
+
+
+
 
