@@ -5,7 +5,7 @@ with Wikimedia APIs, Wikidata, and other web resources, offering functionalities
 fetching and parsing XML data, validating URLs, and more. This versatility makes it a crucial component
 for scripts aimed at analyzing, reporting, or enhancing data related to Wikimedia Commons and Wikipedia.
 
-Latest update: 14 February 2024
+Latest update: 6 March 2024
 Author: Olaf Janssen, Wikimedia coordinator at KB, the national library of the Netherlands
 Supported by ChatGPT
 
@@ -46,8 +46,6 @@ to Wikimedia projects. Users may need to adapt these utilities or extend them ba
 of their specific projects or scripts.
 """
 
-
-import requests
 from SPARQLWrapper import SPARQLWrapper, JSON
 import traceback
 import urllib3
@@ -56,12 +54,18 @@ import json
 import os
 from urllib.parse import urlparse
 from datetime import date
+from typing import Union, Optional, List
 import pandas as pd
+from pandas import DataFrame
+import logging
+import requests
+import ast
+
 
 today = date.today().strftime("%d%m%Y") #20122022
 today2 = date.today().strftime("%d-%m-%Y")  #20-12-2022
 
-def load_dict(file_path):
+def load_dict(file_path: str):
     """
     Loads and returns a dictionary from a JSON file specified by the given file path.
     This function checks if the specified JSON file exists at the given path. If the file does not exist,
@@ -87,7 +91,7 @@ def load_dict(file_path):
         print(f"File not found: {file_path}")
         return None
     try:
-        with open(file_path, 'r') as file:
+        with open(file_path, 'r', encoding='utf-8') as file:
             dictfile = file.read()
             loaded_dict = json.loads(dictfile)
     except json.JSONDecodeError:
@@ -97,6 +101,27 @@ def load_dict(file_path):
         print(f"An error occurred: {e}")
         return None
     return loaded_dict
+
+def save_dict(file_path: str, data_dict: dict):
+    """
+    Writes a dictionary to a JSON file at the specified file path.
+    If any exception occurs during writing, it prints an appropriate error message.
+    If writing is successful, it confirms the operation to the user.
+    Parameters:
+    - file_path (str): The path where the JSON file should be written.
+    - data_dict (dict): The dictionary that should be saved to the JSON file.
+    Returns:
+    - bool: True if the file is successfully written, False otherwise.
+    """
+    try:
+        with open(file_path, 'w', encoding='utf-8') as file:
+            json.dump(data_dict, file, ensure_ascii=False, indent=4)
+        print(f"File successfully written to: {file_path}")
+        return True
+    except Exception as e:
+        print(f"An error occurred while writing to the file: {file_path}. Error: {e}")
+        return False
+
 
 def get_institution_details(countries_dict, country_key, institute_index):
     """
@@ -634,39 +659,149 @@ def convert_to_dataframe(articles_pictures_dict):
 
 
 #============================================================
-#============================================================
-def get_wikidata_item(wp_article_url):
+
+def read_excel_to_df(excel_file: str, sheet_name: Optional[str] = None) -> DataFrame:
     """
-    Retrieves the Wikidata item ID associated with a given Wikipedia article title.
+    Reads data from a specified sheet of an Excel file into a pandas DataFrame.
     Parameters:
-    - wp_article_url (str): The URL of the Wikipedia article, eg 'https://en.wikipedia.org/wiki/1624'
+    - excel_file (str): The path to the Excel file to read.
+    - sheet_name (Optional[str]): The name of the sheet to read. If None, the first sheet is read by default.
     Returns:
-    - str: The Wikidata item ID associated with the Wikipedia article.
+    - DataFrame: A pandas DataFrame containing the data from the specified Excel sheet.
+    Raises:
+    - FileNotFoundError: If the Excel file cannot be found at the specified path.
+    - ValueError: If the specified sheet name does not exist in the Excel file.
+    - Exception: For any other issues that arise when attempting to read the Excel file.
+
+    New (for me): Type Annotations: These are used for excel_file and sheet_name parameters and the return type.
+    They indicate that 'excel_file' should be a string, 'sheet_name' is an optional string (which could be None),
+    and the function returns a pandas DataFrame.
     """
-    # URL to query Wikipedia for the article's associated Wikidata item
-    wp_project_code = wp_article_url.split('://')[1].split('.org')[0] # 'en.wikipedia'
-    wp_article_title = wp_article_url.split('/wiki/')[1] # '1624'
-    wikipedia_api_url = f'https://{wp_project_code}.org/w/api.php'
+    try:
+        df = pd.read_excel(excel_file, sheet_name=sheet_name)
+        return df
+    except FileNotFoundError:
+        raise FileNotFoundError(f"The file {excel_file} cannot be found.")
+    except ValueError as ve:
+        raise ValueError(f"The sheet '{sheet_name}' does not exist in the file: {excel_file}.") from ve
+    except Exception as e:
+        raise Exception(f"An error occurred while reading the Excel file: {excel_file}.") from e
 
-    params = {
-        'action': 'query',
-        'format': 'json',
-        'prop': 'pageprops',
-        'titles': wp_article_title
-    }
 
-    user_agent = "GLAMorousToHTML Python script by User:OlafJanssen - https://github.com/KBNLwikimedia/GLAMorousToHTML"
-    headers = {'User-Agent': user_agent}
+def write_df_to_excel(df: pd.DataFrame, datadir: str, excelpath: str, sheetname: str) -> None:
+    """
+    Writes the given pandas DataFrame to an Excel file in the specified directory with comprehensive error handling.
+    This function ensures the specified 'data' directory exists, creating it if necessary. It then writes the DataFrame
+    to an Excel file at the specified path, using a specified sheet name. Errors during the writing process are caught
+    and reported.
+    Parameters:
+    - df (pd.DataFrame): The DataFrame to be written to the Excel file.
+    - datadir (str): The directory path where the Excel file will be saved. This function will attempt to create
+                     the directory if it does not already exist.
+    - excelpath (str): The complete path, including the file name, where the Excel file will be saved. This path
+                       should reflect the intended location within the 'datadir'.
+    - sheetname (str): The name of the Excel sheet where the DataFrame will be written. If the sheet already exists,
+                       it will be overwritten.
+    Returns:
+    - None: The function's primary purpose is to write data to an Excel file and does not return a value.
+    Raises:
+    - Various exceptions can be raised by the underlying pandas and openpyxl libraries, depending on the nature of
+      the failure (e.g., IOError for issues accessing the file, ValueError for invalid input data). These exceptions
+      are caught and reported as error messages.
+    """
+    # Initialize logging
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    # Validate DataFrame is not empty
+    if df.empty:
+        logging.error("The DataFrame is empty. No data to write.")
+        return
+    # Ensure the data directory exists
+    try:
+        os.makedirs(datadir, exist_ok=True)
+    except Exception as e:
+        logging.error(f"Failed to create directory {datadir}: {e}")
+        return
+    try:
+        # Write (in append mode) the DataFrame to an Excel file with the specified sheet name
+        #TODO: Create toggle for these two modes ('a' and 'w')
+        #with pd.ExcelWriter(excelpath, engine='openpyxl', mode='a', if_sheet_exists='replace') as writer:
+        with pd.ExcelWriter(excelpath, engine='openpyxl', mode='w') as writer:
+            df.to_excel(writer, index=False, sheet_name=sheetname)
+        logging.info(f"Successfully wrote sheet '{sheetname}' to '{excelpath}'.")
+    except Exception as e:
+        logging.error(f"An occurred while writing to Excel: {e}")
 
-    response = requests.get(wikipedia_api_url, params=params, headers=headers)
-    data = response.json()
-    # Extract page ID
-    page_id = next(iter(data['query']['pages']))
-    # Extract Wikidata item ID from the page properties
-    wikidata_item_id = data['query']['pages'][page_id]['pageprops'].get('wikibase_item', 'No Wikidata item found')
-    return wikidata_item_id
+def fetch_labels_for_qids(qids: Union[str, List[str]], language_code: str = 'en') -> Optional[Union[str, List[str]]]:
+    """
+    Fetches labels for given Wikidata QID(s) in the specified language using a single API call.
+    This function supports fetching labels for both a single QID and multiple QIDs by utilizing the Wikidata API's
+    capability to process multiple QIDs separated by '|'. The function returns the label(s) in the specified language.
 
-# Example usage
-#title = "Python (programming language)"
-#wikidata_item_id = get_wikidata_item(title)
-#print(f"Wikidata item ID for '{title}': {wikidata_item_id}")
+    Parameters:
+    - qids (Union[str, List[str]]): A single Wikidata item ID (QID) as a string, or a list of QIDs for which to fetch labels.
+    - language_code (str, optional): The language code for the labels to fetch. Defaults to 'en' (English).
+
+    Returns:
+    - Optional[Union[str, List[str]]]: If a single QID is provided, returns a single label as a string. If multiple QIDs
+      are provided, returns a list of labels corresponding to each QID. Returns None for any QID whose label cannot be retrieved.
+
+    Raises:
+    - requests.exceptions.RequestException: If the request to the Wikidata API fails.
+    - ValueError: If there's an issue decoding the JSON response from the API.
+    """
+    # Convert qids to a single string separated by '|' if it's a list
+    qids_param = '|'.join(qids) if isinstance(qids, list) else qids
+
+    api_url = f'https://www.wikidata.org/w/api.php?action=wbgetentities&ids={qids_param}&props=labels&languages={language_code}&format=json'
+    headers = {'Accept': 'application/json', 'User-Agent': 'Wikidata Label Fetcher - by User:OlafJanssen'}
+
+    try:
+        response = requests.get(api_url, headers=headers)
+        response.raise_for_status()  # Raises a HTTPError for bad responses
+        data = response.json()
+
+        if isinstance(qids, list):
+            labels = []
+            for qid in qids:
+                label = data.get('entities', {}).get(qid, {}).get('labels', {}).get(language_code, {}).get('value', None)
+                labels.append(label if label is not None else '')
+            # Filter out None values or replace them with an empty string (or a placeholder)
+            labels_str = " -- ".join(filter(None, labels))
+            print(f'Labels for {" -- ".join(qids)} : {labels_str}')
+            return labels
+        else:
+            label = data.get('entities', {}).get(qids, {}).get('labels', {}).get(language_code, {}).get('value', None)
+            print(f'Label for {qids} : {label}')
+            return label
+
+    except requests.exceptions.RequestException as e:
+        print(f"Request error: {e}")
+        return None if isinstance(qids, list) else [None] * len(qids)
+    except ValueError as e:
+        print(f"JSON decoding error: {e}")
+        return None if isinstance(qids, list) else [None] * len(qids)
+
+def safe_eval(x):
+    """
+    Safely evaluates a string that looks like a Python literal (e.g., lists, dicts, tuples) and returns its actual value.
+    If the string does not represent a literal, or if evaluating it would result in an error (ValueError, SyntaxError),
+    the function returns the input value as is.
+    This function is particularly useful when reading data that contains string representations of Python literals
+    and converting them to their actual types. It uses `ast.literal_eval`, which is safe for evaluating strings containing
+    Python literals compared to the built-in `eval` function, which can execute arbitrary code.
+    Parameters:
+    - x: A string representing a Python literal, or any value.
+    Returns:
+    - The evaluated Python literal corresponding to the input string, or the original value if the string does not
+      represent a literal or cannot be safely evaluated.
+    Examples:
+    - safe_eval("['Q486972', 'Q1852859']") would return the list ['Q486972', 'Q1852859'].
+    - safe_eval("{'key': 'value'}") would return the dictionary {'key': 'value'}.
+    - safe_eval("3.14") would return the float 3.14.
+    - safe_eval("Not a literal") would return the string "Not a literal".
+    """
+    try:
+        return ast.literal_eval(x)
+    except (ValueError, SyntaxError):
+        # Return the original value in case it's not a string representation of a list or other literal
+        return x
