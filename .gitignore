@@ -5,4 +5,6 @@ __pycache__
 wikidata_cache.json
 wikidata_cache - kopie.json
 addWikidata.py
+addWikidata - kopie.py
 GLAMorousToHTML_old.py
+GLAMorousToHTML_bak.py
