@@ -49,7 +49,9 @@ You will need to make some simple adaptations to the existing code to make it wo
    * Under this country key, add a line with a syntax identical to the one starting with "Media contributed by Koninklijke Bibliotheek", but with modifications for three things: 
      
       1) The exact name (without underscores '_') of the Wikimedia Commons category you want run the script for ("[Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek)")
+      
       2) A shortname of the institution ("KoninklijkeBibliotheekNL"). This is used for the name of the sheet in the Excel file, so keep it shorter than 32 characters. 
+       
       3) Name of an institutional logo file, starting with "icon_", followed by a unique and descriptive letter code for the institution, and appended with a .png or .jpg extension at the end. This logo/icon is displayed at the top of the HTML page. Don't forget the next step!
 
 2) Add a small logo of the institution (256x256 px or so) as a .png of .jpg to the [site/logos](site/logos) folder, and add the filename "icon_xxxxx.png/jpg" to the json file.
