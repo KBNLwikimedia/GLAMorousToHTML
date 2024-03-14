@@ -47,22 +47,17 @@ You will need to make some simple adaptations to the existing code to make it wo
 1) Adapt the [category_logo_dict.json](category_logo_dict.json) for your own needs, making sure the existing syntax is maintained. 
    
     * If not yet available, make a new top level country key (similar to "Netherlands", "USA", "Norway" etc.) to include your country.
-   
     * Under this country key, add a line with a syntax identical to the one starting with "Media contributed by Koninklijke Bibliotheek", but with modifications for three things: 
       
       1) The exact name (without underscores '_') of the Wikimedia Commons category you want run the script for ("[Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek)")
-       
       2) A shortname of the institution ("KoninklijkeBibliotheekNL"). This is used for the name of the sheet in the Excel file, so keep it shorter than 32 characters. 
-       
       3) Name of an institutional logo file, starting with "icon_", followed by a unique and descriptive letter code for the institution, and appended with a .png or .jpg extension at the end. This logo/icon is displayed at the top of the HTML page. Don't forget the next step!
 
 2) Add a small logo of the institution (256x256 px or so) as a .png of .jpg to the [site/logos](site/logos) folder, and add the filename "icon_xxxxx.png/jpg" to the json file.
 
 3) In [setup.py](setup.py), change 
-    
-    - the *country_key* variable to the new country key you added to the json file  (default = "Netherlands")
-   
-    - the *institute_index* to the index of the line corresponding to your institution in the json file (default = 0; first line under a country key)
+   * the *country_key* variable to the new country key you added to the json file  (default = "Netherlands")
+   * the *institute_index* to the index of the line corresponding to your institution in the json file (default = 0; first line under a country key)
  
 That's  all, you should now be able to run the main [GLAMorousToHTML script](GLAMorousToHTML.py). The generated HTML page will be added to the [site/](site/) folder and the Excel to the [data/](data/) folder. 
 
@@ -177,7 +172,7 @@ See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_quite-a
 
 #### Australia and New Zealand
 See also this [LinkedIn post](https://www.linkedin.com/....)
-<image src="site/logos/icon_xxx.png" width="200" hspace="10" align="right"/>
+<image src="site/logos/icon_padil.jpg" width="200" hspace="10" align="right"/>
 
 ##### *Australia*
  * [Australian Paralympic Committee](https://commons.wikimedia.org/wiki/Category:Images_from_the_Australian_Paralympic_Committee) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheAustralianParalympicCommittee_Wikipedia_NS0_14032024.html)
@@ -192,6 +187,8 @@ See also this [LinkedIn post](https://www.linkedin.com/....)
  * [Australian War Memorial](https://commons.wikimedia.org/wiki/Category:Images_from_the_Australian_War_Memorial) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheAustralianWarMemorial_Wikipedia_NS0_14032024.html)
 
 ##### *New Zealand*
+<image src="site/logos/icon_auckmus.jpg" width="200" hspace="10" align="right"/>
+
  * [Auckland Museum](https://commons.wikimedia.org/wiki/Category:Images_from_Auckland_Museum) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromAucklandMuseum_Wikipedia_NS0_14032024.html)
  * [Archives New Zealand](https://commons.wikimedia.org/wiki/Category:Images_from_Archives_New_Zealand) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromArchivesNewZealand_Wikipedia_NS0_14032024.html)
  * [New Zealand Defence Force](https://commons.wikimedia.org/wiki/Category:Photographs_by_the_New_Zealand_Defence_Force) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/PhotographsbytheNewZealandDefenceForce_Wikipedia_NS0_14032024.html)
