@@ -55,10 +55,10 @@ import os
 from urllib.parse import urlparse
 from datetime import date
 from typing import Union, Optional, List
+import pandas as pd
 from pandas import DataFrame
 import logging
 import requests
-import pandas as pd
 import ast
 
 
@@ -723,14 +723,15 @@ def write_df_to_excel(df: pd.DataFrame, datadir: str, excelpath: str, sheetname:
         return
     try:
         # Write (in append mode) the DataFrame to an Excel file with the specified sheet name
-        with pd.ExcelWriter(excelpath, engine='openpyxl', mode='a', if_sheet_exists='replace') as writer:
+        #TODO: Create toggle for these two modes ('a' and 'w')
+        #with pd.ExcelWriter(excelpath, engine='openpyxl', mode='a', if_sheet_exists='replace') as writer:
+        with pd.ExcelWriter(excelpath, engine='openpyxl', mode='w') as writer:
             df.to_excel(writer, index=False, sheet_name=sheetname)
         logging.info(f"Successfully wrote sheet '{sheetname}' to '{excelpath}'.")
     except Exception as e:
-        logging.error(f"An error occurred while writing to Excel: {e}")
+        logging.error(f"An occurred while writing to Excel: {e}")
 
 def fetch_labels_for_qids(qids: Union[str, List[str]], language_code: str = 'en') -> Optional[Union[str, List[str]]]:
-    #TODO: Still to test this function
     """
     Fetches labels for given Wikidata QID(s) in the specified language using a single API call.
     This function supports fetching labels for both a single QID and multiple QIDs by utilizing the Wikidata API's
@@ -768,7 +769,6 @@ def fetch_labels_for_qids(qids: Union[str, List[str]], language_code: str = 'en'
             labels_str = " -- ".join(filter(None, labels))
             print(f'Labels for {" -- ".join(qids)} : {labels_str}')
             return labels
-
         else:
             label = data.get('entities', {}).get(qids, {}).get('labels', {}).get(language_code, {}).get('value', None)
             print(f'Label for {qids} : {label}')
@@ -780,8 +780,6 @@ def fetch_labels_for_qids(qids: Union[str, List[str]], language_code: str = 'en'
     except ValueError as e:
         print(f"JSON decoding error: {e}")
         return None if isinstance(qids, list) else [None] * len(qids)
-
-
 
 def safe_eval(x):
     """

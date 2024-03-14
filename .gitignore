@@ -3,3 +3,4 @@
 .git
 __pycache__
 wikidata_cache - kopie.json
+addWikidata.py

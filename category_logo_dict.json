@@ -1,57 +1,246 @@
 {
   "Netherlands": {
-    "Media contributed by Koninklijke Bibliotheek": ["KoninklijkeBibliotheekNL", "icon_kb.png"],
-    "Images from Nationaal Archief": ["NationaalArchief", "icon_na.jpg"],
-    "Images from the Rijksmuseum": ["Rijksmuseum", "icon_rm.png"],
-    "Media from Beeld en Geluid Wiki" : ["BeeldEnGeluid", "icon_beng.png"],
-    "Images from the Tropenmuseum": ["Tropenmuseum", "icon_tropenmus.jpg"],
-    "Images from the African Studies Centre (Leiden)": ["ASCLeiden", "icon_asc.png"],
-    "Images from Universiteitsbibliotheek Maastricht": ["UBMaastricht", "icon_um.png"],
-    "Images from Het Utrechts Archief": ["UtrechtsArchief", "icon_ua.png"],
-    "Images from the Rijksdienst voor het Cultureel Erfgoed": ["RCE", "icon_rce.png"],
-    "Images from the Special Collections of the University of Amsterdam": ["SpecialCollectionsUVA", "icon_uva.png"],
-    "Media donated by Naturalis Biodiversity Center": ["Naturalis", "icon_naturalis.jpg"],
-    "Photographs in the Stadsarchief Amsterdam": ["StadsarchiefAdam", "icon_saadam.jpg"],
-    "Media contributed by Museum Catharijneconvent": ["Catharijneconvent", "icon_mcc.png"],
-    "Files from the Nationaal Museum van Wereldculturen": ["MuseumWereldculturen", "icon_nmwc.png"]
+    "Media contributed by Koninklijke Bibliotheek": [
+      "KoninklijkeBibliotheekNL",
+      "icon_kb.png"
+    ],
+    "Images from Nationaal Archief": [
+      "NationaalArchief",
+      "icon_na.jpg"
+    ],
+    "Images from the Rijksmuseum": [
+      "Rijksmuseum",
+      "icon_rm.png"
+    ],
+    "Media from Beeld en Geluid Wiki": [
+      "BeeldEnGeluid",
+      "icon_beng.png"
+    ],
+    "Images from the Tropenmuseum": [
+      "Tropenmuseum",
+      "icon_tropenmus.jpg"
+    ],
+    "Images from the African Studies Centre (Leiden)": [
+      "ASCLeiden",
+      "icon_asc.png"
+    ],
+    "Images from Universiteitsbibliotheek Maastricht": [
+      "UBMaastricht",
+      "icon_um.png"
+    ],
+    "Images from Het Utrechts Archief": [
+      "UtrechtsArchief",
+      "icon_ua.png"
+    ],
+    "Images from the Rijksdienst voor het Cultureel Erfgoed": [
+      "RCE",
+      "icon_rce.png"
+    ],
+    "Images from the Special Collections of the University of Amsterdam": [
+      "SpecialCollectionsUVA",
+      "icon_uva.png"
+    ],
+    "Media donated by Naturalis Biodiversity Center": [
+      "Naturalis",
+      "icon_naturalis.jpg"
+    ],
+    "Photographs in the Stadsarchief Amsterdam": [
+      "StadsarchiefAdam",
+      "icon_saadam.jpg"
+    ],
+    "Media contributed by Museum Catharijneconvent": [
+      "Catharijneconvent",
+      "icon_mcc.png"
+    ],
+    "Files from the Nationaal Museum van Wereldculturen": [
+      "MuseumWereldculturen",
+      "icon_nmwc.png"
+    ]
   },
   "USA": {
-    "Images from the Library of Congress": ["LibraryOfCongress", "icon_loc.png"],
-    "Images from Metropolitan Museum of Art": ["MetropolitanMuseumOfArt", "icon_mma.png"],
-    "Images from the New York Public Library": ["NYPublicLibrary", "icon_nypl.png"],
-    "Images from the National Gallery of Art": ["NationalGalleryOfArt", "icon_ngawdc.png"],
-    "Images from the National Archives and Records Administration": ["NARA", "icon_nara.png"],
-    "Images from the Smithsonian Institution": ["SmithsonianInstitution", "icon_smith.png"],
-    "Media contributed by the Walters Art Museum" : ["WaltersArtMuseum", "icon_wam.jpg"],
-    "Photographs from the U.S. Navy Museum": ["USNavyMuseum", "icon_usnavy.jpg"],
-    "Public domain images from the Los Angeles County Museum of Art" : ["LACountyMuseumOfArt", "icon_lacma.png"],
-    "Media contributed by Boston Public Library" :  ["BostonPublicLibrary", "icon_bpl.jpg"],
-    "Images from NPGallery" : ["NPGallery", "icon_nps.png"]
+    "Images from the Library of Congress": [
+      "LibraryOfCongress",
+      "icon_loc.png"
+    ],
+    "Images from Metropolitan Museum of Art": [
+      "MetropolitanMuseumOfArt",
+      "icon_mma.png"
+    ],
+    "Images from the New York Public Library": [
+      "NYPublicLibrary",
+      "icon_nypl.png"
+    ],
+    "Images from the National Gallery of Art": [
+      "NationalGalleryOfArt",
+      "icon_ngawdc.png"
+    ],
+    "Images from the National Archives and Records Administration": [
+      "NARA",
+      "icon_nara.png"
+    ],
+    "Images from the Smithsonian Institution": [
+      "SmithsonianInstitution",
+      "icon_smith.png"
+    ],
+    "Media contributed by the Walters Art Museum": [
+      "WaltersArtMuseum",
+      "icon_wam.jpg"
+    ],
+    "Photographs from the U.S. Navy Museum": [
+      "USNavyMuseum",
+      "icon_usnavy.jpg"
+    ],
+    "Public domain images from the Los Angeles County Museum of Art": [
+      "LACountyMuseumOfArt",
+      "icon_lacma.png"
+    ],
+    "Media contributed by Boston Public Library": [
+      "BostonPublicLibrary",
+      "icon_bpl.jpg"
+    ],
+    "Images from NPGallery": [
+      "NPGallery",
+      "icon_nps.png"
+    ]
   },
   "Norway": {
-    "Images from Nasjonalbiblioteket": ["Nasjonalbiblioteket", "icon_nbn.png"],
-    "Images from The Norwegian Directorate for Cultural Heritage": ["NorwegianDirForCH", "icon_ndch.png"],
-    "Images from Digitalt Museum, Norway": ["DigitaltMuseum", "icon_dm.png"],
-    "Media from the National Archives of Norway": ["NationalArchivesNorway", "icon_nan.png"],
-    "Media from Kartverket": ["Kartverket", "icon_kartverket.jpg"],
-    "Media from the collection of Oslo Museum": ["OsloMuseum", "icon_om.png"],
-    "Images from The Municipal Archives of Trondheim": ["MunicipalArchivesTrondheim", "icon_tk.png"]
+    "Images from Nasjonalbiblioteket": [
+      "Nasjonalbiblioteket",
+      "icon_nbn.png"
+    ],
+    "Images from The Norwegian Directorate for Cultural Heritage": [
+      "NorwegianDirForCH",
+      "icon_ndch.png"
+    ],
+    "Images from Digitalt Museum, Norway": [
+      "DigitaltMuseum",
+      "icon_dm.png"
+    ],
+    "Media from the National Archives of Norway": [
+      "NationalArchivesNorway",
+      "icon_nan.png"
+    ],
+    "Media from Kartverket": [
+      "Kartverket",
+      "icon_kartverket.jpg"
+    ],
+    "Media from the collection of Oslo Museum": [
+      "OsloMuseum",
+      "icon_om.png"
+    ],
+    "Images from The Municipal Archives of Trondheim": [
+      "MunicipalArchivesTrondheim",
+      "icon_tk.png"
+    ]
   },
-  "Sweden" : {
-    "Images from the Nationalmuseum Stockholm": ["NationalmuseumStockholm", "icon_nm.png"],
-    "Images from the National Archives of Sweden": ["NationalArchivesSweden", "icon_nas.png"],
-    "Images from the National Library of Sweden": ["NationalLibrarySweden", "icon_kbs.png"],
-    "Media from the National Museums of World Culture": ["NatMuseumsWorldCultureSweden", "icon_vkm.jpg"],
-    "Images from Tekniska museet": ["TekniskaMuseet", "icon_tms.jpg"],
-    "Images from Livrustkammaren": ["Livrustkammaren", "icon_livkam.png"]
+  "Sweden": {
+    "Images from the Nationalmuseum Stockholm": [
+      "NationalmuseumStockholm",
+      "icon_nm.png"
+    ],
+    "Images from the National Archives of Sweden": [
+      "NationalArchivesSweden",
+      "icon_nas.png"
+    ],
+    "Images from the National Library of Sweden": [
+      "NationalLibrarySweden",
+      "icon_kbs.png"
+    ],
+    "Media from the National Museums of World Culture": [
+      "NatMuseumsWorldCultureSweden",
+      "icon_vkm.jpg"
+    ],
+    "Images from Tekniska museet": [
+      "TekniskaMuseet",
+      "icon_tms.jpg"
+    ],
+    "Images from Livrustkammaren": [
+      "Livrustkammaren",
+      "icon_livkam.png"
+    ]
   },
-  "Finland" : {
-    "Files from the Helsinki City Museum": ["HelsinkiCityMuseum", "icon_hcm.png"],
-    "Files from the National Archives of Finland": ["NationalArchivesFinland", "icon_nafin.png"],
-    "Files from the Society of Swedish Literature in Finland": ["SocSwedishLitFinland", "icon_sls.jpg"]
+  "Finland": {
+    "Files from the Helsinki City Museum": [
+      "HelsinkiCityMuseum",
+      "icon_hcm.png"
+    ],
+    "Files from the National Archives of Finland": [
+      "NationalArchivesFinland",
+      "icon_nafin.png"
+    ],
+    "Files from the Society of Swedish Literature in Finland": [
+      "SocSwedishLitFinland",
+      "icon_sls.jpg"
+    ]
   },
-  "Denmark" : {
-    "Images released under the CC0 1.0 Universal license by Statens Museum for Kunst": ["StatensMuseumForKunst", "icon_smk.png"],
-    "Files from The Portrait Collection of Royal Danish Library": ["RoyalDanishLibrary", "icon_dkb.png"]
+  "Denmark": {
+    "Images released under the CC0 1.0 Universal license by Statens Museum for Kunst": [
+      "StatensMuseumForKunst",
+      "icon_smk.png"
+    ],
+    "Files from The Portrait Collection of Royal Danish Library": [
+      "RoyalDanishLibrary",
+      "icon_dkb.png"
+    ]
+  },
+  "Australia": {
+    "Images from the Australian Paralympic Committee": [
+      "AustrParalympicComm",
+      "icon_apc.jpg"
+    ],
+    "Images from the Australian National Maritime Museum": [
+      "AustrNatMaritimeMus",
+      "icon_anmm.png"
+    ],
+    "Images from PaDIL": [
+      "PaDIL",
+      "icon_padil.jpg"
+    ],
+    "Images from the New South Wales Heritage Database": [
+      "NSWHeritageDatabase",
+      "icon_nswhdb.png"
+    ],
+    "Images from the State Archives and Records Authority of New South Wales": [
+      "SARANewSouthWales",
+      "icon_saransw.png"
+    ],
+    "Images from the State Library of NSW": [
+      "StateLibraryNSW",
+      "icon_slnsw.jpg"
+    ],
+    "Images from the State Library of Queensland": [
+      "StateLibQueensland",
+      "icon_slqslnd.png"
+    ],
+    "Files from the State Library of South Australia": [
+      "StateLibrarySouthAustr",
+      "icon_slsa.png"
+    ],
+    "Photographs in the State Library of Victoria": [
+      "StateLibraryVictoria",
+      "icon_slv.png"
+    ],
+    "Images from the Australian War Memorial": [
+      "AustrWarMemorial",
+      "icon_auswm.png"
+    ]
+  },
+  "New Zealand": {
+    "Images from Auckland Museum": [
+      "AucklandMuseum",
+      "icon_auckmus.jpg"
+    ],
+    "Images from Archives New Zealand": [
+      "ArchivesNewZealand",
+      "icon_anz.jpg"
+    ],
+    "Photographs by the New Zealand Defence Force": [
+      "NZDefenceForce",
+      "icon_nzdf.png"
+    ],
+    "Files by New Zealand Tertiary Education Union": [
+      "NZTertiaryEduUnion",
+      "icon_nzteu.jpg"
+    ]
   }
 }

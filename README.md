@@ -45,16 +45,23 @@ If you want to run this script for your own Commons category and create HTML and
 You will need to make some simple adaptations to the existing code to make it work for the Commons category of your choice. These are: 
 
 1) Adapt the [category_logo_dict.json](category_logo_dict.json) for your own needs, making sure the existing syntax is maintained. 
+   
     * If not yet available, make a new top level country key (similar to "Netherlands", "USA", "Norway" etc.) to include your country.
+   
     * Under this country key, add a line with a syntax identical to the one starting with "Media contributed by Koninklijke Bibliotheek", but with modifications for three things: 
-        1) The exact name (without underscores '_') of the Wikimedia Commons category you want run the script for ("[Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek)")
-        2) A shortname of the institution ("KoninklijkeBibliotheekNL"). This is used for the name of the sheet in the Excel file, so keep it shorter than 32 characters. 
-        3) Name of an institutional logo file, starting with "icon_", followed by a unique and descriptive letter code for the institution, and appended with a .png or .jpg extension at the end. This logo/icon is displayed at the top of the HTML page. Don't forget the next step!
+      
+      1) The exact name (without underscores '_') of the Wikimedia Commons category you want run the script for ("[Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek)")
+       
+      2) A shortname of the institution ("KoninklijkeBibliotheekNL"). This is used for the name of the sheet in the Excel file, so keep it shorter than 32 characters. 
+       
+      3) Name of an institutional logo file, starting with "icon_", followed by a unique and descriptive letter code for the institution, and appended with a .png or .jpg extension at the end. This logo/icon is displayed at the top of the HTML page. Don't forget the next step!
 
 2) Add a small logo of the institution (256x256 px or so) as a .png of .jpg to the [site/logos](site/logos) folder, and add the filename "icon_xxxxx.png/jpg" to the json file.
 
 3) In [setup.py](setup.py), change 
+    
     - the *country_key* variable to the new country key you added to the json file  (default = "Netherlands")
+   
     - the *institute_index* to the index of the line corresponding to your institution in the json file (default = 0; first line under a country key)
  
 That's  all, you should now be able to run the main [GLAMorousToHTML script](GLAMorousToHTML.py). The generated HTML page will be added to the [site/](site/) folder and the Excel to the [data/](data/) folder. 
@@ -131,8 +138,8 @@ See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_wikiped
 * [U.S. Navy Museum](https://commons.wikimedia.org/wiki/Category:Photographs_from_the_U.S._Navy_Museum) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/PhotographsfromtheU.S.NavyMuseum_Wikipedia_NS0_24012024.html)
 * [Walters Art Museum](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_the_Walters_Art_Museum) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediacontributedbytheWaltersArtMuseum_Wikipedia_NS0_24012024.html)
 * [Smithsonian Institution](https://commons.wikimedia.org/wiki/Category:Images_from_the_Smithsonian_Institution) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheSmithsonianInstitution_Wikipedia_NS0_24012024.html)
-* [Library of Congress](https://commons.wikimedia.org/wiki/Category:Images_from_the_Library_of_Congress) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheLibraryofCongress_Wikipedia_NS0_24012024.html)
-* [National Archives and Records Administration](https://commons.wikimedia.org/wiki/Category:Images%20from%20the%20National%20Archives%20and%20Records%20Administration) (NARA) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheNationalArchivesandRecordsAdministration_Wikipedia_NS0_24012024.html)
+* [Library of Congress](https://commons.wikimedia.org/wiki/Category:Images_from_the_Library_of_Congress) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheLibraryofCongress_Wikipedia_NS0_24012024.html) - Warning: big file, loading might take some time
+* [National Archives and Records Administration](https://commons.wikimedia.org/wiki/Category:Images%20from%20the%20National%20Archives%20and%20Records%20Administration) (NARA) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheNationalArchivesandRecordsAdministration_Wikipedia_NS0_24012024.html) - Warning: big file, loading might take some time
 * [Metropolitan Museum of Art](https://commons.wikimedia.org/wiki/Category:Images_from_Metropolitan_Museum_of_Art) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromMetropolitanMuseumofArt_Wikipedia_NS0_24012024.html)
 * [New York Public Library](https://commons.wikimedia.org/wiki/Category:Images_from_the_New_York_Public_Library) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheNewYorkPublicLibrary_Wikipedia_NS0_24012024.html)
 * [National Gallery of Art](https://commons.wikimedia.org/wiki/Category:Images_from_the_National_Gallery_of_Art) (Washington, D.C.) : Output on [24-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheNationalGalleryofArt_Wikipedia_NS0_24012024.html)
@@ -168,11 +175,38 @@ See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_quite-a
  * [Statens Museum for Kunst](https://commons.wikimedia.org/wiki/Category:Images_released_under_the_CC0_1.0_Universal_license_by_Statens_Museum_for_Kunst) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesreleasedundertheCC01.0UniversallicensebyStatensMuseumforKunst_Wikipedia_NS0_01032024.html)
  * [Royal Danish Library, Portraits](https://commons.wikimedia.org/wiki/Category:Files_from_The_Portrait_Collection_of_Royal_Danish_Library) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/FilesfromThePortraitCollectionofRoyalDanishLibrary_Wikipedia_NS0_01032024.html)
 
+#### Australia and New Zealand
+See also this [LinkedIn post](https://www.linkedin.com/....)
+<image src="site/logos/icon_xxx.png" width="200" hspace="10" align="right"/>
+
+##### *Australia*
+ * [Australian Paralympic Committee](https://commons.wikimedia.org/wiki/Category:Images_from_the_Australian_Paralympic_Committee) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheAustralianParalympicCommittee_Wikipedia_NS0_14032024.html)
+ * [Australian National Maritime Museum](https://commons.wikimedia.org/wiki/Category:Images_from_the_Australian_National_Maritime_Museum) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheAustralianNationalMaritimeMuseum_Wikipedia_NS0_14032024.html)
+ * [PaDIL](https://commons.wikimedia.org/wiki/Category:Images_from_PaDIL) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromPaDIL_Wikipedia_NS0_14032024.html)
+ * [New South Wales Heritage Database](https://commons.wikimedia.org/wiki/Category:Images_from_the_New_South_Wales_Heritage_Database) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheNewSouthWalesHeritageDatabase_Wikipedia_NS0_14032024.html)
+ * [State Archives and Records Authority of New South Wales](https://commons.wikimedia.org/wiki/Category:Images_from_the_State_Archives_and_Records_Authority_of_New_South_Wales) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheStateArchivesandRecordsAuthorityofNewSouthWales_Wikipedia_NS0_14032024.html)
+ * [State Library of New South Wales](https://commons.wikimedia.org/wiki/Category:Images_from_the_State_Library_of_NSW) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheStateLibraryofNSW_Wikipedia_NS0_14032024.html)
+ * [State Library of Queensland](https://commons.wikimedia.org/wiki/Category:Images_from_the_State_Library_of_Queensland) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheStateLibraryofQueensland_Wikipedia_NS0_14032024.html)
+ * [State Library of South_Australia](https://commons.wikimedia.org/wiki/Category:Files_from_the_State_Library_of_South_Australia) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/FilesfromtheStateLibraryofSouthAustralia_Wikipedia_NS0_14032024.html)
+ * [State Library of Victoria](https://commons.wikimedia.org/wiki/Category:Photographs_in_the_State_Library_of_Victoria) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/PhotographsintheStateLibraryofVictoria_Wikipedia_NS0_14032024.html)
+ * [Australian War Memorial](https://commons.wikimedia.org/wiki/Category:Images_from_the_Australian_War_Memorial) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheAustralianWarMemorial_Wikipedia_NS0_14032024.html)
+
+##### *New Zealand*
+ * [Auckland Museum](https://commons.wikimedia.org/wiki/Category:Images_from_Auckland_Museum) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromAucklandMuseum_Wikipedia_NS0_14032024.html)
+ * [Archives New Zealand](https://commons.wikimedia.org/wiki/Category:Images_from_Archives_New_Zealand) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromArchivesNewZealand_Wikipedia_NS0_14032024.html)
+ * [New Zealand Defence Force](https://commons.wikimedia.org/wiki/Category:Photographs_by_the_New_Zealand_Defence_Force) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/PhotographsbytheNewZealandDefenceForce_Wikipedia_NS0_14032024.html)
+ * [New Zealand Tertiary Education Union](https://commons.wikimedia.org/wiki/Category:Files_by_New_Zealand_Tertiary_Education_Union) : Output on [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/FilesbyNewZealandTertiaryEducationUnion_Wikipedia_NS0_14032024.html)
+
 ## See also
 * [https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML](https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML)
 * *[Public outreach and reuse of KB images via Wikipedia, 2014-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/Public%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.html)* (20-12-2022)
 
+
 ## Change log
+
+### 14 March 2024
+* Included 14 institutions from Australia and New Zealand.
+
 ### 29 February 2024
 * Included institutions from Norway, Sweden, Finland and Sweden.
 * [README.md](README.md): Added explanations how you can run the script yourself. 

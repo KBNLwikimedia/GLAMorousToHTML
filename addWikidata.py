@@ -263,6 +263,8 @@ def fetch_Pxx_qids(row: pd.Series, property_id: str = 'P31') -> Optional[List[st
 
 #====================================================
 
+# TODO - clean up this workflow
+
 data_dir = "data" #Output directory containing Excel and other (structured) data outputs
 excel_file="MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_14022024.xlsx" # datestamped name of the Excel output file
 excel_path = os.path.join(data_dir, excel_file)
