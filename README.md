@@ -172,7 +172,7 @@ See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_quite-a
  * [Royal Danish Library, Portraits](https://commons.wikimedia.org/wiki/Category:Files_from_The_Portrait_Collection_of_Royal_Danish_Library) : Output on [01-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/FilesfromThePortraitCollectionofRoyalDanishLibrary_Wikipedia_NS0_01032024.html)
 
 #### Australia and New Zealand
-See also this [LinkedIn post](https://www.linkedin.com/....)
+See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_time-for-new-glam-reports-this-time-across-activity-7174344877973852160-nUpW?utm_source=share&utm_medium=member_desktop)
 <image src="site/logos/icon_padil.jpg" width="200" hspace="10" align="right"/>
 
 ##### *Australia*
@@ -203,10 +203,10 @@ See also this [LinkedIn post](https://www.linkedin.com/....)
 ## Change log
 
 ### 14 March 2024
-* Included 14 institutions from Australia and New Zealand.
+* Included reports for 14 institutions from Australia and New Zealand.
 
 ### 29 February 2024
-* Included institutions from Norway, Sweden, Finland and Sweden.
+* Included reports for institutions from Norway, Sweden, Finland and Sweden.
 * [README.md](README.md): Added explanations how you can run the script yourself. 
 
 ### 14 February 2024
@@ -218,4 +218,7 @@ See also this [LinkedIn post](https://www.linkedin.com/....)
 * Improved [pagetemplate.html](pagetemplate.html) to be key based (*{numarticles} Wikipedia articles*) rather than index based (*{0} Wikipedia articles*)
 
 ## Features to add
-* TODO: Add Wikidata column to KB Excel sheets
+* Export reports to Wiki format and put on Commons: (work in progress)
+  * https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML/Reports (index page)
+  * https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML/Reports/Media_contributed_by_Koninklijke_Bibliotheek (index page for KB)
+  * https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML/Reports/Media_contributed_by_Koninklijke_Bibliotheek/14022024 (KB report dd 14 Feb 2024)
