@@ -3,7 +3,7 @@
     "title" : "GLAMorousToHTML",
     "description" : "Creates a HTML page and a corresponding Excel file listing all Wikipedia articles (in all languages) in which (one or more) images from a given category on Wikimedia Commons are used.",
     "url" : "https://github.com/KBNLwikimedia/GLAMorousToHTML/blob/main/GLAMorousToHTML.py",
-    "keywords" : "GLAMorous, images, Wikipedia, uptake, Commons, GLAMwiki"
+    "keywords" : "GLAMorous, images, Wikipedia, uptake, Commons, GLAMwiki, glam",
     "author" : "Olaf Janssen",
     "repository" : "https://github.com/KBNLwikimedia/GLAMorousToHTML",
     "comment": "See https://hay.toolforge.org/directory/#addtool"
