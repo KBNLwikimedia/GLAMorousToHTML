@@ -58,7 +58,7 @@ The GLAMorousToHTML tool has so for produced [GLAM reports](reports/reports.md) 
 
 ## Publications
 * A first article about the NDE reports will be published a.s.a.p. (September 2024)
-* [Public outreach and reuse of KB images via Wikipedia, 2014-2022](stories%2FPublic%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.md) (December 2022). This article is also available [as a PDF](stories%2FPublic%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.pdf).
+* [Public outreach and reuse of KB images via Wikipedia, 2014-2022](stories/Public%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.html) (December 2022). This article is also available [as a PDF](stories%2FPublic%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.pdf).
 
 ## Technical notes
 
