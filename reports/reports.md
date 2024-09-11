@@ -30,31 +30,6 @@ Currently, reports are available for the following GLAM institutions, countries 
    * [Australia](#australia) 
    * [New Zealand](#new-zealand) 
 
-### Structure of the reports
-
-#### HTML reports
-* The structure of an HTML report is pretty straightfoward. 
-* The file names have the following syntax, taking as an example [MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_28032024.html](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_28032024.html) 
-  * *MediacontributedbyKoninklijkeBibliotheek* : the de-spaced name of the top level Wikimedia Commons category for which the report was generated. In this case [Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek).
-  * *Wikipedia_NS0*: The [main name space (NS0)](https://en.wikipedia.org/wiki/Wikipedia:What_is_an_article%3F#Namespace) of Wikipedia. Default string in all file names.
-  * *28032024*: the DDMMYYYY date on which the report was generated. In this case 28 March 2024.
-* All HTML reports live in the [*/site* folder](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site), and its subfolders
-* Please note that earlier reports might look different from the latest reports. This is a result of the GLAMorousToHTML tool being improved over time.  
-
-#### Excel reports
-* The Excel files names follow the same syntax as the HTML reports.
-* All Excel files live in the [*/data* folder](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/data), and its subfolders.
-* Taking [MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx)  as an example, the columns are a follows:
-  * *Full institution name*:  The full/official name of the institution. This column is not present in files from before September 2024. 
-  * *ProjectCode*: the code for the specific Wikipedia project. Eg 'pt.wikipedia', indicating the Portuguese Wikipedia.  
-  * *FullLanguageName*: The full name (in English) of the language associated with the ProjectCode. In this case 'Portuguese'. This is retrieved from Wikidata ([Portuguese example](https://www.wikidata.org/wiki/Q11921#P856)).
-  * *ArticleURL*: The URL of the Wikipedia article
-  * *ArticleTitle*: The title of the Wikipedia article
-  * *Images*: A list of the exact images (from the specified Commons category tree) used in this article. The Commons prefix 'File:' has been omitted. The image names are separated by ' -- '. 
-  * *NumberOfImages*: The number of images (from the specified Commons category tree) that are used in this article. This is the length of the above images list. 
-* The sheetname in the Excel is an abbreviation of the full institution name, not following any specific syntax. In this case 'KoninklijkeBibliotheekNL'.
-
-
 ## KB, national library of the Netherlands
 <image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_kb.png" width="100" hspace="10" align="right"/>
 
@@ -211,3 +186,29 @@ See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_time-fo
  * [Archives New Zealand](https://commons.wikimedia.org/wiki/Category:Images_from_Archives_New_Zealand) : Report for [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromArchivesNewZealand_Wikipedia_NS0_14032024.html)
  * [New Zealand Defence Force](https://commons.wikimedia.org/wiki/Category:Photographs_by_the_New_Zealand_Defence_Force) : Report for [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/PhotographsbytheNewZealandDefenceForce_Wikipedia_NS0_14032024.html)
  * [New Zealand Tertiary Education Union](https://commons.wikimedia.org/wiki/Category:Files_by_New_Zealand_Tertiary_Education_Union) : Report for [14-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/FilesbyNewZealandTertiaryEducationUnion_Wikipedia_NS0_14032024.html)
+
+--------------------
+
+## Structure of the reports
+
+### HTML reports
+* The structure of an HTML report is pretty straightfoward. 
+* The file names have the following syntax, taking as an example [MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_28032024.html](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_28032024.html) 
+  * *MediacontributedbyKoninklijkeBibliotheek* : the de-spaced name of the top level Wikimedia Commons category for which the report was generated. In this case [Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek).
+  * *Wikipedia_NS0*: The [main name space (NS0)](https://en.wikipedia.org/wiki/Wikipedia:What_is_an_article%3F#Namespace) of Wikipedia. Default string in all file names.
+  * *28032024*: the DDMMYYYY date on which the report was generated. In this case 28 March 2024.
+* All HTML reports live in the [*/site* folder](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site), and its subfolders
+* Please note that earlier reports might look different from the latest reports. This is a result of the GLAMorousToHTML tool being improved over time.  
+
+### Excel reports
+* The Excel files names follow the same syntax as the HTML reports.
+* All Excel files live in the [*/data* folder](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/data), and its subfolders.
+* Taking [MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx)  as an example, the columns are a follows:
+  * *Full institution name*:  The full/official name of the institution. This column is not present in files from before September 2024. 
+  * *ProjectCode*: the code for the specific Wikipedia project. Eg 'pt.wikipedia', indicating the Portuguese Wikipedia.  
+  * *FullLanguageName*: The full name (in English) of the language associated with the ProjectCode. In this case 'Portuguese'. This is retrieved from Wikidata ([Portuguese example](https://www.wikidata.org/wiki/Q11921#P856)).
+  * *ArticleURL*: The URL of the Wikipedia article
+  * *ArticleTitle*: The title of the Wikipedia article
+  * *Images*: A list of the exact images (from the specified Commons category tree) used in this article. The Commons prefix 'File:' has been omitted. The image names are separated by ' -- '. 
+  * *NumberOfImages*: The number of images (from the specified Commons category tree) that are used in this article. This is the length of the above images list. 
+* The sheetname in the Excel is an abbreviation of the full institution name, not following any specific syntax. In this case 'KoninklijkeBibliotheekNL'.
