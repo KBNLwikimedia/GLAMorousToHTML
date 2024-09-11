@@ -30,7 +30,7 @@ The KB uses the 'classical' [GLAMorous tool](https://glamtools.toolforge.org/gla
 
 Please note: 'Total image usages' does NOT equal the number of unique Wikipedia articles! A single unique image can illustrate multiple unique articles, and/or the other way around, 1 unique article can contain multiple distinct images. In other words: images-articles have many-to-many relationships.
 
-What was still missing were functionalities to measure
+What was still missing were functionalities to create
 * 5 - The **number of unique Wikipedia articles** in which KB media files are used, 
 * 6 - A **manifest overview** of those articles, grouped per Wikipedia language version,
 * 7 - A **structured output format** that can be easily processed by tools, such as CSV of Excel files.
@@ -73,7 +73,7 @@ Please note that his page is still under construction and is therefore messy and
 
 All original materials in this repo, expect for the [flags](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site/flags) 
 and [logos](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site/logos), 
-are released under the [CC0 1.0 Universal license](https://github.com/KBNLwikimedia/LICENSE), effectively donating all original content to the public domain.
+are released under the [CC0 1.0 Universal license](https://github.com/KBNLwikimedia/GLAMorousToHTML/blob/main/LICENSE), effectively donating all original content to the public domain.
 
 ## Contact
 
