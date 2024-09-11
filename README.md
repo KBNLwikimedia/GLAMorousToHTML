@@ -41,7 +41,7 @@ That is why we developed the GLAMorousToHTML tool. It takes the [XML-output of t
 
 --------------
 
-## GLAM Reports
+## GLAM reports
 The GLAMorousToHTML tool has so for produced [GLAM reports](reports/reports.md) for the following heritage institutions, countries and regions:
 
 * [KB, national library of the Netherlands](reports/reports.md#kb-national-library-of-the-netherlands)
@@ -76,7 +76,9 @@ Please note that his page is still under construction and is therefore messy and
 ## CC0 licensing
 <image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_cc0.png" width="100" hspace="10" align="right"/>
 
-All original materials in this repo, expect for the [flags](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site/flags) and [logos](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site/logos), are released under the [CC0 1.0 Universal license](LICENSE)
+All original materials in this repo, expect for the [flags](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site/flags) 
+and [logos](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site/logos), 
+are released under the [CC0 1.0 Universal license](https://github.com/KBNLwikimedia/LICENSE), effectively donating all original content to the public domain.
 
 --------------
 
