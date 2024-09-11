@@ -1,6 +1,6 @@
 # GLAM reports 
 
-*Latest update*: 29 August 2024
+*Latest update*: 16 September 2024
 
 Korte uitleg....
 
@@ -19,7 +19,7 @@ Currently reports are available for the following institutions, countries and re
    * [Netwerk Digitaal Erfgoed (NDE)](#netwerk-digitaal-erfgoed), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
  * [Nordic European countries](#nordic-european-countries) 
    * [Norway](#norway)
-   * [Finland](finland)
+   * [Finland](#finland)
    * [Sweden](#sweden)
    * [Denmark](#denmark)
  * [United States of America](#usa)

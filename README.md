@@ -41,22 +41,22 @@ That is why we developed the GLAMorousToHTML tool. It takes the [XML-output of t
 
 --------------
 
-## Reports
-The GLAMorousToHTML tool has so for produced [reports](./reports/reports.md) for the following institutions, countries and regions:
+## GLAM Reports
+The GLAMorousToHTML tool has so for produced [GLAM reports](reports/reports.md) for the following heritage institutions, countries and regions:
 
-* [KB, national library of the Netherlands](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/reports.html#kb-national-library-of-the-netherlands)
-* The Netherlands
-  * Selected institutions
-  * Netwerk Digitaal Erfgoed (NDE), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
-* Nordic European countries
-  * Norway
-  * Finland
-  * Sweden
-  * Denmark
-* United States of America
-* Australia and New Zealand
-  * Australia
-  * New Zealand
+* [KB, national library of the Netherlands](reports/reports.md#kb-national-library-of-the-netherlands)
+* [The Netherlands](#the-netherlands)
+  * [Selected institutions](#selected-institutions)
+  * [Netwerk Digitaal Erfgoed (NDE)](#netwerk-digitaal-erfgoed), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
+* [Nordic European countries](#nordic-european-countries) 
+  * [Norway](#norway)
+  * [Finland](#finland)
+  * [Sweden](#sweden)
+  * [Denmark](#denmark)
+* [United States of America](#usa)
+* [Australia and New Zealand](#australia-and-new-zealand)
+  * [Australia](#australia) 
+  * [New Zealand](#new-zealand) 
 
 --------------
 
