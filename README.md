@@ -56,6 +56,10 @@ The GLAMorousToHTML tool has so for produced [GLAM reports](reports/reports.md) 
   * [Australia](reports/reports.md#australia) 
   * [New Zealand](reports/reports.md#new-zealand) 
 
+## Publications
+* A first article about the NDE reports will be published a.s.a.p. (September 2024)
+* [Public outreach and reuse of KB images via Wikipedia, 2014-2022](stories%2FPublic%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.md) (December 2022). This article is also available [as a PDF](stories%2FPublic%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.pdf).
+
 ## Technical notes
 
 The [technical notes](technical-notes.md) give more info about 
@@ -67,13 +71,14 @@ The [technical notes](technical-notes.md) give more info about
 
 Please note that his page is still under construction and is therefore messy and incomplete.
 
-## CC0 licensing
+## Licensing
 
 <image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_cc0.png" width="100" hspace="10" align="right"/>
 
-All original materials in this repo, expect for the [flags](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site/flags) 
-and [logos](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site/logos), 
+All original materials in this repo, expect for the [flags](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site/flags), [logos](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site/logos) and [publications](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/stories)
 are released under the [CC0 1.0 Universal license](https://github.com/KBNLwikimedia/GLAMorousToHTML/blob/main/LICENSE), effectively donating all original content to the public domain.
+
+For the [publications](#publications) listed above : see each article for its exact licensing condition.
 
 ## Contact
 
