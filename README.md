@@ -16,7 +16,7 @@ Here is quick example of such an [HTML report](https://kbnlwikimedia.github.io/G
 for [images from the collection](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek) of the [KB, national library of the Netherlands](https://www.kb.nl/en).
 It is datestamped 04-09-2024. 
 
-<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.html" target="_blank"><image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/screenshot_report_KB_0492024.png" hspace="0" align="left"/></a>
+<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.html" target="_blank"><image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_report_KB_0492024.png" hspace="0" align="left"/></a>
 <br clear="all"/>
 
 ## What problem does it solve?
