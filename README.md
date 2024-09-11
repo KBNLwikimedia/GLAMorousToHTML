@@ -19,10 +19,9 @@ It is datestamped 04-09-2024.
 <a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.html" target="_blank"><image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/screenshot_report_KB_0492024.png" hspace="0" align="left"/></a>
 <br clear="all"/>
 
---------------
-
 ## What problem does it solve?
-The KB uses the 'classical' [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) to [measure the use of KB media files](https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief/Resultaten/KPIs/KPI4) (as stored in Wikimedia Commons) in Wikipedia articles. This tool [rapports 4 things](https://tools.wmflabs.org/glamtools/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects%5Bwikipedia%5D=1) :
+
+The KB uses the 'classical' [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php) to [measure the use of KB media files](https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief/Resultaten/KPIs/KPI4) (as stored in Wikimedia Commons) in Wikipedia articles. This tool [reports 4 things](https://tools.wmflabs.org/glamtools/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects%5Bwikipedia%5D=1):
 
 * 1 - The total **number of KB media files** in [Category:Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek) (*Category "Media contributed by Koninklijke Bibliotheek" has XXXX files.*)
 * 2 - The **number of Wikipedia language versions** in which KB media files are used (*length of the table*, omitting non-language Wikipedias, such as 'outreach.wikipedia', 'simple.wikipedia' or 'incubator.wikipedia')
@@ -39,9 +38,8 @@ What was still missing were functionalities to measure
 
 That is why we developed the GLAMorousToHTML tool. It takes the [XML-output of the GLAMorous tool](https://glamtools.toolforge.org/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&format=xml) and processes that data into HTML reports and Excel files. 
 
---------------
-
 ## GLAM reports
+
 The GLAMorousToHTML tool has so for produced [GLAM reports](reports/reports.md) for the following heritage institutions, countries and regions:
 
 * [KB, national library of the Netherlands](reports/reports.md#kb-national-library-of-the-netherlands)
@@ -58,8 +56,6 @@ The GLAMorousToHTML tool has so for produced [GLAM reports](reports/reports.md) 
   * [Australia](reports/reports.md#australia) 
   * [New Zealand](reports/reports.md#new-zealand) 
 
---------------
-
 ## Technical notes
 
 The [technical notes](technical-notes.md) give more info about 
@@ -71,18 +67,16 @@ The [technical notes](technical-notes.md) give more info about
 
 Please note that his page is still under construction and is therefore messy and incomplete.
 
---------------
-
 ## CC0 licensing
+
 <image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_cc0.png" width="100" hspace="10" align="right"/>
 
 All original materials in this repo, expect for the [flags](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site/flags) 
 and [logos](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/site/logos), 
 are released under the [CC0 1.0 Universal license](https://github.com/KBNLwikimedia/LICENSE), effectively donating all original content to the public domain.
 
---------------
-
 ## Contact
+
 <image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_kb2.png" width="200" hspace="10" align="right"/>
 
 This tool is developed and maintained by Olaf Janssen, Wikimedia coordinator [@KB, national library of the Netherlands](https://www.kb.nl).
