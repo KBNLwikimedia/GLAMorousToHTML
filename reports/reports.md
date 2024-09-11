@@ -31,9 +31,14 @@ Currently, reports are available for the following GLAM institutions, countries 
    * [New Zealand](#new-zealand) 
 
 ## KB, national library of the Netherlands
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_kb.png" width="100" hspace="10" align="right"/>
+
+<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.html" target="_blank"><image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_report_KB_0492024.png" hspace="0" align="left" width="75%"/></a>
+<br clear="all"/>
 
 ### Media contributed by Koninklijke Bibliotheek
+
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_kb.png" width="100" hspace="10" align="right"/>
+
 * Input: Commons category = [Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek)
 * Reports for : 
   * [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx)
