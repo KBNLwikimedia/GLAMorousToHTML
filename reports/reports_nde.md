@@ -10,13 +10,15 @@ for the [partners](https://netwerkdigitaalerfgoed.nl/activiteiten/manifest-netwe
 
 For context and reports for other national and international institutions, see the [overall reports page](reports.md).
 
+TOC opnemen
+
 --------------
 
 ## Per area 
 
 
 ### Friesland
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_friesland.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_friesland.png" width="100" hspace="10" align="right"/>
 
 * [Fries Museum](https://commons.wikimedia.org/wiki/Category:Collections_of_the_Fries_Museum) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/CollectionsoftheFriesMuseum_Wikipedia_NS0_04092024.html)
 * [Keramiekmuseum Princessehof](https://commons.wikimedia.org/wiki/Category:Collection_of_Keramiekmuseum_Princessehof) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/CollectionofKeramiekmuseumPrincessehof_Wikipedia_NS0_04092024.html)
@@ -25,14 +27,14 @@ For context and reports for other national and international institutions, see t
 * [Stichting Erfgoed & Publiek](https://erfgoedpubliek.nl/) : No images on Wikimedia Commons
 
 ### Groningen
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_groningen.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_groningen.png" width="100" hspace="10" align="right"/>
 
 * [Groninger Archieven](https://commons.wikimedia.org/wiki/Category:Images_from_Groninger_Archieven) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ImagesfromGroningerArchieven_Wikipedia_NS0_04092024.html)
 * [DE REE archiefsystemen](https://www.de-ree.nl/nl/) : No images on Wikimedia Commons
 * [Erfgoedpartners](https://erfgoedpartners.nl/) : No images on Wikimedia Commons
 
 ### Drenthe
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_drenthe.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_drenthe.png" width="100" hspace="10" align="right"/>
 
 * [Drents Archief](https://commons.wikimedia.org/wiki/Category:Images_from_Drents_Archief) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ImagesfromDrentsArchief_Wikipedia_NS0_04092024.html)
 * [Herinneringscentrum Kamp Westerbork](https://commons.wikimedia.org/wiki/Category:Memorials_Kamp_Westerbork) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/MemorialsKampWesterbork_Wikipedia_NS0_04092024.html)
@@ -45,7 +47,7 @@ For context and reports for other national and international institutions, see t
 * [Scheepstra Kabinet](https://www.scheepstrakabinet.nl/) : No images on Wikimedia Commons
 
 ### Overijssel
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_overijssel.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_overijssel.png" width="100" hspace="10" align="right"/>
 
 * [Collectie Overijssel](https://commons.wikimedia.org/wiki/Category:Images_from_Historisch_Centrum_Overijssel) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ImagesfromHistorischCentrumOverijssel_Wikipedia_NS0_04092024.html)
 * [De Museumfabriek](https://commons.wikimedia.org/wiki/Category:De_Museumfabriek) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/DeMuseumfabriek_Wikipedia_NS0_04092024.html)
@@ -55,7 +57,7 @@ For context and reports for other national and international institutions, see t
 * [Museum de Pelgrim](https://museumdepelgrim.nl/) : No images on Wikimedia Commons
 
 ### Gelderland
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_gelderland.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_gelderland.png" width="100" hspace="10" align="right"/>
 
 * [Airborne Museum Hartenstein](https://commons.wikimedia.org/wiki/Category:Airborne_Museum_Hartenstein) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/AirborneMuseumHartenstein_Wikipedia_NS0_04092024.html)
 * [Erfgoedcentrum Achterhoek en Liemers](https://commons.wikimedia.org/wiki/Category:Media_from_Erfgoedcentrum_Achterhoek_en_Liemers) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/MediafromErfgoedcentrumAchterhoekenLiemers_Wikipedia_NS0_04092024.html)
@@ -72,13 +74,13 @@ For context and reports for other national and international institutions, see t
 * [Seecr](https://seecr.nl/) : No images on Wikimedia Commons
 
 ### Flevoland
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_flevoland.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_flevoland.png" width="100" hspace="10" align="right"/>
 
 * [Batavialand](https://commons.wikimedia.org/wiki/Category:Batavialand) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/Batavialand_Wikipedia_NS0_04092024.html)
 * [Het Flevolands Archief](https://commons.wikimedia.org/wiki/Category:Images_from_Flevolands_Archief) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ImagesfromFlevolandsArchief_Wikipedia_NS0_04092024.html)
 
 ### Utrecht
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_utrecht.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_utrecht.png" width="100" hspace="10" align="right"/>
 
 * [Het Utrechts Archief](https://commons.wikimedia.org/wiki/Category:Images_from_Het_Utrechts_Archief) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ImagesfromHetUtrechtsArchief_Wikipedia_NS0_04092024.html)
 * [Landhuis Oud Amelisweerd](https://commons.wikimedia.org/wiki/Category:Museum_Oud_Amelisweerd) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/MuseumOudAmelisweerd_Wikipedia_NS0_04092024.html)
@@ -96,7 +98,7 @@ For context and reports for other national and international institutions, see t
 * [Regionaal Historisch Centrum Vecht en Venen](https://www.rhcvechtenvenen.nl/) : No images on Wikimedia Commons
 
 ### Noord-Holland
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_noord-holland.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_noord-holland.png" width="100" hspace="10" align="right"/>
 
 * [Amsterdam Museum](https://commons.wikimedia.org/wiki/Category:Collections_of_the_Amsterdam_Museum) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/CollectionsoftheAmsterdamMuseum_Wikipedia_NS0_04092024.html)
 * [Anne Frank Stichting](https://commons.wikimedia.org/wiki/Category:Anne_Frank_Stichting_(Amsterdam)) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/AnneFrankStichting(Amsterdam)_Wikipedia_NS0_04092024.html)
@@ -138,7 +140,7 @@ For context and reports for other national and international institutions, see t
 * [Total Design](https://www.totaldesign.com/) : No images on Wikimedia Commons
 
 ### Zuid-Holland
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_zuid-holland.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_zuid-holland.png" width="100" hspace="10" align="right"/>
 
 * [Chabot Museum](https://commons.wikimedia.org/wiki/Category:Chabot_Museum) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ChabotMuseum_Wikipedia_NS0_04092024.html)
 * [DIG IT UP](https://commons.wikimedia.org/wiki/Category:DIG_IT_UP_(Rotterdam)) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/DIGITUP(Rotterdam)_Wikipedia_NS0_04092024.html)
@@ -177,7 +179,7 @@ For context and reports for other national and international institutions, see t
 * [VHIC](https://www.vhic.nl/) : No images on Wikimedia Commons
 
 ### Noord-Brabant
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_noord-brabant.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_noord-brabant.png" width="100" hspace="10" align="right"/>
 
 * [DAF Museum Eindhoven](https://commons.wikimedia.org/wiki/Category:Collections_of_the_DAF_Museum) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/CollectionsoftheDAFMuseum_Wikipedia_NS0_04092024.html)
 * [Museum 't Oude Slot](https://commons.wikimedia.org/wiki/Category:Hemelrijken_14,_Veldhoven) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/Hemelrijken14,Veldhoven_Wikipedia_NS0_04092024.html)
@@ -189,7 +191,7 @@ For context and reports for other national and international institutions, see t
 * [Heemkring Molenheide (Gilze en Rijen)](https://www.heemkringmolenheide.nl/) : No images on Wikimedia Commons
 
 ### Zeeland
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_zeeland.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_zeeland.png" width="100" hspace="10" align="right"/>
 
 * [Maritiem MuZEEum Zeeland](https://commons.wikimedia.org/wiki/Category:Zeeuws_maritiem_muZEEum) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ZeeuwsmaritiemmuZEEum_Wikipedia_NS0_04092024.html)
 * [Museum Het Bolwerk](https://commons.wikimedia.org/wiki/Category:Het_Bolwerk) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/HetBolwerk_Wikipedia_NS0_04092024.html)
@@ -198,7 +200,7 @@ For context and reports for other national and international institutions, see t
 * [Erfgoed Zeeland](https://www.erfgoedzeeland.nl/) : No images on Wikimedia Commons
 
 ### Limburg
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_limburg.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_limburg.png" width="100" hspace="10" align="right"/>
 
 * [Discovery Museum Kerkrade](https://commons.wikimedia.org/wiki/Category:Industrion) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/Industrion_Wikipedia_NS0_04092024.html)
 * [Keramiekcentrum Tiendschuur Tegelen](https://commons.wikimedia.org/wiki/Category:Keramiekcentrum_Tiendschuur_Tegelen) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/KeramiekcentrumTiendschuurTegelen_Wikipedia_NS0_04092024.html)
@@ -210,7 +212,7 @@ For context and reports for other national and international institutions, see t
 * [Kleksi/Sofco](https://www.kleksi.com) : No images on Wikimedia Commons 
 
 ### Aruba
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_aruba.png" width="50" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_aruba.png" width="100" hspace="10" align="right"/>
 
 * [Archivo Nacional Aruba](https://commons.wikimedia.org/wiki/Category:Archivo_Nacional_Aruba) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ArchivoNacionalAruba_Wikipedia_NS0_04092024.html)
 * [Biblioteca Nacional Aruba](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Biblioteca_Nacional_Aruba) : Report for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/MediacontributedbyBibliotecaNacionalAruba_Wikipedia_NS0_04092024.html)
@@ -226,8 +228,8 @@ The Excel files for all NDE institutions have been merged into a single overall 
 #### Downloads
 
 You can download this combined data in two formats:  
-* CSV: [04-09-2-24](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/aggregated/all_NDE_partners_Wikipedia_NS0_04092024.csv)
-* Excel: [04-09-2-24](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/aggregated/all_NDE_partners_Wikipedia_NS0_04092024.xlsx)
+* CSV: [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/aggregated/all_NDE_partners_Wikipedia_NS0_04092024.csv)
+* Excel: [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/aggregated/all_NDE_partners_Wikipedia_NS0_04092024.xlsx)
 * Both files can also be downloaded directly from the [*data/nde/aggregated* folder](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/data/nde/aggregated) in the repo.
 
 Please note that the individual Excel file are accessible from the HTML reports above, or directly from the [*data/nde* folder](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/data/nde) in the repo.
@@ -244,10 +246,12 @@ You can download these combined key figures  in two formats:
 * Excel: [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/GLAMorousToHTML_keyfigures_NDE_04092024.xlsx)
 * Both files can also be downloaded directly from the [*reports/* folder](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/reports) in the repo
 
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_keyfigures_NDE_04092024.png" hspace="0" align="left"/>
-<br clear="all"/>
+
 
 #### Explanation of the column names
+
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_keyfigures_NDE_04092024.png" hspace="0" align="left"/>
+<br clear="all"/>
 
 * **Date**: The date on which the report was generated. 
   * Example: 04-09-2024  
