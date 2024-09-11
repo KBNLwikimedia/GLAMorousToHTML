@@ -4,14 +4,14 @@
 
 Korte uitleg....
 
-See [this page](README.md) for more context.
+See [this page](../README.md) for more context.
 
 -----
 
 
-## Available reports
+## Available GLAM reports
 
-Currently reports are available for the following institutions, countries and regions:
+Currently reports are available for the following GLAM institutions, countries and regions:
 
  * [KB, national library of the Netherlands](#kb-national-library-of-the-netherlands)
  * [The Netherlands](#the-netherlands)
@@ -27,8 +27,7 @@ Currently reports are available for the following institutions, countries and re
    * [Australia](#australia) 
    * [New Zealand](#new-zealand) 
 
-
-*Explanation of the HTML page
+*Explanation of the HTML report
 *Explanation of the Excel file: this contains the exact images used in a WP article
 -----
 

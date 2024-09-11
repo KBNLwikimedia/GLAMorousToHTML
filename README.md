@@ -45,18 +45,18 @@ That is why we developed the GLAMorousToHTML tool. It takes the [XML-output of t
 The GLAMorousToHTML tool has so for produced [GLAM reports](reports/reports.md) for the following heritage institutions, countries and regions:
 
 * [KB, national library of the Netherlands](reports/reports.md#kb-national-library-of-the-netherlands)
-* [The Netherlands](#the-netherlands)
-  * [Selected institutions](#selected-institutions)
-  * [Netwerk Digitaal Erfgoed (NDE)](#netwerk-digitaal-erfgoed), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
-* [Nordic European countries](#nordic-european-countries) 
-  * [Norway](#norway)
-  * [Finland](#finland)
-  * [Sweden](#sweden)
-  * [Denmark](#denmark)
-* [United States of America](#usa)
-* [Australia and New Zealand](#australia-and-new-zealand)
-  * [Australia](#australia) 
-  * [New Zealand](#new-zealand) 
+* [The Netherlands](reports/reports.md#the-netherlands)
+  * [Selected institutions](reports/reports.md#selected-institutions)
+  * [Netwerk Digitaal Erfgoed (NDE)](reports/reports.md#netwerk-digitaal-erfgoed), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
+* [Nordic European countries](reports/reports.md#nordic-european-countries) 
+  * [Norway](reports/reports.md#norway)
+  * [Finland](reports/reports.md#finland)
+  * [Sweden](reports/reports.md#sweden)
+  * [Denmark](reports/reports.md#denmark)
+* [United States of America](reports/reports.md#usa)
+* [Australia and New Zealand](reports/reports.md#australia-and-new-zealand)
+  * [Australia](reports/reports.md#australia) 
+  * [New Zealand](reports/reports.md#new-zealand) 
 
 --------------
 
