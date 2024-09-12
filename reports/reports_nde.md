@@ -298,4 +298,4 @@ You can download these combined key figures  in two formats:
 -----------------
 
 ## Publications
-A first article about the NDE reports will be published a.s.a.p. (september 2024)
+* [Test story](https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/story.html) with Datawrapper interactive visuals
