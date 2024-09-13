@@ -268,27 +268,22 @@ You can download these combined key figures  in two formats:
   * Example: Collections of Leiden University Library
 * **Commons category URL**: The full URL of this category, with spaces replaced by underscores.
   * Example: https://commons.wikimedia.org/wiki/Category:Collections_of_Leiden_University_Library
-* **Category depth**: The number of subcategories that are taken into account for the report. This is an input paramater of the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php).
-  * Examples: 0 (no subcategories, only images in the main category are used), 1 (all first order subcategories) etc.
+* **Category depth**: The level of subcategories that are taken into account for the report. This is an input paramater of the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php).
+  * Examples: 0 (no subcategories, only images in the main category are used), 1 (all first level subcategories) etc.
 * **Total images available**: The total number of images available in the main category and its tree of subcategories (as specified by the category depth).
   * Example: 194.097
-* **Distinct images used**: The unique/distinct number of images from this category tree that are used in Wikipedia articles (all language versions)
+* **Distinct images used**: The unique/distinct number of images from this category tree that are used in Wikipedia articles (all language versions).
   * Example: 3.397
-* **Image reuse percentage**: The percentage of the available images that are actually used in Wikipedia articles. 
-    This is a measure for the uptake of the images.
+* **Image reuse percentage**: The percentage of the available images that are actually used in Wikipedia articles. This is a measure for the uptake of the images.
   * Example: (3.397/194.097) * 100 = 1.75% 
 * **Distinct articles**: The number of unique/distinct Wikipedia articles (all language versions) that are illustrated by (one or more) images from the category tree. 
   * Example: 6.306
 * **Number of languages**: The number of Wikipedia language versions in which images from the category tree are used. 
   * Example: 168
-* **Total usages**: The total number of times that distinct images (from the category tree) show up in Wikipedia articles, in all language versions.
-    This is different from 'Distinct articles', as a single image can illustrate multiple articles and one article can contain multiple images. 
-    For illustration, see this [easy example](https://glamtools.toolforge.org/glamorous.php?doit=1&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&category=Stedelijk%20Museum%20Schiedam&depth=0). 
+* **Total usages**: The total number of times that images from the category tree show up in Wikipedia articles, in all language versions. This is different from 'Distinct articles', as a single image can illustrate multiple articles and v.v, one article can contain multiple images. For illustration, see this [easy example](https://glamtools.toolforge.org/glamorous.php?doit=1&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&category=Stedelijk%20Museum%20Schiedam&depth=0). 
   * Example: 8.288
 * **Average image reuse**: The average number of Wikipedia articles illustrated by a single image. This is 'Total usages' divided by 'Distinct images used'. 
-    This is a measure for the outreach effectiveness of the images that are used in Wikipedia articles. 
-    For example, if we look at the [Wereldmuseum Rotterdam](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/WereldmuseumRotterdam_Wikipedia_NS0_04092024.html), we see that (on 04-09-2024) only 3 of their images illustrate no fewer than 79 articles, resulting in an average image reuse of 79/3 = 26.33. These couple of images are very effective in their reach and are seen worldwide!
-    At the other end of the spectrum is the [Rijksdienst voor het Cultureel Erfgoed](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ImagesfromtheRijksdienstvoorhetCultureelErfgoed_Wikipedia_NS0_04092024.html); their 23.471 distinct images 'only' have 31.955 usages, making this number equal 1.36.
+    This is a measure for the outreach effectiveness of the images that are used in Wikipedia articles. For example, if we look at the [Wereldmuseum Rotterdam](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/WereldmuseumRotterdam_Wikipedia_NS0_04092024.html), we see that (on 04-09-2024) only 3 of their images illustrate no fewer than 79 articles, resulting in an average image reuse of 79/3 = 26.33. These couple of images are very effective in their reach and are seen worldwide! At the other end of the spectrum is the [Rijksdienst voor het Cultureel Erfgoed](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ImagesfromtheRijksdienstvoorhetCultureelErfgoed_Wikipedia_NS0_04092024.html); their 23.471 distinct images 'only' have 31.955 usages, making this number equal 1.36.
   * Example: 8.288/3.397 = 2.44
 * **HTML URL**: URL of the report for the specified date (*04-09-2024*) 
   * Example: [https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/CollectionsofLeidenUniversityLibrary_Wikipedia_NS0_04092024.html](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/CollectionsofLeidenUniversityLibrary_Wikipedia_NS0_04092024.html)
@@ -299,3 +294,4 @@ You can download these combined key figures  in two formats:
 
 ## Publications
 * [Test story](https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/story.html) with Datawrapper interactive visuals
+* Voor elke NDE partner, welk artikel heeft de meeste beelden van/uit/over die instelling? In welke taalversie is dat artikel
