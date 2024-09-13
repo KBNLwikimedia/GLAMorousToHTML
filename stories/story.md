@@ -3,11 +3,12 @@
 ## Wikimedia image reuse key figures - NDE partners
 
 <div style="min-height:719px" id="datawrapper-vis-1wP5w"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/1wP5w/embed.js" charset="utf-8" data-target="#datawrapper-vis-1wP5w"></script><noscript><img src="https://datawrapper.dwcdn.net/1wP5w/full.png" alt="This chart shows the number of collection images available on Wikimedia Commons for the top 10 partners in the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
+<br/>
 
-<small>
-Columns explained: 
 
-* **Full institution name**: The full/official name of the institution 
+<small>Columns explained:</small> 
+
+* <small>**Full institution name**: The full/official name of the institution</small> 
 * **Commons category**: The main category on Wikimedia Commons containing the images related to the (collections of the) institution.
 * **Category depth**: The level of subcategories that are taken into account. 0 = no subcategories, only images in the main category are used; 1 = all first level subcategories, etc.
 * **Total images available**: The total number of images available in the main category and its tree of subcategories, as specified by the category depth.
