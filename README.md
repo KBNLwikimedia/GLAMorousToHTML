@@ -59,12 +59,11 @@ The GLAMorousToHTML tool has so for produced [GLAM reports](reports/reports.md) 
   * [Australia](reports/reports.md#australia) 
   * [New Zealand](reports/reports.md#new-zealand) 
 
-When intertpreting these reports, one shoud be aware of XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - nog uitwerken [these remarks about-the-images-and-category-trees](reports/reports.md#about-the-images-and-category-trees)
-about 
-* image contributions, 
-* images in templates and 
-* accuracy of category trees.
-
+When interpreting these reports, take note of 
+* the [structure](reports/reports.md#reports-structure) of the reports and Excel files, 
+* [who contributed](reports/reports.md#who-contributed) the images, 
+* the [accuracy of category trees](reports/reports.md#accuracy-and-overshooting-of-category-trees) and 
+* [image thumbnails & template contamination](reports/reports.md#image-thumbnails-in-templates-template-contamination). 
 
 ## Publications
 * A first article about the NDE reports will be published a.s.a.p. (September 2024)

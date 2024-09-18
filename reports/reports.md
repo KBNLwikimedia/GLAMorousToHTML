@@ -7,7 +7,7 @@ for a variety of cultural heritage and scientific institutions, such as museums,
 
 For every GLAM, this report lists all Wikipedia articles in which images from (the Wikimedia Commons category tree associated with) this institution are being used. The same data is also provided as an Excel file. The [structure of the reports](#reports-structure) is explained below. 
 
-In the paragraph on [images and category trees](#scope-of-the-images-and-category-trees), you can read more details about the scope of the images, the accuracy of the category trees and [template contamination](#image-thumbnails-in-templates-template-contamination). 
+In the paragraph on [Image contributions, category trees and template contamination](#image-contributions-category-trees-and-template-contamination), you can read more about who contributed the images, the accuracy of category trees and image thumbnails & template contamination. 
 
 For the broader context, see the  [home page](https://github.com/KBNLwikimedia/GLAMorousToHTML) of the GLAMorousToHTML repo.
 
@@ -221,7 +221,7 @@ See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_time-fo
 
 --------------------------------
 
-## Scope of the images and category trees
+## Image contributions, category trees and template contamination
 
 ### Who contributed?
 All images related to a GLAM institution and its collections are gathered in a corresponding Wikimedia Commons category, and its subcategories when finer categorization is needed. 
