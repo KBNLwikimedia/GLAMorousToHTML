@@ -44,7 +44,7 @@ of zie /site/nde/ImagesfromtheTropenmuseum_Wikipedia_NS0_04092024.html, sjabllon
   
 xxxxxxxxxxxxxxxxx
 
-<div style="min-height:666px" id="datawrapper-vis-cBG3d"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/cBG3d/embed.js" charset="utf-8" data-target="#datawrapper-vis-cBG3d"></script><noscript><img src="https://datawrapper.dwcdn.net/cBG3d/full.png" alt="This table shows the variety of Wikipedia articles and languages illustrated by NDE partner images, where NDE stand for the Netwerk Digitaal Erfgoed, the Dutch network for digital heritage." /></noscript></div>
+<div style="min-height:664px" id="datawrapper-vis-cBG3d"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/cBG3d/embed.js" charset="utf-8" data-target="#datawrapper-vis-cBG3d"></script><noscript><img src="https://datawrapper.dwcdn.net/cBG3d/full.png" alt="This table shows the variety of Wikipedia articles and languages illustrated by images from the collections of partner institutions of the Netwerk Digitaal Erfgoed (NDE, the Dutch network for digital heritage). For each institution, the most-illustrated article is shown. Only articles containing at least 5 of their images are listed. If multiple articles for the same institution contained the same number of collection images , a random article from this set was chosen. Date: 4 September 2024" /></noscript></div>
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_top3_articles_with_most_images_by_institution_04092024_-_forDatawrapper.xlsx)*</small>
  
@@ -56,6 +56,7 @@ xxxxxxxxxxxxxxxxxxxxxxxx
 
   * Wele GLAMS hebben het meeste aertiekel in het Engels, NLS, Frans en andere talen...s
 
+Top 10 og most used image across all NEd partners --> Image of Karl Marx from IISG? Or imaage thumbs in template contamindatee articles?
 
 ----------------------------------------
 
@@ -74,7 +75,7 @@ Zoom in on NDE key figures - see datawrapper stuff below
 
 ## Wikimedia image reuse key figures - NDE partners
 
-<div style="min-height:719px" id="datawrapper-vis-1wP5w"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/1wP5w/embed.js" charset="utf-8" data-target="#datawrapper-vis-1wP5w"></script><noscript><img src="https://datawrapper.dwcdn.net/1wP5w/full.png" alt="This chart shows the number of collection images available on Wikimedia Commons for the top 10 partners in the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
+<div style="min-height:918px" id="datawrapper-vis-1wP5w"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/1wP5w/embed.js" charset="utf-8" data-target="#datawrapper-vis-1wP5w"></script><noscript><img src="https://datawrapper.dwcdn.net/1wP5w/full.png" alt="This table shows key figures on how images from the collections of the partner institutions of the Netwerk Digitaal Erfgoed (NDE, the Dutch network for digital heritage) are being used in Wikimedia Commons and Wikipedia, per 4 September 2024." /></noscript></div>
 <br/>
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
@@ -85,7 +86,7 @@ Zoom in on NDE key figures - see datawrapper stuff below
 * <small>**Full institution name**: The full/official name of the institution</small> 
 * <small>**Commons category**: The main category on Wikimedia Commons containing the images related to the (collections of the) institution.</small>
 * <small>**Category depth**: The level of subcategories that are taken into account. 0 = no subcategories, only images in the main category are used; 1 = all first level subcategories, etc.</small>
-* <small>**Total images available**: The total number of images available in the main category and its tree of subcategories, as specified by the category depth.</small>
+* <small>**Total images available**: The total number of images available in the main Commons category and its tree of subcategories, as specified by the category depth.</small>
 * <small>**Distinct images used**: The unique/distinct number of images from this category tree that are used in Wikipedia articles (all language versions).</small>
 * <small>**Image reuse percentage**: The percentage of the available images that are actually used in Wikipedia articles. This is 'Distinct images used' divided by 'Total images available'. This is a measure for the uptake of the images.</small>
 * <small>**Distinct articles**: The number of unique/distinct Wikipedia articles (all language versions) that are illustrated by (one or more) images from the category tree.</small> 
@@ -100,7 +101,7 @@ Zoom in on NDE key figures - see datawrapper stuff below
 ## Number of collection images available on Wikimedia Commons - NDE partners
 adasd
 
-<div style="min-height:595px" id="datawrapper-vis-WPDUE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WPDUE/embed.js" charset="utf-8" data-target="#datawrapper-vis-WPDUE"></script><noscript><img src="https://datawrapper.dwcdn.net/WPDUE/full.png" alt="This chart shows the number of collection images available on Wikimedia Commons for the top 10 partners in the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
+<div style="min-height:644px" id="datawrapper-vis-WPDUE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WPDUE/embed.js" charset="utf-8" data-target="#datawrapper-vis-WPDUE"></script><noscript><img src="https://datawrapper.dwcdn.net/WPDUE/full.png" alt="This donut chart shows the number of collection images available on Wikimedia Commons for the top 10 partner institutions in the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
@@ -112,10 +113,14 @@ adasd
 
 ## Number of unique WP articles ilustrated by NDe parnte images - NDE partners
 
-<div style="min-height:656px" id="datawrapper-vis-0epXW"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/0epXW/embed.js" charset="utf-8" data-target="#datawrapper-vis-0epXW"></script><noscript><img src="https://datawrapper.dwcdn.net/0epXW/full.png" alt="This donut chart shows the number of unique Wikipedia articles (all language versions) illustrated by images from the top 10 partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
+<div style="min-height:670px" id="datawrapper-vis-0epXW"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/0epXW/embed.js" charset="utf-8" data-target="#datawrapper-vis-0epXW"></script><noscript><img src="https://datawrapper.dwcdn.net/0epXW/full.png" alt="This donut chart shows the number of unique Wikipedia articles (all language versions) illustrated by images from the top 10 partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
 ## Number of languages
+
+<div style="min-height:3089px" id="datawrapper-vis-WPByl"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WPByl/embed.js" charset="utf-8" data-target="#datawrapper-vis-WPByl"></script><noscript><img src="https://datawrapper.dwcdn.net/WPByl/full.png" alt="This split bar chart shows the image reuse percentage (being the fraction of available images on Wikimedia Commons that are actually used in Wikipedia articles) for all partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
+
+<small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
 ## Breakdon per laguange - For English Wikipedia, wha are te top 10 of NE partners
