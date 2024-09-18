@@ -208,12 +208,13 @@ See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_time-fo
 
 ### Excel reports
 
-<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx" target="_blank"><image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_kb_excel_-04-09-2024.png" hspace="0" align="right"/></a>
-<br clear="all"/>
-
 * The Excel files names follow the same syntax as the HTML reports.
 * All Excel files live in the [*/data* folder](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/data), and its subfolders.
-* Taking [MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx)  as an example, the columns are a follows:
+
+<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx" target="_blank"><image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_kb_excel_-04-09-2024.png" hspace="0" align="right"/></a>
+<br clear="all"/> 
+
+* Taking [MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx)  as an example, the columns are a follows, see screenshot above:
   * *Full institution name*:  The full/official name of the institution. This column is not present in files from before September 2024. 
   * *ProjectCode*: the code for the specific Wikipedia project. Eg 'pt.wikipedia', indicating the Portuguese Wikipedia.  
   * *FullLanguageName*: The full name (in English) of the language associated with the ProjectCode. In this case 'Portuguese'. This is retrieved from Wikidata ([Portuguese example](https://www.wikidata.org/wiki/Q11921#P856)).
