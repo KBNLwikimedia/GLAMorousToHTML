@@ -254,7 +254,7 @@ You can download these combined key figures  in two formats:
 
 #### Explanation of the column names
 
-  <image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_keyfigures_NDE_04092024.png" hspace="0" align="left" border="1"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_keyfigures_NDE_04092024.png" hspace="0" align="left" border="1"/>
 <br clear="all"/>
 
 * **Date**: The date on which the report was generated. 
