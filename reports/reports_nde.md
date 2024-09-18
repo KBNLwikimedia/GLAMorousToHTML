@@ -252,11 +252,9 @@ You can download these combined key figures  in two formats:
 * Excel: [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/GLAMorousToHTML_keyfigures_NDE_04092024.xlsx)
 * Both files can also be downloaded directly from the [*reports/* folder](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/reports) in the repo
 
-
-
 #### Explanation of the column names
 
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_keyfigures_NDE_04092024.png" hspace="0" align="left" border="1"/>
+  <image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_keyfigures_NDE_04092024.png" hspace="0" align="left" border="1"/>
 <br clear="all"/>
 
 * **Date**: The date on which the report was generated. 
@@ -266,7 +264,7 @@ You can download these combined key figures  in two formats:
 * **Commons category**: The main category on Wikimedia Commons containing the images related to the (collections of the) institution.
   * Example: Collections of Leiden University Library
 * **Commons category URL**: The full URL of this category, with spaces replaced by underscores.
-  * Example: https://commons.wikimedia.org/wiki/Category:Collections_of_Leiden_University_Library
+  * Example: [https://commons.wikimedia.org/wiki/Category:Collections_of_Leiden_University_Library](https://commons.wikimedia.org/wiki/Category:Collections_of_Leiden_University_Library)
 * **Category depth**: The level of subcategories that are taken into account for the report. This is an input paramater of the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php).
   * Examples: 0 (no subcategories, only images in the main category are used), 1 (all first level subcategories) etc.
 * **Total images available**: The total number of images available in the main category and its tree of subcategories (as specified by the category depth).
