@@ -2,7 +2,7 @@
 
 *Creates a datestamped HTML report and a corresponding Excel file listing all Wikipedia articles (in all languages) in which (one or more) images from a given category tree on Wikimedia Commons are used.*
 
-*Latest update*: 16 September 2024
+*Latest update*: 18 September 2024
 
 --------------
 
@@ -25,7 +25,7 @@ The KB uses the 'classical' [GLAMorous tool](https://glamtools.toolforge.org/gla
 
 * 1 - The total **number of KB media files** in [Category:Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek) (*Category "Media contributed by Koninklijke Bibliotheek" has XXXX files.*)
 * 2 - The **number of Wikipedia language versions** in which KB media files are used (*length of the table*, omitting non-language Wikipedias, such as 'outreach.wikipedia', 'simple.wikipedia' or 'incubator.wikipedia')
-* 3 - The total **number of times that distinct images show up** in Wikipedia articles, in all language versions. (*Total image usages*).
+* 3 - The total **number of times that these images show up** in Wikipedia articles, in all language versions. (*Total image usages*).
 * 4 - The **number of unique KB media files** that are used in Wikipedia articles in all those languages. (*Distinct images used*)
 
 Please note: 'Total image usages' does NOT equal the number of unique Wikipedia articles! A single unique image can illustrate multiple unique articles, and/or the other way around, 1 unique article can contain multiple distinct images. In other words: images-articles have many-to-many relationships.
@@ -34,7 +34,10 @@ What was still missing were functionalities to create
 * 5 - The **number of unique Wikipedia articles** in which KB media files are used, 
 * 6 - A **manifest overview** of those articles, grouped per Wikipedia language version,
 * 7 - A **structured output format** that can be easily processed by tools, such as CSV of Excel files.
-* 8 - A method to **generate these reports in bulk**, so for multiple Commons categories trees at once (with one report per category tree). 
+
+Bulk/group functionalities:
+* 8 - A method to **generate these reports in bulk**, so for multiple Commons categories trees at once (with one report per category tree).
+* 9 - **Aggregated data** and **key figure statistics** for sets of reports, eg. for grouped reports from a specific country.
 
 That is why we developed the GLAMorousToHTML tool. It takes the [XML-output of the GLAMorous tool](https://glamtools.toolforge.org/glamorous.php?doit=1&category=Media+contributed+by+Koninklijke+Bibliotheek&use_globalusage=1&ns0=1&show_details=1&projects[wikipedia]=1&format=xml) and processes that data into HTML reports and Excel files. 
 
@@ -55,6 +58,13 @@ The GLAMorousToHTML tool has so for produced [GLAM reports](reports/reports.md) 
 * [Australia and New Zealand](reports/reports.md#australia-and-new-zealand)
   * [Australia](reports/reports.md#australia) 
   * [New Zealand](reports/reports.md#new-zealand) 
+
+When intertpreting these reports, one shoud be aware of XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - nog uitwerken [these remarks about-the-images-and-category-trees](reports/reports.md#about-the-images-and-category-trees)
+about 
+* image contributions, 
+* images in templates and 
+* accuracy of category trees.
+
 
 ## Publications
 * A first article about the NDE reports will be published a.s.a.p. (September 2024)
@@ -86,3 +96,5 @@ For the [publications](#publications) listed above : see each article for its ex
 
 This tool is developed and maintained by Olaf Janssen, Wikimedia coordinator [@KB, national library of the Netherlands](https://www.kb.nl).
 You can find his contact details on his [KB expert page](https://www.kb.nl/over-ons/experts/olaf-janssen) or via his [Wikimedia user page](https://commons.wikimedia.org/wiki/User:OlafJanssen).
+
+If you are interested in getting reports for your own GLAM institution, please send me a message.   
