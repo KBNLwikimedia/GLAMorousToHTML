@@ -107,7 +107,7 @@ adasd
 
 ## Image reuse percentage - NDE partners
 
-<div style="min-height:3089px" id="datawrapper-vis-xUTUE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/xUTUE/embed.js" charset="utf-8" data-target="#datawrapper-vis-xUTUE"></script><noscript><img src="https://datawrapper.dwcdn.net/xUTUE/full.png" alt="This split bar chart shows the image reuse percentage (being the fraction of available images on Wikimedia Commons that are actually used in Wikipedia articles) for all partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
+<div style="height:600px" id="datawrapper-vis-xUTUE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/xUTUE/embed.js" charset="utf-8" data-target="#datawrapper-vis-xUTUE"></script><noscript><img src="https://datawrapper.dwcdn.net/xUTUE/full.png" alt="This split bar chart shows the image reuse percentage (being the fraction of available images on Wikimedia Commons that are actually used in Wikipedia articles) for all partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
