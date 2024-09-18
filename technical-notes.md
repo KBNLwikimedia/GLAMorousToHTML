@@ -153,3 +153,4 @@ See the section on Repo structure below for more info.
     * [Index page for KB](https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML/Reports/Media_contributed_by_Koninklijke_Bibliotheek), related to  [Category:Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek).
       * [KB report dd 14 Feb 2024](https://commons.wikimedia.org/wiki/Commons:GLAMorousToHTML/Reports/Media_contributed_by_Koninklijke_Bibliotheek/14022024), for this category.
 
+* Add page/file request for category trees. Explore https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/reference/commons.html
