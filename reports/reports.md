@@ -207,6 +207,10 @@ See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_time-fo
 * Please note that earlier reports might look different from the latest reports. This is a result of the GLAMorousToHTML tool being improved over time.  
 
 ### Excel reports
+
+<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx" target="_blank"><image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_kb_excel_-04-09-2024.png" hspace="0" align="right"/></a>
+<br clear="all"/>
+
 * The Excel files names follow the same syntax as the HTML reports.
 * All Excel files live in the [*/data* folder](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/data), and its subfolders.
 * Taking [MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx)  as an example, the columns are a follows:
@@ -273,5 +277,5 @@ Another example of "template contamination" is illustrated by the [1.550 Persian
 
 Unfortunately, there is no easy way to filter out template contamination, as we rely on the data provided by the [GLAMorous tool](https://glamtools.toolforge.org/glamorous.php), which does not provide straightforward ways to filter out templates or articles using templates.
 
-(*) In a similar way that the physicist Albert Einstein has become a 'meta-icon' for all fields of science and being smart/brainy in general.
+(*) *In a similar way that the physicist Albert Einstein has become a 'meta-icon' for all fields of science and being smart/brainy in general.*
 
