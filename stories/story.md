@@ -119,7 +119,7 @@ adasd
 
 ## Number of languages
 
-<div style="height:500px; overflow:scroll" id="datawrapper-vis-WPByl"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WPByl/embed.js" charset="utf-8" data-target="#datawrapper-vis-WPByl"></script><noscript><img src="https://datawrapper.dwcdn.net/WPByl/full.png" alt="This split bar chart shows the image reuse percentage (being the fraction of available images on Wikimedia Commons that are actually used in Wikipedia articles) for all partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
+<div style="overflow-y: scroll; height:600px;" id="datawrapper-vis-WPByl"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WPByl/embed.js" charset="utf-8" data-target="#datawrapper-vis-WPByl"></script><noscript><img src="https://datawrapper.dwcdn.net/WPByl/full.png" alt="This split bar chart shows the image reuse percentage (being the fraction of available images on Wikimedia Commons that are actually used in Wikipedia articles) for all partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
