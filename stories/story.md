@@ -46,7 +46,7 @@ xxxxxxxxxxxxxxxxx
 
 <div style="min-height:666px" id="datawrapper-vis-cBG3d"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/cBG3d/embed.js" charset="utf-8" data-target="#datawrapper-vis-cBG3d"></script><noscript><img src="https://datawrapper.dwcdn.net/cBG3d/full.png" alt="This table shows the variety of Wikipedia articles and languages illustrated by NDE partner images, where NDE stand for the Netwerk Digitaal Erfgoed, the Dutch network for digital heritage." /></noscript></div>
 
-[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTMLreports/forDatawrapper/GLAMorousToHTML_top3_articles_with_most_images_by_institution_04092024_-_forDatawrapper.xlsx)
+<small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTMLreports/forDatawrapper/GLAMorousToHTML_top3_articles_with_most_images_by_institution_04092024_-_forDatawrapper.xlsx)*</small>
  
 xxxxxxxxxxxxxxxxxxxxxxxx 
 
@@ -70,8 +70,7 @@ Zoom in on NDE key figures - see datawrapper stuff below
 <div style="min-height:719px" id="datawrapper-vis-1wP5w"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/1wP5w/embed.js" charset="utf-8" data-target="#datawrapper-vis-1wP5w"></script><noscript><img src="https://datawrapper.dwcdn.net/1wP5w/full.png" alt="This chart shows the number of collection images available on Wikimedia Commons for the top 10 partners in the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
 <br/>
 
-Raw data used as input for Datawrapper visualisation : https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx
-
+<small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
 
 <small>Columns explained:</small> 
