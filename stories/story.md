@@ -123,4 +123,12 @@ adasd
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
+
 ## Breakdon per laguange - For English Wikipedia, wha are te top 10 of NE partners
+
+
+## Average image reuse
+
+<div style="min-height:3182px" id="datawrapper-vis-icEaG"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/icEaG/embed.js" charset="utf-8" data-target="#datawrapper-vis-icEaG"></script><noscript><img src="https://datawrapper.dwcdn.net/icEaG/full.png" alt="The last column of this split bar chart shows the average number of times a single image from an NDE partner institution is used to illustrate a Wikipedia article. This number is 'Total usages' divided by 'Distinct images used'. This is a measure for the outreach effectiveness of the images that are used in Wikipedia articles. For example, if we look at the Wereldmuseum Rotterdam we see that only 3 of their images show up in articles 79 times, resulting in an average image reuse of 79/3 = 26.33. These couple of images are very effective in their reach! At the other end of the spectrum is the Rijksdienst voor het Cultureel Erfgoed; their 23.471 distinct images 'only' have 31.955 usages, making this number equal 1.36. Date: 4 September 2024" /></noscript></div>
+
+* <small>**Average image reuse**: The average number of times a single image is used to illustrate an article. This is 'Total usages' divided by 'Distinct images used'. This is a measure for the outreach effectiveness of the images that are used in Wikipedia articles. For example, if we look at the [Wereldmuseum Rotterdam](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/WereldmuseumRotterdam_Wikipedia_NS0_04092024.html), we see that only 3 of their images show up in articles 79 times, resulting in an average image reuse of 79/3 = 26.33. These couple of images are very effective in their reach and are seen worldwide! At the other end of the spectrum is the [Rijksdienst voor het Cultureel Erfgoed](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ImagesfromtheRijksdienstvoorhetCultureelErfgoed_Wikipedia_NS0_04092024.html); their 23.471 distinct images 'only' have 31.955 usages, making this number equal 1.36.</small>
