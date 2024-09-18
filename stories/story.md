@@ -119,7 +119,7 @@ adasd
 
 ## Number of languages
 
-<div style="overflow-y: scroll; height:600px;" id="datawrapper-vis-WPByl"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WPByl/embed.js" charset="utf-8" data-target="#datawrapper-vis-WPByl"></script><noscript><img src="https://datawrapper.dwcdn.net/WPByl/full.png" alt="This split bar chart shows the image reuse percentage (being the fraction of available images on Wikimedia Commons that are actually used in Wikipedia articles) for all partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
+<div style="min-height:3097px" id="datawrapper-vis-WPByl"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WPByl/embed.js" charset="utf-8" data-target="#datawrapper-vis-WPByl"></script><noscript><img src="https://datawrapper.dwcdn.net/WPByl/full.png" alt="The last column of this split bar chart shows the number Wikipedia language versions that contain images from partner institutions of the Netwerk Digitaal Erfgoed (NDE, the Dutch network for digital heritage). With only 266 images, the IISG illustrates 2411 articles in 195 languages! Date: 4 September 2024" /></noscript></div>
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
