@@ -46,11 +46,18 @@ xxxxxxxxxxxxxxxxx
 
 <div style="min-height:666px" id="datawrapper-vis-cBG3d"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/cBG3d/embed.js" charset="utf-8" data-target="#datawrapper-vis-cBG3d"></script><noscript><img src="https://datawrapper.dwcdn.net/cBG3d/full.png" alt="This table shows the variety of Wikipedia articles and languages illustrated by NDE partner images, where NDE stand for the Netwerk Digitaal Erfgoed, the Dutch network for digital heritage." /></noscript></div>
 
-<small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTMLreports/forDatawrapper/GLAMorousToHTML_top3_articles_with_most_images_by_institution_04092024_-_forDatawrapper.xlsx)*</small>
+<small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_top3_articles_with_most_images_by_institution_04092024_-_forDatawrapper.xlsx)*</small>
  
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+top 5 van meest voorkomedne talen per instelling - reeks van donut-digrammen
+
 xxxxxxxxxxxxxxxxxxxxxxxx 
 
   * Wele GLAMS hebben het meeste aertiekel in het Engels, NLS, Frans en andere talen...s
+
+
+----------------------------------------
 
 ## Topics/outline data story 3 - zoom in on key figures
 Zoom in on NDE key figures - see datawrapper stuff below
@@ -92,11 +99,23 @@ Zoom in on NDE key figures - see datawrapper stuff below
 
 ## Number of collection images available on Wikimedia Commons - NDE partners
 adasd
-asdasd
-
-adasd
-
-adasd
 
 <div style="min-height:595px" id="datawrapper-vis-WPDUE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WPDUE/embed.js" charset="utf-8" data-target="#datawrapper-vis-WPDUE"></script><noscript><img src="https://datawrapper.dwcdn.net/WPDUE/full.png" alt="This chart shows the number of collection images available on Wikimedia Commons for the top 10 partners in the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
 
+<small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
+
+## Image reuse percentage - NDE partners
+
+<div style="min-height:3089px" id="datawrapper-vis-xUTUE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/xUTUE/embed.js" charset="utf-8" data-target="#datawrapper-vis-xUTUE"></script><noscript><img src="https://datawrapper.dwcdn.net/xUTUE/full.png" alt="This split bar chart shows the image reuse percentage (being the fraction of available images on Wikimedia Commons that are actually used in Wikipedia articles) for all partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
+
+<small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
+
+## Number of unique WP articles ilustrated by NDe parnte images - NDE partners
+
+<div style="min-height:656px" id="datawrapper-vis-0epXW"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/0epXW/embed.js" charset="utf-8" data-target="#datawrapper-vis-0epXW"></script><noscript><img src="https://datawrapper.dwcdn.net/0epXW/full.png" alt="This donut chart shows the number of unique Wikipedia articles (all language versions) illustrated by images from the top 10 partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
+
+<small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
+
+## Number of languages
+
+## Breakdon per laguange - For English Wikipedia, wha are te top 10 of NE partners
