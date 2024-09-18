@@ -211,7 +211,7 @@ See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_time-fo
 * The Excel files names follow the same syntax as the HTML reports.
 * All Excel files live in the [*/data* folder](https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/data), and its subfolders.
 
-<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx" target="_blank"><image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_kb_excel_-04-09-2024.png" hspace="0" align="right"/></a>
+  <a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx" target="_blank"><image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/images/screenshot_kb_excel_-04-09-2024.png" hspace="0" align="right"/></a>
 <br clear="all"/> 
 
 * Taking [MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx)  as an example, the columns are a follows, see screenshot above:
@@ -239,7 +239,6 @@ Roughly speaking, these category trees can range between holding 'professional' 
 * Self-taken images uploaded (mostly) by community members: [Memorials Kamp Westerbork](https://commons.wikimedia.org/wiki/Category:Memorials_Kamp_Westerbork), [Airborne Museum Hartenstein](https://commons.wikimedia.org/wiki/Category:Airborne_Museum_Hartenstein) or [Discovery Museum Kerkrade](https://commons.wikimedia.org/wiki/Category:Industrion).
 
 So, in the context of the GLAMorousToHTML tool, when we speak about "images from museum X" or "images related to library Y", or "archive Z and its images", we need to take the above distinctions into account, avoiding to falsely imply or claim ownership and/or credits over images that were not taken and/or uploaded by that GLAM itself. And of course we only refer to images that are available on Wikimedia Commons!  
-
 
 ### Accuracy and overshooting of category trees
 When defining the top-level category to be used as input for generating a report, we first look for 
