@@ -1,9 +1,78 @@
 # Test story for embedding interactive datawrapper charts.
 
+Outline of this article series on NDE-GLAMorousToHTML
+
+Which DATA STORIES do I want to tell ? 
+
+## Intended audiences
+* NDE-network
+* GLAM-Wiki-community
+* Other data/glam/science professionals
+
+## Aim of this aticle series, what messages do I want to covey?
+1. ff
+2. ff
+3. ff
+
+## Topics/outline story 1 // Introduction
+
+* Overall intro : glams digitise images, they want to images to be seen py as many peole as pooosb, public outreach out. Wikipedia is  very effective vehicle to sprea yur image arounmd the worls (as can be seen im the GLAM report) , and have them seen by many people, as WP is a very wll visited website
+* Felt the need to get more inssights/understaning into how collection are used via WMC and WP
+* What things are relevant to measure --> see 9 points in README --> key figures
+* Method: GLAMorousToHRML Tool
+* Explain about catyegory TREEES, and that the not always are accurate capturing pure COLLECTION-related images --> see section I alread wrote 
+* Startted experiments by KB report, see aricle below
+* then USA, Scandinavia an NZ & Austrlaoa
+* Scaled up to NDE, the Netherlands
+
+## Topics/outline data story 2 - focuissed on articles & languages
+* Explain about what NDE is, and partners
+Visuialisaties obv Obv data/nde/aggrgated/excelfile..
+
+
+* Created reports for all NDE-partners that have presence on WMCommons. Precense can be from Image contributed both by glam itself (example) and the wiki-commuinty members (give eamples), or a mox of both. -> see section I alread wrote 
+* Use of collection images in templates, thumbs of Van Gogh used to ilustrate all WPaertiocles about art (bv van Gogh museum) --> Van Gogh as a meta-icooneeld voor alle schilderkubnst (vgl de natuurkuindige Einstein als icoon-beedel voor alle wetenschappers) 
+of zie /site/nde/ImagesfromtheTropenmuseum_Wikipedia_NS0_04092024.html, sjabllon linkonder elke pigina -> see section I alread wrote 
+
+* Zoom in on NDE reports- Wikipeia articles & languiages
+
+* article tiopics and institutins: it is not very surpriseing to see images from the van Ggh museum being used in articles rlated to van Gogh
+* Which surprisuing articles are there, of which you don not expext right away that an instutition can prvide illustrations about that topic?
+
+* Datawrapper visualsatiew maken voor - obv data/aggregated/all_NDE_partners_Wikipedia_NS0_04092024.xlsx
+  * Voor elke NDE-instituut: varietein in grootste taalversie, totaal aantal talen, zoom in op de top 5 van meest voorkomedne talen --> zegt iets over internationaal bereik --> korte analyse  
+  
+xxxxxxxxxxxxxxxxx
+
+<div style="min-height:666px" id="datawrapper-vis-cBG3d"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/cBG3d/embed.js" charset="utf-8" data-target="#datawrapper-vis-cBG3d"></script><noscript><img src="https://datawrapper.dwcdn.net/cBG3d/full.png" alt="This table shows the variety of Wikipedia articles and languages illustrated by NDE partner images, where NDE stand for the Netwerk Digitaal Erfgoed, the Dutch network for digital heritage." /></noscript></div>
+
+[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTMLreports/forDatawrapper/GLAMorousToHTML_top3_articles_with_most_images_by_institution_04092024_-_forDatawrapper.xlsx)
+ 
+xxxxxxxxxxxxxxxxxxxxxxxx 
+
+  * Wele GLAMS hebben het meeste aertiekel in het Engels, NLS, Frans en andere talen...s
+
+## Topics/outline data story 3 - zoom in on key figures
+Zoom in on NDE key figures - see datawrapper stuff below
+
+------------------------
+
+## Related articles by myself
+* KB specific
+  * [Reuse indicators for KB images in Wikipedia and Wikimedia Commons, the 2023 update](https://github.com/KBNLwikimedia/KB-Wiki-Stats-Graphs/blob/master/stories/Reuse%20indicators%20for%20KB%20images%20in%20Wikipedia%20and%20Wikimedia%20Commons%2C%20the%202023%20update.md), January 2024.
+  * [Three reuse indicators for KB images in Wikipedia and Wikimedia Commons, in a historical perspective (2013-2022)](https://github.com/KBNLwikimedia/KB-Wiki-Stats-Graphs/blob/master/stories/Three%20reuse%20indicators%20for%20KB%20images%20in%20Wikipedia%20and%20Wikimedia%20Commons%2C%20in%20a%20historical%20perspective%20(2013-2022).md), December 2022.
+  * [Public outreach and reuse of KB images via Wikipedia, 2014-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/Public%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.html), December 2022.
+
+--------------
+
 ## Wikimedia image reuse key figures - NDE partners
 
 <div style="min-height:719px" id="datawrapper-vis-1wP5w"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/1wP5w/embed.js" charset="utf-8" data-target="#datawrapper-vis-1wP5w"></script><noscript><img src="https://datawrapper.dwcdn.net/1wP5w/full.png" alt="This chart shows the number of collection images available on Wikimedia Commons for the top 10 partners in the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
 <br/>
+
+Raw data used as input for Datawrapper visualisation : https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx
+
+
 
 <small>Columns explained:</small> 
 
@@ -20,6 +89,8 @@
 * <small>**Full report URL**: Link to the full report.</small>
 * <small>**Excel URL**: Link to the corresponding Excel file. This file shows which exact images are used per article.</small>
 
+------------------------
+
 ## Number of collection images available on Wikimedia Commons - NDE partners
 adasd
 asdasd
@@ -29,3 +100,4 @@ adasd
 adasd
 
 <div style="min-height:595px" id="datawrapper-vis-WPDUE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WPDUE/embed.js" charset="utf-8" data-target="#datawrapper-vis-WPDUE"></script><noscript><img src="https://datawrapper.dwcdn.net/WPDUE/full.png" alt="This chart shows the number of collection images available on Wikimedia Commons for the top 10 partners in the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
+
