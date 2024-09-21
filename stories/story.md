@@ -132,7 +132,7 @@ This chart says sometg9nh abiout th NUMBER of langueage, but doeis nor details w
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
-
+<div style="min-height:1397px" id="datawrapper-vis-GFfRB"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/GFfRB/embed.js" charset="utf-8" data-target="#datawrapper-vis-GFfRB"></script><noscript><img src="https://datawrapper.dwcdn.net/GFfRB/full.png" alt="Number of articles illustrated by images from NDE institutions, per Wikipedia language version, per NDE institution" /></noscript></div>
 
 ## Average image reuse
 
