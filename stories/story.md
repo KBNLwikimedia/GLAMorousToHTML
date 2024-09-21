@@ -120,16 +120,19 @@ adasd
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
+This chart says sometg9nh abiout th NUMBER of langueage, but doeis nor details which langagues
+, zoom in op de top 5 van meest voorkomedne talen --> zegt iets over internationaal bereik
+
+<div style="min-height:690px" id="datawrapper-vis-SFuPV"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/SFuPV/embed.js" charset="utf-8" data-target="#datawrapper-vis-SFuPV"></script><noscript><img src="https://datawrapper.dwcdn.net/SFuPV/full.png" alt="This donut chart shows the number of unique Wikipedia articles in Dutch illustrated by images from the top 10 partner institutions of the Netwerk Digitaal Erfgoed (NDE, the Dutch network for digital heritage). Please note that the overall total of 27.427 unique articles is smaller than the sum of all individual totals, as images from multiple different NDE institutions can illustrate the same article. Date: 4 September 2024" /></noscript></div>
+
+
 ## Number of languages
 
 <div style="min-height:3097px" id="datawrapper-vis-WPByl"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WPByl/embed.js" charset="utf-8" data-target="#datawrapper-vis-WPByl"></script><noscript><img src="https://datawrapper.dwcdn.net/WPByl/full.png" alt="The last column of this split bar chart shows the number Wikipedia language versions that contain images from partner institutions of the Netwerk Digitaal Erfgoed (NDE, the Dutch network for digital heritage). With only 266 images, the IISG illustrates 2411 articles in 195 languages! Date: 4 September 2024" /></noscript></div>
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
-This chart says sometg9nh abiout th NUMBER of langueage, but doeis nor details which langagues
-, zoom in op de top 5 van meest voorkomedne talen --> zegt iets over internationaal bereik
 
-<div style="min-height:690px" id="datawrapper-vis-SFuPV"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/SFuPV/embed.js" charset="utf-8" data-target="#datawrapper-vis-SFuPV"></script><noscript><img src="https://datawrapper.dwcdn.net/SFuPV/full.png" alt="This donut chart shows the number of unique Wikipedia articles in Dutch illustrated by images from the top 10 partner institutions of the Netwerk Digitaal Erfgoed (NDE, the Dutch network for digital heritage). Please note that the overall total of 27.427 unique articles is smaller than the sum of all individual totals, as images from multiple different NDE institutions can illustrate the same article. Date: 4 September 2024" /></noscript></div>
 
 ## Average image reuse
 
