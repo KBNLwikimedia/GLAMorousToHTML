@@ -14,6 +14,12 @@ Which DATA STORIES do I want to tell ?
 2. ff
 3. ff
 
+Vier groepen datavioz
+1. IMAGES - 
+2. ARTICLES - 
+3. INSTITUTIONS - 
+4.  LANGAUGES - 
+
 ## Topics/outline story 1 // Introduction
 
 * Overall intro : glams digitise images, they want to images to be seen py as many peole as pooosb, public outreach out. Wikipedia is  very effective vehicle to sprea yur image arounmd the worls (as can be seen im the GLAM report) , and have them seen by many people, as WP is a very wll visited website
@@ -50,15 +56,13 @@ xxxxxxxxxxxxxxxxx
  
 XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-top 5 van meest voorkomedne talen per instelling - reeks van donut-digrammen
-
 xxxxxxxxxxxxxxxxxxxxxxxx 
 
   * Wele GLAMS hebben het meeste aertiekel in het Engels, NLS, Frans en andere talen...s
   * 
-## Breakdon per laguange - For English Wikipedia, wha are te top 10 of NE partners
+## Breakdon per laguange - For English Wikipedia, wha are te top 10 of NE partners --> gedaan
 
-Top 10 og most used image across all NEd partners --> Image of Karl Marx from IISG? Or imaage thumbs in template contamindatee articles?
+1. IMAGES - Top 10 og most used image across all NEd partners --> Image of Karl Marx from IISG? Or imaage thumbs in template contamindatee articles?
 
 ----------------------------------------
 
@@ -101,20 +105,20 @@ Zoom in on NDE key figures - see datawrapper stuff below
 
 ------------------------
 
-## Number of collection images available on Wikimedia Commons - NDE partners
+## 1. IMAGES - Number of collection images available on Wikimedia Commons - NDE partners
 adasd
 
 <div style="min-height:644px" id="datawrapper-vis-WPDUE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WPDUE/embed.js" charset="utf-8" data-target="#datawrapper-vis-WPDUE"></script><noscript><img src="https://datawrapper.dwcdn.net/WPDUE/full.png" alt="This donut chart shows the number of collection images available on Wikimedia Commons for the top 10 partner institutions in the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
-## Image reuse percentage - NDE partners
+## 1. IMAGES - Image reuse percentage - NDE partners
 
 <div style="height:600px" id="datawrapper-vis-xUTUE"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/xUTUE/embed.js" charset="utf-8" data-target="#datawrapper-vis-xUTUE"></script><noscript><img src="https://datawrapper.dwcdn.net/xUTUE/full.png" alt="This split bar chart shows the image reuse percentage (being the fraction of available images on Wikimedia Commons that are actually used in Wikipedia articles) for all partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
-## Number of unique WP articles ilustrated by NDe parnte images - NDE partners
+## 2. ARTICLES - Number of unique WP articles ilustrated by NDe parnte images - NDE partners
 
 <div style="min-height:670px"  style="overflow:scroll; height:400px;" id="datawrapper-vis-0epXW"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/0epXW/embed.js" charset="utf-8" data-target="#datawrapper-vis-0epXW"></script><noscript><img src="https://datawrapper.dwcdn.net/0epXW/full.png" alt="This donut chart shows the number of unique Wikipedia articles (all language versions) illustrated by images from the top 10 partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage. Please note that the overall total of 172.290 unique articles is smaller than the sum of all individual totals, as images from multiple different NDE institutions can illustrate the same article." /></noscript></div>
 
@@ -126,7 +130,8 @@ This chart says sometg9nh abiout th NUMBER of langueage, but doeis nor details w
 <div style="min-height:808px" id="datawrapper-vis-SFuPV"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/SFuPV/embed.js" charset="utf-8" data-target="#datawrapper-vis-SFuPV"></script><noscript><img src="https://datawrapper.dwcdn.net/SFuPV/full.png" alt="These donut charts show a breakdown of the number of articles in the six Wikipedia language versions most illustrated by images from the partner institutions of the Netwerk Digitaal Erfgoed (NDE, the Dutch network for digital heritage). These languages are Dutch, English, German, French, Italian and Indonesian. For each donut a maximun of 8 institutions are shown. Date: 4 September 2024" /></noscript></div>
 
 
-## Number of languages
+
+## 4.  LANGAUGES - Number of languages
 
 <div style="min-height:3097px" id="datawrapper-vis-WPByl"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WPByl/embed.js" charset="utf-8" data-target="#datawrapper-vis-WPByl"></script><noscript><img src="https://datawrapper.dwcdn.net/WPByl/full.png" alt="The last column of this split bar chart shows the number Wikipedia language versions that contain images from partner institutions of the Netwerk Digitaal Erfgoed (NDE, the Dutch network for digital heritage). With only 266 images, the IISG illustrates 2411 articles in 195 languages! Date: 4 September 2024" /></noscript></div>
 
@@ -134,7 +139,7 @@ This chart says sometg9nh abiout th NUMBER of langueage, but doeis nor details w
 
 <div style="min-height:1397px" id="datawrapper-vis-GFfRB"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/GFfRB/embed.js" charset="utf-8" data-target="#datawrapper-vis-GFfRB"></script><noscript><img src="https://datawrapper.dwcdn.net/GFfRB/full.png" alt="Number of articles illustrated by images from NDE institutions, per Wikipedia language version, per NDE institution" /></noscript></div>
 
-## Average image reuse
+## 1. IMAGES - Average image reuse
 
 <div style="min-height:3182px" id="datawrapper-vis-icEaG"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/icEaG/embed.js" charset="utf-8" data-target="#datawrapper-vis-icEaG"></script><noscript><img src="https://datawrapper.dwcdn.net/icEaG/full.png" alt="The last column of this split bar chart shows the average number of times a single image from an NDE partner institution is used to illustrate a Wikipedia article. This number is 'Total usages' divided by 'Distinct images used'. This is a measure for the outreach effectiveness of the images that are used in Wikipedia articles. For example, if we look at the Wereldmuseum Rotterdam we see that only 3 of their images show up in articles 79 times, resulting in an average image reuse of 79/3 = 26.33. These couple of images are very effective in their reach! At the other end of the spectrum is the Rijksdienst voor het Cultureel Erfgoed; their 23.471 distinct images 'only' have 31.955 usages, making this number equal 1.36. Date: 4 September 2024" /></noscript></div>
 
