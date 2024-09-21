@@ -55,6 +55,8 @@ top 5 van meest voorkomedne talen per instelling - reeks van donut-digrammen
 xxxxxxxxxxxxxxxxxxxxxxxx 
 
   * Wele GLAMS hebben het meeste aertiekel in het Engels, NLS, Frans en andere talen...s
+  * 
+## Breakdon per laguange - For English Wikipedia, wha are te top 10 of NE partners
 
 Top 10 og most used image across all NEd partners --> Image of Karl Marx from IISG? Or imaage thumbs in template contamindatee articles?
 
@@ -84,17 +86,18 @@ Zoom in on NDE key figures - see datawrapper stuff below
 <small>Columns explained:</small> 
 
 * <small>**Full institution name**: The full/official name of the institution</small> 
+* <small>**Full report URL**: Link to the full report.</small>
+* <small>**Excel URL**: Link to the corresponding Excel file. This file shows which exact images are used per article.</small>
 * <small>**Commons category**: The main category on Wikimedia Commons containing the images related to the (collections of the) institution.</small>
 * <small>**Category depth**: The level of subcategories that are taken into account. 0 = no subcategories, only images in the main category are used; 1 = all first level subcategories, etc.</small>
 * <small>**Total images available**: The total number of images available in the main Commons category and its tree of subcategories, as specified by the category depth.</small>
 * <small>**Distinct images used**: The unique/distinct number of images from this category tree that are used in Wikipedia articles (all language versions).</small>
 * <small>**Image reuse percentage**: The percentage of the available images that are actually used in Wikipedia articles. This is 'Distinct images used' divided by 'Total images available'. This is a measure for the uptake of the images.</small>
-* <small>**Distinct articles**: The number of unique/distinct Wikipedia articles (all language versions) that are illustrated by (one or more) images from the category tree.</small> 
-* <small>**Number of languages**: The number of Wikipedia language versions in which images from the category tree are used.</small> 
+* <small>**Unique WP articles**: The number of unique/distinct Wikipedia articles (all language versions) that are illustrated by (one or more) images from the category tree.</small> 
+* <small>**Number of WP languages**: The number of Wikipedia language versions in which images from the category tree are used.</small> 
 * <small>**Total usages**: The total number of times that images from the category tree show up in Wikipedia articles, in all language versions. This is different from 'Distinct articles', as a single image can illustrate multiple articles and v.v., one article can contain multiple images.</small> 
 * <small>**Average image reuse**: The average number of times a single image is used to illustrate an article. This is 'Total usages' divided by 'Distinct images used'. This is a measure for the outreach effectiveness of the images that are used in Wikipedia articles. For example, if we look at the [Wereldmuseum Rotterdam](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/WereldmuseumRotterdam_Wikipedia_NS0_04092024.html), we see that only 3 of their images show up in articles 79 times, resulting in an average image reuse of 79/3 = 26.33. These couple of images are very effective in their reach and are seen worldwide! At the other end of the spectrum is the [Rijksdienst voor het Cultureel Erfgoed](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ImagesfromtheRijksdienstvoorhetCultureelErfgoed_Wikipedia_NS0_04092024.html); their 23.471 distinct images 'only' have 31.955 usages, making this number equal 1.36.</small>
-* <small>**Full report URL**: Link to the full report.</small>
-* <small>**Excel URL**: Link to the corresponding Excel file. This file shows which exact images are used per article.</small>
+
 
 ------------------------
 
@@ -113,7 +116,7 @@ adasd
 
 ## Number of unique WP articles ilustrated by NDe parnte images - NDE partners
 
-<div style="min-height:670px"  style="overflow:scroll; height:400px;" id="datawrapper-vis-0epXW"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/0epXW/embed.js" charset="utf-8" data-target="#datawrapper-vis-0epXW"></script><noscript><img src="https://datawrapper.dwcdn.net/0epXW/full.png" alt="This donut chart shows the number of unique Wikipedia articles (all language versions) illustrated by images from the top 10 partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage." /></noscript></div>
+<div style="min-height:670px"  style="overflow:scroll; height:400px;" id="datawrapper-vis-0epXW"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/0epXW/embed.js" charset="utf-8" data-target="#datawrapper-vis-0epXW"></script><noscript><img src="https://datawrapper.dwcdn.net/0epXW/full.png" alt="This donut chart shows the number of unique Wikipedia articles (all language versions) illustrated by images from the top 10 partner institutions of the Netwerk Digitaal Erfgoed (NDE), the Dutch network for digital heritage. Please note that the overall total of 172.290 unique articles is smaller than the sum of all individual totals, as images from multiple different NDE institutions can illustrate the same article." /></noscript></div>
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
@@ -123,9 +126,10 @@ adasd
 
 <small>*[Raw data used as input for this Datawrapper visualisation](https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/forDatawrapper/GLAMorousToHTML_keyfigures_NDE_04092024_-_forDatawrapper.xlsx)*</small>
 
+This chart says sometg9nh abiout th NUMBER of langueage, but doeis nor details which langagues
+, zoom in op de top 5 van meest voorkomedne talen --> zegt iets over internationaal bereik
 
-## Breakdon per laguange - For English Wikipedia, wha are te top 10 of NE partners
-
+<div style="max-height:200px" id="datawrapper-vis-SFuPV"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/SFuPV/embed.js" charset="utf-8" data-target="#datawrapper-vis-SFuPV"></script><noscript><img src="https://datawrapper.dwcdn.net/SFuPV/full.png" alt="This donut chart shows the number of unique Wikipedia articles in Dutch illustrated by images from the top 10 partner institutions of the Netwerk Digitaal Erfgoed (NDE, the Dutch network for digital heritage). Please note that the overall total of 27.427 unique articles is smaller than the sum of all individual totals, as images from multiple different NDE institutions can illustrate the same article. Date: 4 September 2024" /></noscript></div>
 
 ## Average image reuse
 
