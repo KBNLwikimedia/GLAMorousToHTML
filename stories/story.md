@@ -129,7 +129,7 @@ adasd
 This chart says sometg9nh abiout th NUMBER of langueage, but doeis nor details which langagues
 , zoom in op de top 5 van meest voorkomedne talen --> zegt iets over internationaal bereik
 
-<div style="max-height:200px" id="datawrapper-vis-SFuPV"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/SFuPV/embed.js" charset="utf-8" data-target="#datawrapper-vis-SFuPV"></script><noscript><img src="https://datawrapper.dwcdn.net/SFuPV/full.png" alt="This donut chart shows the number of unique Wikipedia articles in Dutch illustrated by images from the top 10 partner institutions of the Netwerk Digitaal Erfgoed (NDE, the Dutch network for digital heritage). Please note that the overall total of 27.427 unique articles is smaller than the sum of all individual totals, as images from multiple different NDE institutions can illustrate the same article. Date: 4 September 2024" /></noscript></div>
+<div style="min-height:690px" id="datawrapper-vis-SFuPV"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/SFuPV/embed.js" charset="utf-8" data-target="#datawrapper-vis-SFuPV"></script><noscript><img src="https://datawrapper.dwcdn.net/SFuPV/full.png" alt="This donut chart shows the number of unique Wikipedia articles in Dutch illustrated by images from the top 10 partner institutions of the Netwerk Digitaal Erfgoed (NDE, the Dutch network for digital heritage). Please note that the overall total of 27.427 unique articles is smaller than the sum of all individual totals, as images from multiple different NDE institutions can illustrate the same article. Date: 4 September 2024" /></noscript></div>
 
 ## Average image reuse
 
