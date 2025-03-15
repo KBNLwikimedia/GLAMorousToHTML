@@ -18,7 +18,7 @@ For the broader context, see the  [home page](https://github.com/KBNLwikimedia/G
 Currently, reports are available for the following GLAM institutions, countries and regions:
 
  * [KB, national library of the Netherlands](#kb-national-library-of-the-netherlands)
-   * [Delpher](#delpher) 
+   * [Delpher](#media-from-delpher) 
  * [The Netherlands](#the-netherlands)
    * [Selected institutions](#selected-institutions)
    * [Netwerk Digitaal Erfgoed (NDE)](reports_nde.md), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
@@ -55,9 +55,9 @@ Currently, reports are available for the following GLAM institutions, countries 
   * [16-02-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16022022.html), related to [this analysis](https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief/Resultaten/KPIs/KPI4/KPI4_KB_16-02-2022) on Dutch Wikipedia dd 16-02-2022
   * [27-01-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_27012022.html) 
 
-### Delpher
+### Media from Delpher
 
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_delpher.jpg" width="100" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_delpher.jpg" width="200" hspace="10" align="right"/>
 
 * Input: Commons category = [Media from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)
 * Reports for : 
