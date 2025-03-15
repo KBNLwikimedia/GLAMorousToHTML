@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok Style Portrait Viewer</title>
+    <title>Portraits from the collections of KB, national library of the Netherlands</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -32,11 +32,11 @@
         .top-overlay {
             position: absolute;
             top: 15px;
-            left: 0;
+            left: 0px;
             width: 100%;
             background: rgba(0, 0, 0, 0.6);
-            padding: 5px 10px;
-            font-size: 14px;
+            padding: 5px 5px;
+            font-size: 16px;
             text-align: center;
             display: flex;
             align-items: center;
@@ -47,10 +47,11 @@
         .top-overlay img {
             width: 50px;
             height: auto;
+            //filter: brightness(0) saturate(100%) invert(59%) sepia(43%) saturate(610%) hue-rotate(322deg) brightness(96%) contrast(90%);
         }
         .overlay {
             position: absolute;
-            top: 75%;
+            top: 80%;
             left: 0;
             width: 100%;
             background: rgba(0, 0, 0, 0.7);
@@ -107,7 +108,7 @@
                         <i>Portraits from the collections of KB, national library of the Netherlands</i>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/103px-Wikipedia-logo-v2.svg.png" alt="Wikipedia Logo">
                     </div>
-                    <img src="${portrait.imageUrl}" alt="Portrait">
+                    <img src="${portrait.imageUrl}" alt="Portrait of ${portrait.title}">
                     <div class="overlay">
                         <h2>
                             <a href="${portrait.wikipediaLink}" target="_blank">${portrait.title}</a>
@@ -143,9 +144,9 @@
             const diffY = startY - endY;
 
             if (diffY > 50) {
-                previousPortrait();
-            } else if (diffY < -50) {
                 nextRandomPortrait();
+            } else if (diffY < -50) {
+                previousPortrait();
             }
         });
 
