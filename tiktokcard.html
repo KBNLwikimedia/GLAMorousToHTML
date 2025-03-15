@@ -3,47 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinder Style Portrait Viewer</title>
+    <title>TikTok Style Portrait Viewer</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
             background-color: #000;
             color: white;
             font-family: 'Arial', sans-serif;
-        }
-        .card-container {
-            position: relative;
-            width: 300px;
-            height: 500px;
-        }
-        .portrait-card {
-            width: 100%;
-            height: 100%;
-            background-color: #1e1e1e;
-            border-radius: 15px;
             overflow: hidden;
-            position: absolute;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            height: 100vh;
+        }
+        .tiktok-card {
+            width: 100%;
+            height: 100vh;
+            background-color: #1e1e1e;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: transform 0.3s ease, opacity 0.3s ease;
         }
-        .portrait-card img {
+        .tiktok-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        .logo-overlay {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            width: 50px;
-            opacity: 0.8;
         }
         .top-overlay {
             position: absolute;
@@ -63,18 +46,46 @@
             background: rgba(0, 0, 0, 0.7);
             padding: 10px;
             box-sizing: border-box;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            text-align: center;
         }
-        .overlay h2 a {
+        .overlay h2 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .overlay a {
             color: #1db954;
             text-decoration: none;
+        }
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 5px solid #1e1e1e;
+            border-top: 5px solid #1db954;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <div class="card-container" id="card-container"></div>
+    <div id="loading" class="loading"></div>
+    <div id="portrait-container" style="display:none"></div>
 
     <script>
         let portraits = [];
+        let history = [];
+        let currentIndex = -1;
+        let startY = 0;
 
         async function fetchPortraits(cmcontinue = '') {
             const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:Portraits_from_Koninklijke_Bibliotheek&cmtype=file&cmlimit=500&format=json&origin=*${cmcontinue ? `&cmcontinue=${cmcontinue}` : ''}`;
@@ -84,38 +95,63 @@
             if (data.continue && data.continue.cmcontinue) {
                 await fetchPortraits(data.continue.cmcontinue);
             } else {
-                loadCards();
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('portrait-container').style.display = 'block';
+                nextPortrait();
             }
         }
 
-        function loadCards() {
-            const container = document.getElementById('card-container');
-            portraits.reverse().forEach(portrait => {
-                const card = document.createElement('div');
-                card.classList.add('portrait-card');
+        function displayPortrait(portrait) {
+            const imageUrl = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(portrait.title.replace('File:', ''))}`;
+            const pageUrl = `https://commons.wikimedia.org/wiki/${encodeURIComponent(portrait.title)}`;
+            const title = portrait.title.replace('File:', '').replace(/_/g, ' ').replace(/\.[^/.]+$/, "");
 
-                const imageUrl = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(portrait.title.replace('File:', ''))}`;
-                const pageUrl = `https://commons.wikimedia.org/wiki/${encodeURIComponent(portrait.title)}`;
-                const title = portrait.title.replace('File:', '').replace(/_/g, ' ').replace(/\.[^/.]+$/, "");
-
-                card.innerHTML = `
+            const container = document.getElementById('portrait-container');
+            container.innerHTML = `
+                <div class="tiktok-card">
                     <div class="top-overlay">Portrait from Koninklijke Bibliotheek</div>
                     <img src="${imageUrl}" alt="Portrait">
-                    <img class="logo-overlay" src="https://www.kb.nl/sites/default/files/styles/paragraph/public/images/kb-nationale-bibliotheek-rgb-zwart.webp?h=9c8aad59&itok=fJx4dafj" alt="KB Logo">
                     <div class="overlay">
                         <h2><a href="${pageUrl}" target="_blank">${title}</a></h2>
                     </div>
-                `;
-
-                card.addEventListener('click', () => {
-                    card.style.transform = 'translateX(500px) rotate(20deg)';
-                    card.style.opacity = '0';
-                    setTimeout(() => card.remove(), 300);
-                });
-
-                container.appendChild(card);
-            });
+                </div>`;
         }
+
+        function nextPortrait() {
+            const randomIndex = Math.floor(Math.random() * portraits.length);
+            history.push(randomIndex);
+            currentIndex = history.length - 1;
+            displayPortrait(portraits[randomIndex]);
+        }
+
+        function previousPortrait() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                displayPortrait(portraits[history[currentIndex]]);
+            }
+        }
+
+        window.addEventListener('wheel', (event) => {
+            if (event.deltaY > 0) {
+                nextPortrait();
+            } else if (event.deltaY < 0) {
+                previousPortrait();
+            }
+        });
+
+        window.addEventListener('touchstart', (event) => {
+            startY = event.touches[0].clientY;
+        });
+
+        window.addEventListener('touchend', (event) => {
+            const endY = event.changedTouches[0].clientY;
+            const diffY = startY - endY;
+            if (diffY > 50) {
+                nextPortrait();
+            } else if (diffY < -50) {
+                previousPortrait();
+            }
+        });
 
         // Initial fetch
         fetchPortraits();
