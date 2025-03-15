@@ -45,7 +45,7 @@ That is why we developed the GLAMorousToHTML tool. It takes the [XML-output of t
 
 The GLAMorousToHTML tool has so for produced [GLAM reports](reports/reports.md) for the following heritage institutions, countries and regions:
 
-* [KB, national library of the Netherlands](reports/reports.md#kb-national-library-of-the-netherlands)
+* [KB, national library of the Netherlands](reports/reports.md#kb-national-library-of-the-netherlands), including [Delpher](reports/reports.md#delpher)
 * [The Netherlands](reports/reports.md#the-netherlands)
   * [Selected institutions](reports/reports.md#selected-institutions)
   * [Netwerk Digitaal Erfgoed (NDE)](reports/reports_nde.md), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
