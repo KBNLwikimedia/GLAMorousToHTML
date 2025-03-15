@@ -73,20 +73,12 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            border-top-color: #EF6079;
-            border-radius: 50%;
-            animation: spin 1s infinite linear;
-        }
-        @keyframes spin {
-            to { transform: translate(-50%, -50%) rotate(360deg); }
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
-    <div id="loading" class="loading"></div>
+    <div id="loading" class="loading">Loading portraits...</div>
     <div id="portrait-container" style="display:none"></div>
 
     <script>
