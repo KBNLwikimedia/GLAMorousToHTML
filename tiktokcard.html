@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinder Style Portrait Viewer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .card-container {
+            position: relative;
+            width: 300px;
+            height: 500px;
+        }
+        .portrait-card {
+            width: 100%;
+            height: 100%;
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            overflow: hidden;
+            position: absolute;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .portrait-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .logo-overlay {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            width: 50px;
+            opacity: 0.8;
+        }
+        .top-overlay {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .overlay h2 a {
+            color: #1db954;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container" id="card-container"></div>
+
+    <script>
+        let portraits = [];
+
+        async function fetchPortraits(cmcontinue = '') {
+            const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:Portraits_from_Koninklijke_Bibliotheek&cmtype=file&cmlimit=500&format=json&origin=*${cmcontinue ? `&cmcontinue=${cmcontinue}` : ''}`;
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            portraits = portraits.concat(data.query.categorymembers);
+            if (data.continue && data.continue.cmcontinue) {
+                await fetchPortraits(data.continue.cmcontinue);
+            } else {
+                loadCards();
+            }
+        }
+
+        function loadCards() {
+            const container = document.getElementById('card-container');
+            portraits.reverse().forEach(portrait => {
+                const card = document.createElement('div');
+                card.classList.add('portrait-card');
+
+                const imageUrl = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(portrait.title.replace('File:', ''))}`;
+                const pageUrl = `https://commons.wikimedia.org/wiki/${encodeURIComponent(portrait.title)}`;
+                const title = portrait.title.replace('File:', '').replace(/_/g, ' ').replace(/\.[^/.]+$/, "");
+
+                card.innerHTML = `
+                    <div class="top-overlay">Portrait from Koninklijke Bibliotheek</div>
+                    <img src="${imageUrl}" alt="Portrait">
+                    <img class="logo-overlay" src="https://www.kb.nl/sites/default/files/styles/paragraph/public/images/kb-nationale-bibliotheek-rgb-zwart.webp?h=9c8aad59&itok=fJx4dafj" alt="KB Logo">
+                    <div class="overlay">
+                        <h2><a href="${pageUrl}" target="_blank">${title}</a></h2>
+                    </div>
+                `;
+
+                card.addEventListener('click', () => {
+                    card.style.transform = 'translateX(500px) rotate(20deg)';
+                    card.style.opacity = '0';
+                    setTimeout(() => card.remove(), 300);
+                });
+
+                container.appendChild(card);
+            });
+        }
+
+        // Initial fetch
+        fetchPortraits();
+    </script>
+</body>
+</html>
