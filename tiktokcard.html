@@ -31,139 +31,94 @@
         .top-overlay {
             position: absolute;
             top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
+            width: 100%;
             background: rgba(0, 0, 0, 0.6);
             padding: 5px 10px;
-            border-radius: 5px;
             font-size: 14px;
+            text-align: center;
         }
         .overlay {
             position: absolute;
             top: 90%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            left: 0;
+            width: 100%;
             background: rgba(0, 0, 0, 0.7);
             padding: 10px;
             box-sizing: border-box;
-            border-radius: 10px;
             text-align: center;
         }
-        .overlay h2 {
+        .overlay h2, .overlay p {
             margin: 0;
-            font-size: 16px;
-            font-weight: bold;
         }
         .overlay a {
             color: #1db954;
             text-decoration: none;
         }
-        .loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 5px solid #1e1e1e;
-            border-top: 5px solid #1db954;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            z-index: 10;
-        }
-        @keyframes spin {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        #debug {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            color: lime;
+            padding: 5px;
+            z-index: 100;
+            max-width: 90%;
+            overflow-x: auto;
         }
     </style>
 </head>
 <body>
     <div id="loading" class="loading"></div>
     <div id="portrait-container" style="display:none"></div>
+    <div id="debug"></div>
 
     <script>
         let portraits = [];
-        let history = [];
         let currentIndex = -1;
-        let startY = 0;
-        let startX = 0;
 
-        async function fetchPortraits(cmcontinue = '') {
-            const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:Portraits_from_Koninklijke_Bibliotheek&cmtype=file&cmlimit=500&format=json&origin=*${cmcontinue ? `&cmcontinue=${cmcontinue}` : ''}`;
-            const response = await fetch(apiUrl);
-            const data = await response.json();
-            portraits = portraits.concat(data.query.categorymembers);
-            if (data.continue && data.continue.cmcontinue) {
-                await fetchPortraits(data.continue.cmcontinue);
-            } else {
-                document.getElementById('loading').style.display = 'none';
+        function debugLog(message) {
+            document.getElementById('debug').innerHTML += `<div>${message}</div>`;
+        }
+
+        async function fetchPortraits() {
+            try {
+                const response = await fetch('tiktokcard-datacache.csv');
+                const text = await response.text();
+                const lines = text.split('\n').slice(1);
+
+                portraits = lines.map(line => {
+                    const [imageUrl, title, description, wikipediaLink] = line.split(',');
+                    return { imageUrl, title, description, wikipediaLink };
+                });
+
+                debugLog('Data loaded from cache file.');
                 document.getElementById('portrait-container').style.display = 'block';
                 nextPortrait();
+            } catch (error) {
+                console.error('Error loading CSV data:', error);
+                debugLog('Error: ' + error.message);
             }
         }
 
         function displayPortrait(portrait) {
-            document.getElementById('loading').style.display = 'block';
-            const imageUrl = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(portrait.title.replace('File:', ''))}`;
-            const pageUrl = `https://commons.wikimedia.org/wiki/${encodeURIComponent(portrait.title)}`;
-            const title = portrait.title.replace('File:', '').replace(/_/g, ' ').replace(/\.[^/.]+$/, "");
-
             const container = document.getElementById('portrait-container');
             container.innerHTML = `
                 <div class="tiktok-card">
                     <div class="top-overlay">Portrait from Koninklijke Bibliotheek</div>
-                    <img src="${imageUrl}" alt="Portrait" onload="document.getElementById('loading').style.display='none';">
+                    <img src="${portrait.imageUrl}" alt="Portrait">
                     <div class="overlay">
-                        <h2><a href="${pageUrl}" target="_blank">${title}</a></h2>
+                        <h2>${portrait.title}</h2>
+                        <p>${portrait.description}</p>
                     </div>
                 </div>`;
         }
 
         function nextPortrait() {
-            const randomIndex = Math.floor(Math.random() * portraits.length);
-            history.push(randomIndex);
-            currentIndex = history.length - 1;
-            displayPortrait(portraits[randomIndex]);
+            currentIndex = (currentIndex + 1) % portraits.length;
+            displayPortrait(portraits[currentIndex]);
         }
 
-        function previousPortrait() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                displayPortrait(portraits[history[currentIndex]]);
-            }
-        }
-
-        window.addEventListener('wheel', (event) => {
-            if (event.deltaY > 0) {
-                nextPortrait();
-            } else if (event.deltaY < 0) {
-                previousPortrait();
-            }
-        });
-
-        window.addEventListener('touchstart', (event) => {
-            startY = event.touches[0].clientY;
-            startX = event.touches[0].clientX;
-        });
-
-        window.addEventListener('touchend', (event) => {
-            const endY = event.changedTouches[0].clientY;
-            const endX = event.changedTouches[0].clientX;
-            const diffY = startY - endY;
-            const diffX = startX - endX;
-
-            if (diffY > 50) {
-                nextPortrait();
-            } else if (diffY < -50) {
-                if (currentIndex === 0) {
-                    location.reload();
-                } else {
-                    previousPortrait();
-                }
-            }
-        });
-
-        // Initial fetch
         fetchPortraits();
     </script>
 </body>
