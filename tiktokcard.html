@@ -75,7 +75,10 @@
 
     <script>
         let portraits = [];
+        let history = [];
         let currentIndex = -1;
+        let startX = 0;
+        let startY = 0;
 
         function debugLog(message) {
             document.getElementById('debug').innerHTML += `<div>${message}</div>`;
@@ -94,7 +97,7 @@
 
                 debugLog('Data loaded from cache file.');
                 document.getElementById('portrait-container').style.display = 'block';
-                nextPortrait();
+                nextRandomPortrait();
             } catch (error) {
                 console.error('Error loading CSV data:', error);
                 debugLog('Error: ' + error.message);
@@ -108,16 +111,53 @@
                     <div class="top-overlay">Portrait from Koninklijke Bibliotheek</div>
                     <img src="${portrait.imageUrl}" alt="Portrait">
                     <div class="overlay">
-                        <h2>${portrait.title}</h2>
+                        <h2><a href="${portrait.wikipediaLink}" target="_blank">${portrait.title}</a></h2>
                         <p>${portrait.description}</p>
                     </div>
                 </div>`;
         }
 
-        function nextPortrait() {
-            currentIndex = (currentIndex + 1) % portraits.length;
-            displayPortrait(portraits[currentIndex]);
+        function nextRandomPortrait() {
+            const randomIndex = Math.floor(Math.random() * portraits.length);
+            history.push(randomIndex);
+            currentIndex = history.length - 1;
+            displayPortrait(portraits[randomIndex]);
         }
+
+        function previousPortrait() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                displayPortrait(portraits[history[currentIndex]]);
+            }
+        }
+
+        window.addEventListener('touchstart', (event) => {
+            startX = event.touches[0].clientX;
+            startY = event.touches[0].clientY;
+        });
+
+        window.addEventListener('touchend', (event) => {
+            const endX = event.changedTouches[0].clientX;
+            const endY = event.changedTouches[0].clientY;
+            const diffX = startX - endX;
+            const diffY = startY - endY;
+
+            if (diffY > 50) {
+                nextRandomPortrait();
+            } else if (diffY < -50) {
+                previousPortrait();
+            } else if (diffX > 50) {
+                window.open(portraits[history[currentIndex]].wikipediaLink, '_blank');
+            }
+        });
+
+        window.addEventListener('wheel', (event) => {
+            if (event.deltaY < 0) {
+                nextRandomPortrait();
+            } else if (event.deltaY > 0) {
+                previousPortrait();
+            }
+        });
 
         fetchPortraits();
     </script>
