@@ -24,10 +24,12 @@
             justify-content: center;
             align-items: center;
         }
-        .tiktok-card img {
+        .zoomable {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            touch-action: none;
+            transition: transform 0.2s ease;
         }
         .top-overlay {
             position: absolute;
@@ -47,7 +49,6 @@
         .top-overlay img {
             width: 50px;
             height: auto;
-            //filter: brightness(0) saturate(100%) invert(59%) sepia(43%) saturate(610%) hue-rotate(322deg) brightness(96%) contrast(90%);
         }
         .overlay {
             position: absolute;
@@ -80,6 +81,8 @@
         let currentIndex = -1;
         let startX = 0;
         let startY = 0;
+        let scale = 1;
+        let initialDistance = 0;
 
         async function fetchPortraits() {
             try {
@@ -108,15 +111,17 @@
                         <i>Portraits from the collections of KB, national library of the Netherlands</i>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/103px-Wikipedia-logo-v2.svg.png" alt="Wikipedia Logo">
                     </div>
-                    <img src="${portrait.imageUrl}" alt="Portrait of ${portrait.title}">
+                    <img class="zoomable" src="${portrait.imageUrl}" alt="Portrait of ${portrait.title}">
                     <div class="overlay">
                         <h2>
                             <a href="${portrait.wikipediaLink}" target="_blank">${portrait.title}</a>
-                            <a href="${portrait.wikipediaLink}" target="_blank"></a>
                         </h2>
                         <p style="margin-top: 10px;">${portrait.description}</p>
                     </div>
                 </div>`;
+            const image = document.querySelector('.zoomable');
+            image.addEventListener('touchstart', handleTouchStart, { passive: false });
+            image.addEventListener('touchmove', handleTouchMove, { passive: false });
         }
 
         function nextRandomPortrait() {
@@ -131,6 +136,27 @@
                 currentIndex--;
                 displayPortrait(portraits[history[currentIndex]]);
             }
+        }
+
+        function handleTouchStart(event) {
+            if (event.touches.length === 2) {
+                initialDistance = getDistance(event.touches[0], event.touches[1]);
+            }
+        }
+
+        function handleTouchMove(event) {
+            if (event.touches.length === 2) {
+                event.preventDefault();
+                const currentDistance = getDistance(event.touches[0], event.touches[1]);
+                scale = currentDistance / initialDistance;
+                event.target.style.transform = `scale(${scale})`;
+            }
+        }
+
+        function getDistance(touch1, touch2) {
+            const dx = touch1.clientX - touch2.clientX;
+            const dy = touch1.clientY - touch2.clientY;
+            return Math.sqrt(dx * dx + dy * dy);
         }
 
         window.addEventListener('touchstart', (event) => {
