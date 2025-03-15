@@ -40,14 +40,13 @@
         }
         .overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background: rgba(0, 0, 0, 0.7);
             padding: 10px;
             box-sizing: border-box;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
+            border-radius: 10px;
             text-align: center;
         }
         .overlay h2 {
@@ -107,19 +106,17 @@
             document.getElementById('loading').style.display = 'block';
             const imageUrl = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(portrait.title.replace('File:', ''))}`;
             const pageUrl = `https://commons.wikimedia.org/wiki/${encodeURIComponent(portrait.title)}`;
-            const wikiSearchUrl = `https://en.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(portrait.title.replace('File:', '').replace(/_/g, ' '))}`;
             const title = portrait.title.replace('File:', '').replace(/_/g, ' ').replace(/\.[^/.]+$/, "");
 
             const container = document.getElementById('portrait-container');
             container.innerHTML = `
                 <div class="tiktok-card">
-                    <div class="top-overlay">Portraits from Koninklijke Bibliotheek</div>
+                    <div class="top-overlay">Portrait from Koninklijke Bibliotheek</div>
                     <img src="${imageUrl}" alt="Portrait" onload="document.getElementById('loading').style.display='none';">
                     <div class="overlay">
                         <h2><a href="${pageUrl}" target="_blank">${title}</a></h2>
                     </div>
                 </div>`;
-            container.dataset.wikiUrl = wikiSearchUrl;
         }
 
         function nextPortrait() {
@@ -155,20 +152,13 @@
             const diffY = startY - endY;
             const diffX = startX - endX;
 
-            if (Math.abs(diffX) > Math.abs(diffY)) {
-                if (diffX > 50) {
-                    const wikiUrl = document.getElementById('portrait-container').dataset.wikiUrl;
-                    window.open(wikiUrl, '_blank');
-                }
-            } else {
-                if (diffY > 50) {
-                    nextPortrait();
-                } else if (diffY < -50) {
-                    if (currentIndex === 0) {
-                        location.reload();
-                    } else {
-                        previousPortrait();
-                    }
+            if (diffY > 50) {
+                nextPortrait();
+            } else if (diffY < -50) {
+                if (currentIndex === 0) {
+                    location.reload();
+                } else {
+                    previousPortrait();
                 }
             }
         });
