@@ -18,6 +18,7 @@ For the broader context, see the  [home page](https://github.com/KBNLwikimedia/G
 Currently, reports are available for the following GLAM institutions, countries and regions:
 
  * [KB, national library of the Netherlands](#kb-national-library-of-the-netherlands)
+   * [Delpher](#media-from-delpher) 
  * [The Netherlands](#the-netherlands)
    * [Selected institutions](#selected-institutions)
    * [Netwerk Digitaal Erfgoed (NDE)](reports_nde.md), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
@@ -53,6 +54,14 @@ Currently, reports are available for the following GLAM institutions, countries 
   * [20-12-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_20122022.html), related to the article *[Public outreach and reuse of KB images via Wikipedia, 2014-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/Public%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.html)*
   * [16-02-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_16022022.html), related to [this analysis](https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief/Resultaten/KPIs/KPI4/KPI4_KB_16-02-2022) on Dutch Wikipedia dd 16-02-2022
   * [27-01-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/GLAMorous_MediacontributedbyKoninklijkeBibliotheek_Wikipedia_Mainnamespace_27012022.html) 
+
+### Media from Delpher
+
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_delpher.jpg" width="100" hspace="10" align="right"/>
+
+* Input: Commons category = [Media from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)
+* Reports for : 
+  * [15-03-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromDelpher_Wikipedia_NS0_15032025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/MediafromDelpher_Wikipedia_NS0_15032025.xlsx)
 
 ### Atlas de Wit 1698
 * Input: Commons category = [Atlas de Wit 1698](https://commons.wikimedia.org/wiki/Category:Atlas%20de%20Wit%201698)
@@ -102,7 +111,7 @@ See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_wikiped
 * [Rijksmuseum Amsterdam](https://commons.wikimedia.org/wiki/Category:Images%20from%20the%20Rijksmuseum) : Report for [16-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheRijksmuseum_Wikipedia_NS0_16012024.html) 
 * [Stadsarchief Amsterdam](https://commons.wikimedia.org/wiki/Category:Photographs%20in%20the%20Stadsarchief%20Amsterdam) : Report for [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/PhotographsintheStadsarchiefAmsterdam_Wikipedia_NS0_17012024.html) 
 * [Speciale Collecties Universiteitsbibliotheek Amsterdam](https://commons.wikimedia.org/wiki/Category:Images%20from%20the%20Special%20Collections%20of%20the%20University%20of%20Amsterdam) : Report for [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheSpecialCollectionsoftheUniversityofAmsterdam_Wikipedia_NS0_17012024.html)
-* [Universiteitsbibliotheek Maastricht](https://commons.wikimedia.org/wiki/Category:Images%20from%20Universiteitsbibliotheek%20Maastricht) : Report for [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromUniversiteitsbibliotheekMaastricht_Wikipedia_NS0_17012024.html) 
+* [Universiteitsbibliotheek Maastricht](https://commons.wikimedia.org/wiki/Category:Images%20from%20Universiteitsbibliotheek%20Maastricht) : Report for [17-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromUniversiteitsbibliotheekMaastricht_Wikipedia_NS0_17012024.html), for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ImagesfromUniversiteitsbibliotheekMaastricht_Wikipedia_NS0_04092024.html) and for [15-03-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromUniversiteitsbibliotheekMaastricht_Wikipedia_NS0_15032025.html) 
 * [Wereldmuseum Amsterdam ](https://commons.wikimedia.org/wiki/Category:Images%20from%20the%20Tropenmuseum) (former Tropenmuseum): Reports for [16-01-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/ImagesfromtheTropenmuseum_Wikipedia_NS0_16012024.html) and for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/ImagesfromtheTropenmuseum_Wikipedia_NS0_04092024.html)
 * [Universiteitsbibliotheek Leiden](https://commons.wikimedia.org/wiki/Category:Collections_of_Leiden_University_Library) : Reports for [22-03-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/CollectionsofLeidenUniversityLibrary_Wikipedia_NS0_22032024.html) and for [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/CollectionsofLeidenUniversityLibrary_Wikipedia_NS0_04092024.html)
 
