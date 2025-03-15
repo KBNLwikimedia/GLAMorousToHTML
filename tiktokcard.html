@@ -47,7 +47,6 @@
         .top-overlay img {
             width: 50px;
             height: auto;
-            //filter: brightness(0) saturate(100%) invert(59%) sepia(43%) saturate(610%) hue-rotate(322deg) brightness(96%) contrast(90%);
         }
         .overlay {
             position: absolute;
@@ -80,6 +79,7 @@
         let currentIndex = -1;
         let startX = 0;
         let startY = 0;
+        let isFullscreen = false;
 
         async function fetchPortraits() {
             try {
@@ -108,7 +108,7 @@
                         <i>Portraits from the collections of KB, national library of the Netherlands</i>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/103px-Wikipedia-logo-v2.svg.png" alt="Wikipedia Logo">
                     </div>
-                    <img src="${portrait.imageUrl}" alt="Portrait of ${portrait.title}">
+                    <img src="${portrait.imageUrl}" alt="Portrait of ${portrait.title}" ondblclick="toggleFullScreen(this)">
                     <div class="overlay">
                         <h2>
                             <a href="${portrait.wikipediaLink}" target="_blank">${portrait.title}</a>
@@ -117,6 +117,16 @@
                         <p style="margin-top: 10px;">${portrait.description}</p>
                     </div>
                 </div>`;
+        }
+
+        function toggleFullScreen(element) {
+            if (!document.fullscreenElement) {
+                element.requestFullscreen().catch(err => console.error(`Error attempting to enable full-screen mode: ${err.message}`));
+                isFullscreen = true;
+            } else {
+                document.exitFullscreen();
+                isFullscreen = false;
+            }
         }
 
         function nextRandomPortrait() {
