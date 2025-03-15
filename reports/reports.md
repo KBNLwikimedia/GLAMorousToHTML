@@ -19,7 +19,7 @@ Currently, reports are available for the following GLAM institutions, countries 
 
  * [KB, national library of the Netherlands](#kb-national-library-of-the-netherlands)
    * [Delpher](#media-from-delpher) 
-   * [Portraits from KB collection](#portraits-from-koninklijke-bibliotheek) 
+   * [Portraits from KB collections](#portraits-from-koninklijke-bibliotheek) 
  * [The Netherlands](#the-netherlands)
    * [Selected institutions](#selected-institutions)
    * [Netwerk Digitaal Erfgoed (NDE)](reports_nde.md), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
@@ -58,7 +58,7 @@ Currently, reports are available for the following GLAM institutions, countries 
 
 ### Media from Delpher
 
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_delpher.jpg" width="200" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_delpher.jpg" width="150" hspace="10" align="right"/>
 
 * Input: Commons category = [Media from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)
 * Reports for : 
@@ -66,7 +66,7 @@ Currently, reports are available for the following GLAM institutions, countries 
 
 ### Portraits from Koninklijke Bibliotheek
 
-<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_kbport.jpg" width="200" hspace="10" align="right"/>
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_kbport.jpg" width="125" hspace="10" align="right"/>
 
 * Input: Commons category = [Portraits from Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Portraits_from_Koninklijke_Bibliotheek)
 * Reports for : 
