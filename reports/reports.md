@@ -72,7 +72,7 @@ Currently, reports are available for the following GLAM institutions, countries 
 * Reports for : 
   * [15-03-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/PortraitsfromKoninklijkeBibliotheek_Wikipedia_NS0_15032025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/PortraitsfromKoninklijkeBibliotheek_Wikipedia_NS0_15032025.xlsx)
 
-
+<!--
 ### Atlas de Wit 1698
 * Input: Commons category = [Atlas de Wit 1698](https://commons.wikimedia.org/wiki/Category:Atlas%20de%20Wit%201698)
 * Report for [27-01-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/AtlasdeWit1698_Wikipedia_NS0_27012022.html)
@@ -100,7 +100,7 @@ Currently, reports are available for the following GLAM institutions, countries 
 ### Bookbindings from Koninklijke Bibliotheek
 * Input: Commons category = [Bookbindings from Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Bookbindings%20from%20Koninklijke%20Bibliotheek) 
 * Report for  [27-01-2022](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/BookbindingsfromKoninklijkeBibliotheek_Wikipedia_NS0_27012022.html)
-
+-->
 
 ## The Netherlands
 
