@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TikTok Style Portrait Viewer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
             background-color: #000;
             color: white;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Source Sans Pro', sans-serif;
             overflow: hidden;
             height: 100vh;
         }
@@ -37,10 +38,19 @@
             padding: 5px 10px;
             font-size: 14px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-style: italic;
+        }
+        .top-overlay img {
+            width: 50px;
+            height: auto;
         }
         .overlay {
             position: absolute;
-            top: 90%;
+            top: 75%;
             left: 0;
             width: 100%;
             background: rgba(0, 0, 0, 0.7);
@@ -49,29 +59,19 @@
             text-align: center;
         }
         .overlay h2, .overlay p {
-            margin: 0;
+            margin: 5px 0;
         }
         .overlay a {
-            color: #1db954;
-            text-decoration: none;
+            color: #EF6079;
+            text-decoration: underline;
+            font-weight: 600;
         }
-        #debug {
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-            background: rgba(0,0,0,0.7);
-            color: lime;
-            padding: 5px;
-            z-index: 100;
-            max-width: 90%;
-            overflow-x: auto;
-        }
+
     </style>
 </head>
 <body>
     <div id="loading" class="loading"></div>
     <div id="portrait-container" style="display:none"></div>
-    <div id="debug"></div>
 
     <script>
         let portraits = [];
@@ -80,10 +80,6 @@
         let startX = 0;
         let startY = 0;
 
-        function debugLog(message) {
-            document.getElementById('debug').innerHTML += `<div>${message}</div>`;
-        }
-
         async function fetchPortraits() {
             try {
                 const response = await fetch('tiktokcard-datacache.csv');
@@ -91,16 +87,14 @@
                 const lines = text.split('\n').slice(1);
 
                 portraits = lines.map(line => {
-                    const [imageUrl, title, description, wikipediaLink] = line.split(',');
+                    const [imageUrl, title, description, wikipediaLink] = line.split(';');
                     return { imageUrl, title, description, wikipediaLink };
                 });
 
-                debugLog('Data loaded from cache file.');
                 document.getElementById('portrait-container').style.display = 'block';
                 nextRandomPortrait();
             } catch (error) {
                 console.error('Error loading CSV data:', error);
-                debugLog('Error: ' + error.message);
             }
         }
 
@@ -108,11 +102,18 @@
             const container = document.getElementById('portrait-container');
             container.innerHTML = `
                 <div class="tiktok-card">
-                    <div class="top-overlay">Portrait from Koninklijke Bibliotheek</div>
+                    <div class="top-overlay">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Logo_Koninklijke_Bibliotheek_wordmark.svg/143px-Logo_Koninklijke_Bibliotheek_wordmark.svg.png" alt="KB Logo">
+                        <i>Portraits from the collections of KB, national library of the Netherlands</i>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/103px-Wikipedia-logo-v2.svg.png" alt="Wikipedia Logo">
+                    </div>
                     <img src="${portrait.imageUrl}" alt="Portrait">
                     <div class="overlay">
-                        <h2><a href="${portrait.wikipediaLink}" target="_blank">${portrait.title}</a></h2>
-                        <p>${portrait.description}</p>
+                        <h2>
+                            <a href="${portrait.wikipediaLink}" target="_blank">${portrait.title}</a>
+                            <a href="${portrait.wikipediaLink}" target="_blank"></a>
+                        </h2>
+                        <p style="margin-top: 10px;">${portrait.description}</p>
                     </div>
                 </div>`;
         }
@@ -139,23 +140,28 @@
         window.addEventListener('touchend', (event) => {
             const endX = event.changedTouches[0].clientX;
             const endY = event.changedTouches[0].clientY;
-            const diffX = startX - endX;
             const diffY = startY - endY;
 
             if (diffY > 50) {
-                nextRandomPortrait();
-            } else if (diffY < -50) {
                 previousPortrait();
-            } else if (diffX > 50) {
-                window.open(portraits[history[currentIndex]].wikipediaLink, '_blank');
+            } else if (diffY < -50) {
+                nextRandomPortrait();
             }
         });
 
         window.addEventListener('wheel', (event) => {
             if (event.deltaY < 0) {
-                nextRandomPortrait();
-            } else if (event.deltaY > 0) {
                 previousPortrait();
+            } else if (event.deltaY > 0) {
+                nextRandomPortrait();
+            }
+        });
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowUp') {
+                previousPortrait();
+            } else if (event.key === 'ArrowDown') {
+                nextRandomPortrait();
             }
         });
 

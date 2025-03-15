@@ -1,0 +1,38 @@
+#https://w.wiki/DS6A
+#Endpoint: https://commons-query.wikimedia.org/sparql
+#Fetches images, names, descriptions and Wikipedia articles from people the category "Portraits from Koninklijke Bibliotheek" on Wikimedia Commons
+SELECT DISTINCT ?imageurl
+?depictsLabel ?depictsDescription ?depictsWikipediaNL
+WITH
+{
+  SELECT ?file ?title
+  WHERE
+  {
+   SERVICE wikibase:mwapi
+    {
+    bd:serviceParam wikibase:api "Generator";
+    wikibase:endpoint "commons.wikimedia.org";
+    mwapi:gcmtitle "Category:Portraits from Koninklijke Bibliotheek" ;
+    mwapi:generator "categorymembers" ;
+     mwapi:gcmtype "file" ;
+     mwapi:gcmlimit "max".
+    ?title wikibase:apiOutput mwapi:title .
+    ?pageid wikibase:apiOutput "@pageid" .
+    }
+    BIND (URI(CONCAT('https://commons.wikimedia.org/entity/M', ?pageid)) AS ?file)
+  }
+} AS %get_files
+WHERE
+{
+  INCLUDE %get_files
+  ?file schema:url ?imageurl.
+  ?file wdt:P180 ?depicts.
+    SERVICE <https://query.wikidata.org/sparql> {
+      ?depicts rdfs:label ?depictsLabel FILTER (lang(?depictsLabel) = "en").
+      ?depicts schema:description ?depictsDescription FILTER (lang(?depictsDescription) = "en").
+      ?depicts wdt:P31 ?depictsIsA.
+      FILTER (?depictsIsA = wd:Q5)  # ?depicts must be instance of human
+      ?depictsWikipediaNL schema:about ?depicts;
+          schema:isPartOf <https://nl.wikipedia.org/>.
+    }
+}
