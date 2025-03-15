@@ -19,6 +19,7 @@ Currently, reports are available for the following GLAM institutions, countries 
 
  * [KB, national library of the Netherlands](#kb-national-library-of-the-netherlands)
    * [Delpher](#media-from-delpher) 
+   * [Portraits from KB collection](#portraits-from-koninklijke-bibliotheek) 
  * [The Netherlands](#the-netherlands)
    * [Selected institutions](#selected-institutions)
    * [Netwerk Digitaal Erfgoed (NDE)](reports_nde.md), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
@@ -62,6 +63,15 @@ Currently, reports are available for the following GLAM institutions, countries 
 * Input: Commons category = [Media from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)
 * Reports for : 
   * [15-03-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromDelpher_Wikipedia_NS0_15032025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/MediafromDelpher_Wikipedia_NS0_15032025.xlsx)
+
+### Portraits from Koninklijke Bibliotheek
+
+<image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_kbport.jpg" width="200" hspace="10" align="right"/>
+
+* Input: Commons category = [Portraits from Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Portraits_from_Koninklijke_Bibliotheek)
+* Reports for : 
+  * [15-03-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/PortraitsfromKoninklijkeBibliotheek_Wikipedia_NS0_15032025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/PortraitsfromKoninklijkeBibliotheek_Wikipedia_NS0_15032025.xlsx)
+
 
 ### Atlas de Wit 1698
 * Input: Commons category = [Atlas de Wit 1698](https://commons.wikimedia.org/wiki/Category:Atlas%20de%20Wit%201698)
