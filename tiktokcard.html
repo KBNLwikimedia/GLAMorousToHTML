@@ -31,24 +31,34 @@
             touch-action: none;
             transition: transform 0.2s ease;
         }
-        .top-overlay, .overlay {
+        .top-overlay {
             position: absolute;
+            top: 15px;
+            left: 0px;
             width: 100%;
             background: rgba(0, 0, 0, 0.6);
-            padding: 10px;
-            box-sizing: border-box;
+            padding: 5px 5px;
+            font-size: 16px;
             text-align: center;
-        }
-        .top-overlay {
-            top: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 50px;
+            gap: 20px;
             font-style: italic;
         }
+        .top-overlay img {
+            width: 50px;
+            height: auto;
+        }
         .overlay {
-            bottom: 20px;
+            position: absolute;
+            top: 80%;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
         }
         .overlay h2, .overlay p {
             margin: 5px 0;
@@ -58,22 +68,7 @@
             text-decoration: underline;
             font-weight: 600;
         }
-        .loading {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 6px solid #ccc;
-            border-top: 6px solid #EF6079;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+
     </style>
 </head>
 <body>
@@ -81,77 +76,121 @@
     <div id="portrait-container" style="display:none"></div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const portraitContainer = document.getElementById('portrait-container');
-            const loadingIndicator = document.getElementById('loading');
-            const portraits = [];
-            const history = [];
-            let currentIndex = -1;
+        let portraits = [];
+        let history = [];
+        let currentIndex = -1;
+        let startX = 0;
+        let startY = 0;
+        let scale = 1;
+        let initialDistance = 0;
 
-            async function fetchPortraits() {
-                try {
-                    const response = await fetch('tiktokcard-datacache.csv');
-                    const text = await response.text();
-                    const lines = text.trim().split('\n').slice(1);
-                    lines.forEach(line => {
-                        const parts = line.match(/(?:[^;]+|".*?")+/g);
-                        if (parts && parts.length === 4) {
-                            portraits.push({
-                                imageUrl: parts[0],
-                                title: parts[1],
-                                description: parts[2],
-                                wikipediaLink: parts[3]
-                            });
-                        }
-                    });
-                    loadingIndicator.style.display = 'none';
-                    portraitContainer.style.display = 'block';
-                    nextRandomPortrait();
-                } catch (error) {
-                    console.error('Error loading CSV data:', error);
-                }
+        async function fetchPortraits() {
+            try {
+                const response = await fetch('tiktokcard-datacache.csv');
+                const text = await response.text();
+                const lines = text.split('\n').slice(1);
+
+                portraits = lines.map(line => {
+                    const [imageUrl, title, description, wikipediaLink] = line.split(';');
+                    return { imageUrl, title, description, wikipediaLink };
+                });
+
+                document.getElementById('portrait-container').style.display = 'block';
+                nextRandomPortrait();
+            } catch (error) {
+                console.error('Error loading CSV data:', error);
             }
+        }
 
-            function displayPortrait(portrait) {
-                portraitContainer.innerHTML = `
-                    <div class="tiktok-card">
-                        <div class="top-overlay">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Logo_Koninklijke_Bibliotheek_wordmark.svg" alt="KB Logo" width="50">
-                            <i>Portraits from the collections of KB, the national library of the Netherlands</i>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg" alt="Wikipedia Logo" width="50">
-                        </div>
-                        <img class="zoomable" src="${portrait.imageUrl}" alt="Portrait of ${portrait.title}" loading="lazy">
-                        <div class="overlay" role="contentinfo">
-                            <h2><a href="${portrait.wikipediaLink}" target="_blank">${portrait.title}</a></h2>
-                            <p>${portrait.description}</p>
-                        </div>
-                    </div>`;
+        function displayPortrait(portrait) {
+            const container = document.getElementById('portrait-container');
+            container.innerHTML = `
+                <div class="tiktok-card">
+                    <div class="top-overlay">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Logo_Koninklijke_Bibliotheek_wordmark.svg/143px-Logo_Koninklijke_Bibliotheek_wordmark.svg.png" alt="KB Logo">
+                        <i>Portraits from the collections of KB, national library of the Netherlands</i>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/103px-Wikipedia-logo-v2.svg.png" alt="Wikipedia Logo">
+                    </div>
+                    <img class="zoomable" src="${portrait.imageUrl}" alt="Portrait of ${portrait.title}">
+                    <div class="overlay">
+                        <h2>
+                            <a href="${portrait.wikipediaLink}" target="_blank">${portrait.title}</a>
+                        </h2>
+                        <p style="margin-top: 10px;">${portrait.description}</p>
+                    </div>
+                </div>`;
+
+        }
+
+        function nextRandomPortrait() {
+            const randomIndex = Math.floor(Math.random() * portraits.length);
+            history.push(randomIndex);
+            currentIndex = history.length - 1;
+            displayPortrait(portraits[randomIndex]);
+        }
+
+        function previousPortrait() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                displayPortrait(portraits[history[currentIndex]]);
             }
+        }
 
-            function nextRandomPortrait() {
-                const randomIndex = Math.floor(Math.random() * portraits.length);
-                history.push(randomIndex);
-                currentIndex = history.length - 1;
-                displayPortrait(portraits[randomIndex]);
+        function handleTouchStart(event) {
+            if (event.touches.length === 2) {
+                initialDistance = getDistance(event.touches[0], event.touches[1]);
             }
+        }
 
-            let debounceTimer;
-            window.addEventListener('wheel', (event) => {
-                clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(() => {
-                    event.deltaY > 0 ? nextRandomPortrait() : previousPortrait();
-                }, 200);
-            });
-
-            function previousPortrait() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    displayPortrait(portraits[history[currentIndex]]);
-                }
+        function handleTouchMove(event) {
+            if (event.touches.length === 2) {
+                event.preventDefault();
+                const currentDistance = getDistance(event.touches[0], event.touches[1]);
+                scale = currentDistance / initialDistance;
+                event.target.style.transform = `scale(${scale})`;
             }
+        }
 
-            fetchPortraits();
+        function getDistance(touch1, touch2) {
+            const dx = touch1.clientX - touch2.clientX;
+            const dy = touch1.clientY - touch2.clientY;
+            return Math.sqrt(dx * dx + dy * dy);
+        }
+
+        window.addEventListener('touchstart', (event) => {
+            startX = event.touches[0].clientX;
+            startY = event.touches[0].clientY;
         });
+
+        window.addEventListener('touchend', (event) => {
+            const endX = event.changedTouches[0].clientX;
+            const endY = event.changedTouches[0].clientY;
+            const diffY = startY - endY;
+
+            if (diffY > 50) {
+                nextRandomPortrait();
+            } else if (diffY < -50) {
+                previousPortrait();
+            }
+        });
+
+        window.addEventListener('wheel', (event) => {
+            if (event.deltaY < 0) {
+                previousPortrait();
+            } else if (event.deltaY > 0) {
+                nextRandomPortrait();
+            }
+        });
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowUp') {
+                previousPortrait();
+            } else if (event.key === 'ArrowDown') {
+                nextRandomPortrait();
+            }
+        });
+
+        fetchPortraits();
     </script>
 </body>
 </html>
