@@ -34,7 +34,7 @@
         .top-overlay {
             position: absolute;
             top: 15px;
-            left: 0;
+            left: 0px;
             width: 100%;
             background: rgba(0, 0, 0, 0.6);
             padding: 5px 5px;
@@ -68,17 +68,11 @@
             text-decoration: underline;
             font-weight: 600;
         }
-        .loading {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-        }
+
     </style>
 </head>
 <body>
-    <div id="loading" class="loading">Loading portraits...</div>
+    <div id="loading" class="loading"></div>
     <div id="portrait-container" style="display:none"></div>
 
     <script>
@@ -89,7 +83,6 @@
         let startY = 0;
         let scale = 1;
         let initialDistance = 0;
-        let isZooming = false;
 
         async function fetchPortraits() {
             try {
@@ -100,13 +93,11 @@
                 portraits = lines.map(line => {
                     const [imageUrl, title, description, wikipediaLink] = line.split(';');
                     return { imageUrl, title, description, wikipediaLink };
-                }).filter(portrait => portrait.imageUrl);
+                });
 
-                document.getElementById('loading').style.display = 'none';
                 document.getElementById('portrait-container').style.display = 'block';
                 nextRandomPortrait();
             } catch (error) {
-                document.getElementById('loading').innerText = 'Failed to load portraits.';
                 console.error('Error loading CSV data:', error);
             }
         }
@@ -120,14 +111,17 @@
                         <i>Portraits from the collections of KB, national library of the Netherlands</i>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/103px-Wikipedia-logo-v2.svg.png" alt="Wikipedia Logo">
                     </div>
-                    <img src="${portrait.imageUrl}" alt="Portrait of ${portrait.title}" loading="lazy">
+                    <img class="zoomable" src="${portrait.imageUrl}" alt="Portrait of ${portrait.title}">
                     <div class="overlay">
-                        <h2><a href="${portrait.wikipediaLink}" target="_blank">${portrait.title}</a></h2>
-                        <p>${portrait.description}</p>
+                        <h2>
+                            <a href="${portrait.wikipediaLink}" target="_blank">${portrait.title}</a>
+                        </h2>
+                        <p style="margin-top: 10px;">${portrait.description}</p>
                     </div>
                 </div>`;
-
-
+            const image = document.querySelector('.zoomable');
+            image.addEventListener('touchstart', handleTouchStart, { passive: false });
+            image.addEventListener('touchmove', handleTouchMove, { passive: false });
         }
 
         function nextRandomPortrait() {
@@ -146,7 +140,6 @@
 
         function handleTouchStart(event) {
             if (event.touches.length === 2) {
-                isZooming = true;
                 initialDistance = getDistance(event.touches[0], event.touches[1]);
             }
         }
@@ -160,28 +153,42 @@
             }
         }
 
-        function handleTouchEnd(event) {
-            if (isZooming && event.touches.length < 2) {
-                isZooming = false;
-            }
-        }
-
         function getDistance(touch1, touch2) {
             const dx = touch1.clientX - touch2.clientX;
             const dy = touch1.clientY - touch2.clientY;
             return Math.sqrt(dx * dx + dy * dy);
         }
 
+        window.addEventListener('touchstart', (event) => {
+            startX = event.touches[0].clientX;
+            startY = event.touches[0].clientY;
+        });
+
+        window.addEventListener('touchend', (event) => {
+            const endX = event.changedTouches[0].clientX;
+            const endY = event.changedTouches[0].clientY;
+            const diffY = startY - endY;
+
+            if (diffY > 50) {
+                nextRandomPortrait();
+            } else if (diffY < -50) {
+                previousPortrait();
+            }
+        });
+
         window.addEventListener('wheel', (event) => {
-            if (!isZooming) {
-                event.deltaY < 0 ? previousPortrait() : nextRandomPortrait();
+            if (event.deltaY < 0) {
+                previousPortrait();
+            } else if (event.deltaY > 0) {
+                nextRandomPortrait();
             }
         });
 
         window.addEventListener('keydown', (event) => {
-            if (!isZooming) {
-                if (event.key === 'ArrowUp') previousPortrait();
-                if (event.key === 'ArrowDown') nextRandomPortrait();
+            if (event.key === 'ArrowUp') {
+                previousPortrait();
+            } else if (event.key === 'ArrowDown') {
+                nextRandomPortrait();
             }
         });
 
