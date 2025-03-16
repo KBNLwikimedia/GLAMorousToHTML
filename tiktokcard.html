@@ -33,12 +33,13 @@
         }
         .top-overlay {
             position: absolute;
-            top: 15px;
+            top: 90%;
+            //top: 15px;
             left: 0px;
             width: 100%;
             background: rgba(0, 0, 0, 0.6);
             padding: 5px 5px;
-            font-size: 16px;
+            font-size: 14px;
             text-align: center;
             display: flex;
             align-items: center;
@@ -47,12 +48,29 @@
             font-style: italic;
         }
         .top-overlay img {
-            width: 50px;
+            width: 60px;
             height: auto;
         }
+
+        .tronietok {
+            position: absolute;
+            top: 15px;
+            left: 10px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.0);
+            padding: 5px 5px;
+            display: flex;
+            justify-content: left;
+            gap: 20px;
+        }
+        .tronietok img {
+            width: 100px;
+            height: auto;
+        }
+
         .overlay {
             position: absolute;
-            top: 82%;
+            top: 80%;
             left: 0;
             width: 100%;
             background: rgba(0, 0, 0, 0.7);
@@ -107,9 +125,12 @@
             container.innerHTML = `
                 <div class="tiktok-card">
                     <div class="top-overlay">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Logo_Koninklijke_Bibliotheek_wordmark.svg/143px-Logo_Koninklijke_Bibliotheek_wordmark.svg.png" alt="KB Logo">
                         <i>Portraits from the collections of KB, national library of the Netherlands</i>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Logo_Koninklijke_Bibliotheek_wordmark.svg/143px-Logo_Koninklijke_Bibliotheek_wordmark.svg.png" alt="KB Logo">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/103px-Wikipedia-logo-v2.svg.png" alt="Wikipedia Logo">
+                    </div>
+                    <div class="tronietok">
+                       <img src="tronietok-logo.png" alt="TronieTok Logo">
                     </div>
                     <img class="zoomable" src="${portrait.imageUrl}" alt="Portrait of ${portrait.title}">
                     <div class="overlay">
