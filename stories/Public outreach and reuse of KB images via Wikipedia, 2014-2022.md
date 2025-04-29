@@ -1,3 +1,5 @@
+[<< Back to stories index](https://kbnlwikimedia.github.io/stories/)
+
 ## Public outreach and reuse of KB images via Wikipedia, 2014-2022 ##
 
 <sup>Olaf Janssen, 20 December 2022</sup>
