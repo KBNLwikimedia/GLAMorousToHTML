@@ -1,4 +1,9 @@
-[<< Back to stories index](https://kbnlwikimedia.github.io/stories/)
+<table width="100%" border="0"><tr><td align="left">
+<a href="https://kbnlwikimedia.github.io/stories/"><< Back to stories index</a>
+</td><td align="right">
+<a href="https://github.com/KBNLwikimedia/GLAMorousToHTML" target="_blank">>> To the Github repo of this page</a>
+</td></tr></table>
+<hr/>
 
 ## Public outreach and reuse of KB images via Wikipedia, 2014-2022 ##
 

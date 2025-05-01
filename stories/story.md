@@ -1,3 +1,10 @@
+<table width="100%" border="0"><tr><td align="left">
+<a href="https://kbnlwikimedia.github.io/stories/"><< Back to stories index</a>
+</td><td align="right">
+<a href="https://github.com/KBNLwikimedia/GLAMorousToHTML" target="_blank">>> To the Github repo of this page</a>
+</td></tr></table>
+<hr/>
+
 # Test story for embedding interactive datawrapper charts.
 
 Outline of this article series on NDE-GLAMorousToHTML
