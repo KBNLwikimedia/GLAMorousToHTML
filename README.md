@@ -1,4 +1,9 @@
-[<< Back to tools index](https://kbnlwikimedia.github.io/tools/index.html)
+<table width="100%" border="0"><tr><td align="left">
+<a href="https://kbnlwikimedia.github.io/tools/index.html"><< Back to tools and scripts index</a>
+</td><td align="right">
+<a href="https://github.com/KBNLwikimedia/GLAMorousToHTML" target="_blank">>> To the Github repo of this page</a>
+</td></tr></table>
+<hr/>
 
 # GLAMorousToHTML
 
