@@ -1,3 +1,10 @@
+<table width="100%" border="0"><tr><td align="left">
+<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/"><< Back to the homepage of this tool</a>
+</td><td align="right">
+<a href="https://github.com/KBNLwikimedia/GLAMorousToHTML" target="_blank">>> To the Github repo of this page</a>
+</td></tr></table>
+<hr/>
+
 # GLAM reports 
 
 *Latest update*: 15 March 2025

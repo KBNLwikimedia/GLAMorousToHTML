@@ -1,3 +1,10 @@
+<table width="100%" border="0"><tr><td align="left">
+<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/reports.html"><< Back to the reports page</a>
+</td><td align="right">
+<a href="https://github.com/KBNLwikimedia/GLAMorousToHTML" target="_blank">>> To the Github repo of this page</a>
+</td></tr></table>
+<hr/>
+
 # GLAM reports for NDE partners
 
 <image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_nde.png" width="250" hspace="10" align="right"/>
