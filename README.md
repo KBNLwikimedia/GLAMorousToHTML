@@ -9,7 +9,7 @@
 
 *Creates a datestamped HTML report and a corresponding Excel file listing all Wikipedia articles (in all languages) in which (one or more) images from a given category tree on Wikimedia Commons are used.*
 
-*Latest update*: 15 March 2025
+*Latest update*: 7 May 2025
 
 --------------
 
