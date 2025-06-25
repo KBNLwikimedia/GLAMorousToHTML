@@ -5,8 +5,8 @@
 </td></tr></table>
 <hr/>
 
-# Publieksbereik en hergebruik van Delpher-afbeeldingen via Wikipedia, juli 2025 
-<sup>Olaf Janssen, xx juli 2025</sup>
+# Public outreach and reuse of Delpher images via Wikipedia and Wikimedia Commons, July 2025 
+<sup>Olaf Janssen, xx July 2025</sup>
 
 Dit artikel is ook [beschikbaar als PDF](Het%20gebruik%20van%20Delpher%20in%20Nederlandstalige%20Wikipedia-artikelen%2C%20januari%202025.pdf).
 
