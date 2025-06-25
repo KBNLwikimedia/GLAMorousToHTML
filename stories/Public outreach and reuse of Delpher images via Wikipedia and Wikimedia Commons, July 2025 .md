@@ -8,7 +8,7 @@
 # Public outreach and reuse of Delpher images via Wikipedia and Wikimedia Commons, July 2025 
 <sup>Olaf Janssen, xx July 2025</sup>
 
-Dit artikel is ook [beschikbaar als PDF](Het%20gebruik%20van%20Delpher%20in%20Nederlandstalige%20Wikipedia-artikelen%2C%20januari%202025.pdf).
+This article is also [available as a PDF](Het%20gebruik%20van%20Delpher%20in%20Nederlandstalige%20Wikipedia-artikelen%2C%20januari%202025.pdf).
 
 <img src="https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/images/icon_wp.png" align="right" width="110" hspace="20" alt="Logo Wikipedia"/>
 
