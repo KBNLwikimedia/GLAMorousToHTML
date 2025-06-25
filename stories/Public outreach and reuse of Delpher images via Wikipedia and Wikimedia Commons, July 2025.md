@@ -216,14 +216,13 @@ Het eerder genoemde artikel uit 2020 bevat een vergelijkbaar [overzicht van 193 
 <img src="https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/images/Het-gebruik-van-Delpher-in-Nederlandstalige-Wikipedia-artikelen_Jan2025.jpg" align="right" width="300" hspace="10" vspace="5"></a> 
  
 In this article (in Dutch) we look at how often [Delpher](https://www.delpher.nl/) is referred to in which Wikipedia articles, and which Delpher pages are cited most often. We also search for Wikipedia articles that are entirely or largely based on Delpher.
+<br clear="all"/>
 
 ### [Reuse indicators for KB images in Wikipedia and Wikimedia Commons, the 2023 update](https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Reuse%20indicators%20for%20KB%20images%20in%20Wikipedia%20and%20Wikimedia%20Commons%2C%20the%202023%20update.html) (January 2023).<br/> 
 
 <a href="https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Reuse%20indicators%20for%20KB%20images%20in%20Wikipedia%20and%20Wikimedia%20Commons%2C%20the%202023%20update.html" ><img src="https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/images/Reuse_indicators_for_KB_images_in_Wikipedia_and_Wikimedia_Commons_the_2023_update.png" align="right" width="300" hspace="10" vspace="5"></a>
 
 This article shows that Wikipedia and Wikimedia Commons are very effective platforms to make [images from KB's historical heritage collections](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek) visible all over the world. It also shows that over the years these images have gained steadily growing global audiences.
-
-
 
 <br clear="all"/>
 
