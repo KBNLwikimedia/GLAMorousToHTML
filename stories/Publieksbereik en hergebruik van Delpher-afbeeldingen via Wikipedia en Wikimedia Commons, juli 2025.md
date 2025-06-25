@@ -16,7 +16,7 @@ Dit artikel is ook [beschikbaar als PDF](Het%20gebruik%20van%20Delpher%20in%20Ne
 
 _**Delpher** biedt toegang tot miljoenen gedigitaliseerde pagina's uit Nederlandse historische kranten, boeken en tijdschriften. Het is een veelgebruikte bron in de Nederlandstalige Wikipedia. 
 
-Nadat we eerder keken naar [Delpher-URLs in WP:NL]() en naar het Publieksbereik en hergebruik van  [afbeeldingen uit de KB-efgoedcollecteis]() via WP, kijken we nu naar het gebruik van Delpher-afbeeldingen in Wikipedia.
+Nadat we eerder keken naar [Delpher-URLs in WP:NL](https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Het%20gebruik%20van%20Delpher%20in%20Nederlandstalige%20Wikipedia-artikelen,%20januari%202025.html) en naar het Publieksbereik en hergebruik van  [afbeeldingen uit de KB-efgoedcollecteis](https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Reuse%20indicators%20for%20KB%20images%20in%20Wikipedia%20and%20Wikimedia%20Commons%2C%20the%202023%20update.html) via WP, kijken we nu naar het gebruik van Delpher-afbeeldingen in Wikipedia.
 
 In dit artikel bekijken we xxxxxx._
 
