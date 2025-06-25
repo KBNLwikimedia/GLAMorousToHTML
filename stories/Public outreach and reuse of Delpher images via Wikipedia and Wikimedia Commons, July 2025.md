@@ -8,7 +8,7 @@
 # Public outreach and reuse of Delpher images via Wikipedia and Wikimedia Commons, July 2025 
 <sup>Olaf Janssen, xx July 2025</sup>
 
-This article is also [available as a PDF](Het%20gebruik%20van%20Delpher%20in%20Nederlandstalige%20Wikipedia-artikelen%2C%20januari%202025.pdf).
+This article is also [available as a PDF](https://xxxxxxxxx).
 
 <img src="https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/images/icon_wp.png" align="right" width="110" hspace="20" alt="Logo Wikipedia"/>
 
@@ -20,16 +20,18 @@ Nadat we eerder keken naar [Delpher-URLs in WP:NL](https://kbnlwikimedia.github.
 
 In dit artikel bekijken we xxxxxx._
 
+
 ><big><b><em>Leuke quoate</em></b></big>
 
-De belangrijkste punten (per 17 januari 2025) uit dit artikel zijn:
+The key findings (per dd mm 2025) fron this article are:
 
-* 15.569 verschillende Wikipedia-artikelen bevatten gezamenlijk 45.409 links naar 43.063 verschillende pagina’s in Delpher.
-* Deze verwijzingen zijn voornamelijk naar kranten (38.530 URLs), gevolgd door boeken (4.923 URLs) en tijdschriften (1.872 URLs). Zie [de details](#1-aantal-verwijzingen-naar-delpher-vanuit-wikipedia).
-* Het artikel [Lijst van rampen in Nederland](https://nl.wikipedia.org/wiki/Lijst_van_rampen_in_Nederland) bevat met 182 de meeste links naar Delpher, gevolgd door het artikel [Lijst van historische Nederlandse netnummers](https://nl.wikipedia.org/wiki/Lijst_van_historische_Nederlandse_netnummers), met 175 Delpher-URLs. Het artikel over [Jacques Anquetil](https://nl.wikipedia.org/wiki/Jacques_Anquetil) sluit met 130 verwijzingen de top 3 af. Zie [de details](#2-wikipedia-artikelen-met-de-meeste-links-naar-delpher).
-* Wanneer we de [Kranten homepage](https://www.delpher.nl/nl/kranten) en de [Delpher homepage](https://www.delpher.nl/) buiten beschouwing laten, wordt naar de illustratie _[Afstandsaanduidingen langs Rijkswegen](https://delpher.nl/nl/kranten/view?coll=ddd&identifier=ddd:010237771:mpeg21:a0208)_ in de _Nieuwe Tilburgsche Courant_ van 12-02-1937 het vaakst, nl. vanuit 13 Wikipedia-artikelen verwezen. Op de tweede plek staat [pagina 2](https://resolver.kb.nl/resolve?urn=KBDDD02:000212802:mpeg21:p002) van de krant _Suriname_ van 02-09-1933 met verwijzingen in 12 artikelen. Zie [de details](#3-delpher-paginas-waarnaar-het-vaakst-verwezen-wordt-vanuit-wikipedia-artikelen).
-* Er zijn 61 Wikipedia-artikelen die (bijna) geheel op basis van Delpher-inhoud geschreven zijn. M.a.w.: zij danken hun bestaan voor een belangrijk deel aan Delpher. Zie [de details](#4-wikipedia-artikelen-die-grotendeels-op-delpher-gebaseerd-zijn).
-* De onderliggende [ruwe data](#ruwe-data) waar dit artikel gebruik van maakt is [beschikbaar op Github](https://github.com/KBNLwikimedia/KB-Wiki-Stats-Graphs/tree/master/stories/data/Delpher_20250117).
+
+https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromDelpher_Wikipedia_NS0_07052025.html
+
+* van de 62.259 beschikbare Delpher-bestanden (zie ook KPI 2) worden
+* in totaal 1.264 unieke bestanden 2.575 keer gebruikt (hergebruik van 2,0%)
+* in 2.321 unieke WP-artikelen, waarvan hier een overzicht uitgesplitst per taalversie dd 07-05-2025 (1 artikel kan meerdere Delpher-bestanden bevatten, en Delpher-bestanden en WP-artikelen hebben een veel-op-veel relatie).
+* in 83 taalversies, met dd 07-05-2025 de Nederlandstalige op kop (867) artikelen, gevolgd door de Engelstalige (295), Duitse en Welshe Wikipedia's.
 
 ## Links naar Delpher in Nederlandstalige Wikipedia-artikelen 
 
@@ -206,34 +208,44 @@ Voorts zien we dat er meerdere artikelen volledig op Delpher (veelal kranten) ge
 
 Het eerder genoemde artikel uit 2020 bevat een vergelijkbaar [overzicht van 193 Wikipedia-artikelen](https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Detecting%20Wikipedia%20articles%20strongly%20based%20on%20single%20library%20collections.html#for-delpher) die geheel of grotendeels op Delpher gebaseerd zijn. Destijds zijn de volgende drempelwaarden gekozen: *Number of external links >= 6* , *Link ratio >= 0.75*. Dit leverde een stuk bredere artikelselectie op dan met de nu gehanteerde drempelwaarden van 20 en 0.80. Het is interessant - en tevens een oefening voor de lezer - om de overeenkomsten en verschillen te zoeken tussen die tabel en de lijst van 61 artikelen hierboven.
 
-## Ruwe data
-Alle data gebruikt voor de visualisaties en analyses in dit artikel is [beschikbaar op Github](https://github.com/KBNLwikimedia/KB-Wiki-Stats-Graphs/tree/master/stories/data/Delpher_20250117). Je kunt het Excel-bestand ook [direct downloaden](https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/data/Delpher_20250117/WPNLarticlesAndDelpherUrls_20250117_Delpher.xlsx).
+## Related articles
 
-## Vergelijkbaar artikel over DBNL en Wikipedia
+### [The use of Delpher URLs in Dutch language Wikipedia articles, January 2025](https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Het%20gebruik%20van%20Delpher%20in%20Nederlandstalige%20Wikipedia-artikelen,%20januari%202025.html)
 
-<a href="https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Het%20gebruik%20van%20DBNL%20in%20Nederlandstalige%20Wikipedia-artikelen,%20september%202024.html" target="_blank"><img src="https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/images/Het-gebruik-van-DBNL-in-Nederlandstalige-Wikipedia-artikelen_Sept2024.jpg" align="right" width="300" hspace="20" alt="Screenshot van het artikel 'Het gebruik van DBNL in Nederlandstalige Wikipedia-artikelen, september 2024' op Github."/></a>
+<a href="https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Het%20gebruik%20van%20Delpher%20in%20Nederlandstalige%20Wikipedia-artikelen,%20januari%202025.html" >
+<img src="https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/images/Het-gebruik-van-Delpher-in-Nederlandstalige-Wikipedia-artikelen_Jan2025.jpg" align="right" width="300" hspace="10" vspace="5"></a> 
+ 
+In this article (in Dutch) we look at how often [Delpher](https://www.delpher.nl/) is referred to in which Wikipedia articles, and which Delpher pages are cited most often. We also search for Wikipedia articles that are entirely or largely based on Delpher.
 
-In januari 2025 publiceerden we een soortgelijk artikel getiteld _[Het gebruik van DBNL-URL's in Nederlandstalige Wikipedia-artikelen, september 2024](https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Het%20gebruik%20van%20DBNL%20in%20Nederlandstalige%20Wikipedia-artikelen,%20september%202024.html)_. Hierin bekijken we hoe vaak er in welke Wikipedia-artikelen verwezen wordt naar de [Digitale Bibliotheek voor de Nederlandse Letteren](https://www.dbnl.org) (DBNL), en welke DBNL-pagina’s het vaakst worden geciteerd. Ook speuren we naar Wikipedia-artikelen die geheel of grotendeels op de DBNL zijn gebaseerd.
+### [Reuse indicators for KB images in Wikipedia and Wikimedia Commons, the 2023 update](https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Reuse%20indicators%20for%20KB%20images%20in%20Wikipedia%20and%20Wikimedia%20Commons%2C%20the%202023%20update.html) (January 2023).<br/> 
 
-## Over de auteur
-<img align="left" src="https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/images/389px-Olaf_Janssen_at_GLAM_WIKI_Tel_Aviv_Conference_2018.JPG" width="50" hspace="5" alt="Afbeelding van Olaf Janssen in Tel Aviv in 2018."/>
+<a href="https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Reuse%20indicators%20for%20KB%20images%20in%20Wikipedia%20and%20Wikimedia%20Commons%2C%20the%202023%20update.html" ><img src="https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/images/Reuse_indicators_for_KB_images_in_Wikipedia_and_Wikimedia_Commons_the_2023_update.png" align="right" width="300" hspace="10" vspace="5"></a>
 
-<img src="https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/images/kblogo.png" align="right" hspace="20" width="150" alt="Logo van de KB, de nationale bibliotheek van Nederland"/>
+This article shows that Wikipedia and Wikimedia Commons are very effective platforms to make [images from KB's historical heritage collections](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek) visible all over the world. It also shows that over the years these images have gained steadily growing global audiences.
 
-Olaf Janssen is de [Wikimedia-coördinator](https://www.kb.nl/over-ons/experts/olaf-janssen) van de KB, de nationale bibliotheek van Nederland. Hij draagt bij aan [Wikipedia](https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief), [Wikimedia Commons](https://commons.wikimedia.org/wiki/Commons:Koninklijke_Bibliotheek) en [Wikidata](https://www.wikidata.org/wiki/Wikidata:GLAM/Koninklijke_Bibliotheek_Nederland) als [Gebruiker:OlafJanssen](https://nl.wikipedia.org/wiki/Gebruiker:OlafJanssen). ORCID: [0000-0002-9058-9941](https://orcid.org/0000-0002-9058-9941).
 
-## Hergebruik van dit artikel 
-De tekst van dit artikel is vrijgegeven onder de [Creative Commons Naamsvermelding](https://creativecommons.org/licenses/by/4.0/deed.nl) CC-BY 4.0 licentie.<br/> 
-<img src="images/cc-by.png" width="120" hspace="20" align="right" alt="Logo van de CC-BY licentie"/>
 
-*Citatie*: Janssen, O.D. (2025). ‘Het gebruik van Delpher-URL's in Nederlandstalige Wikipedia-artikelen, januari 2025’. Zenodo, 15 februari 2025. [https://doi.org/10.5281/zenodo.14825756](https://doi.org/10.5281/zenodo.14825756).<br/> 
+<br clear="all"/>
 
-Naamsvermelding: *KB, nationale bibliotheek van Nederland / Olaf Janssen, CC-BY 4.0*
+## About the author
+<img align="left" src="images/389px-Olaf_Janssen_at_GLAM_WIKI_Tel_Aviv_Conference_2018.JPG" width="50" hspace="5" alt="Portrait of Olaf Janssen in 2018."/>
 
-### Identifiers en URLs van dit artikel
+<img src="images/KB_Nationale-Bibliotheek_Logo_RGB-Zwart-EN.png" align="right" hspace="20" width="150" alt="Logo of the KB, the national library of the Netherlands"/>
+
+Olaf Janssen is the [Wikimedia coördinator](https://www.kb.nl/over-ons/experts/olaf-janssen) of the KB, the national library of the Netherlands. He contributes to [Wikipedia](https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief), [Wikimedia Commons](https://commons.wikimedia.org/wiki/Commons:Koninklijke_Bibliotheek) and [Wikidata](https://www.wikidata.org/wiki/Wikidata:GLAM/Koninklijke_Bibliotheek_Nederland) as [User:OlafJanssen](https://commons.wikimedia.org/wiki/User:OlafJanssen). ORCID: [0000-0002-9058-9941](https://orcid.org/0000-0002-9058-9941).
+
+## Reusing this article 
+The text and data visualisations of this article have been released under [Creative Commons Attribution](https://creativecommons.org/licenses/by/4.0/deed.en) CC-BY 4.0 license.<br/> 
+<img src="images/cc-by.png" width="120" hspace="20" align="right" alt="Logo of the CC-BY license"/>
+
+*Citation*: Janssen, O.D. (2025). ‘xxxxxx. [https://doi.org/10.5281/zenodo.xxxx](https://doi.org/10.5281/zenodo.xxxx).<br/> 
+
+Attribution: *KB, national library of the Netherlands / Olaf Janssen, CC-BY 4.0*
+
+## Identifiers and URLs of this article
 Persistent:
-* DOI (Zenodo): [https://doi.org/10.5281/zenodo.14825756](https://doi.org/10.5281/zenodo.14825756)
-* Wikimedia Commons: [https://commons.wikimedia.org/entity/M159206027](https://commons.wikimedia.org/entity/M159206027)
+* DOI (Zenodo): [https://doi.org/10.5281/zenodo.xxx](https://doi.org/10.5281/zenodo.xxxxx)
+* Wikimedia Commons: [https://commons.wikimedia.org/entity/xxxx](https://commons.wikimedia.org/entity/xxxx)
 
-Niet-persistent: 
-* Github: [https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Het%20gebruik%20van%20Delpher%20in%20Nederlandstalige%20Wikipedia-artikelen,%20januari%202025.html](https://kbnlwikimedia.github.io/KB-Wiki-Stats-Graphs/stories/Het%20gebruik%20van%20Delpher%20in%20Nederlandstalige%20Wikipedia-artikelen,%20januari%202025.html)
+Non-persistent: 
+* Github: [https://kbnlwikimedia.github.io/xxxx.html](https://kbnlwikimedia.github.io/xxxxx.html)
