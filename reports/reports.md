@@ -117,8 +117,6 @@ Currently, reports are available for the following GLAM institutions, countries 
 
 ## Kingdom of the Netherlands
 
-https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/reports.html#kingdom-of-the-netherlands
-
 <image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_netherlands.png" width="100" hspace="10" align="right"/>
 
 ### Selected institutions
