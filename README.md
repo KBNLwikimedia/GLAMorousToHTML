@@ -9,7 +9,7 @@
 
 *Creates a datestamped HTML report and a corresponding Excel file listing all Wikipedia articles (in all languages) in which (one or more) images from a given category tree on Wikimedia Commons are used.*
 
-*Latest update*: 7 May 2025
+*Latest update*: 1 July 2025
 
 --------------
 
@@ -53,9 +53,10 @@ That is why we developed the GLAMorousToHTML tool. It takes the [XML-output of t
 The GLAMorousToHTML tool has so for produced [GLAM reports](reports/reports.md) for the following heritage institutions, countries and regions:
 
 * [KB, national library of the Netherlands](reports/reports.md#kb-national-library-of-the-netherlands), including [Delpher](reports/reports.md#media-from-delpher) and the [KB portraits collection](reports/reports.md#portraits-from-koninklijke-bibliotheek) 
-* [The Netherlands](reports/reports.md#the-netherlands)
+* [Kingdom of the Netherlands](reports/reports.md##kingdom-of-the-netherlands)
   * [Selected institutions](reports/reports.md#selected-institutions)
   * [Netwerk Digitaal Erfgoed (NDE)](reports/reports_nde.md), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
+  * The [Wikipedia on Aruba | Aruba on Wikipedia](reports/reports.md#the-wikipedia-on-aruba-aruba-on-wikipedia-project) project
 * [Nordic European countries](reports/reports.md#nordic-european-countries) 
   * [Norway](reports/reports.md#norway)
   * [Finland](reports/reports.md#finland)
