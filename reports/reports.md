@@ -30,7 +30,7 @@ Currently, reports are available for the following GLAM institutions, countries 
  * [Kingdom of the Netherlands](#kingdom-of-the-netherlands)
    * [Selected institutions](#selected-institutions)
    * [Netwerk Digitaal Erfgoed (NDE)](reports_nde.md), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
-   * The [Wikipedia on Aruba - Aruba on Wikipedia](reports.md#wikipedia-on-aruba---aruba-on-wikipedia-project) project
+   * The [Wikipedia on Aruba - Aruba on Wikipedia](reports.md#the-wikipedia-on-aruba---aruba-on-wikipedia-project) project
  * [Nordic European countries](#nordic-european-countries) 
    * [Norway](#norway)
    * [Finland](#finland)
