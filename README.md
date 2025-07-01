@@ -56,7 +56,7 @@ The GLAMorousToHTML tool has so for produced [GLAM reports](reports/reports.md) 
 * [Kingdom of the Netherlands](reports/reports.md#kingdom-of-the-netherlands)
   * [Selected institutions](reports/reports.md#selected-institutions)
   * [Netwerk Digitaal Erfgoed (NDE)](reports/reports_nde.md), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
-  * The [Wikipedia on Aruba - Aruba on Wikipedia](reports/reports.md#the-wikipedia-on-aruba-aruba-on-wikipedia-project) project
+  * The [Wikipedia on Aruba - Aruba on Wikipedia](reports/reports.md#the-wikipedia-on-aruba---aruba-on-wikipedia-project) project
 * [Nordic European countries](reports/reports.md#nordic-european-countries) 
   * [Norway](reports/reports.md#norway)
   * [Finland](reports/reports.md#finland)
