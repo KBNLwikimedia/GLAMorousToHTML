@@ -30,7 +30,7 @@ Currently, reports are available for the following GLAM institutions, countries 
  * [Kingdom of the Netherlands](#kingdom-of-the-netherlands)
    * [Selected institutions](#selected-institutions)
    * [Netwerk Digitaal Erfgoed (NDE)](reports_nde.md), the Dutch [network for digital heritage](https://netwerkdigitaalerfgoed.nl/)
-   * The [Wikipedia on Aruba | Aruba on Wikipedia](reports.md#wikipedia-on-aruba-aruba-on-wikipedia-project) project
+   * The [Wikipedia on Aruba - Aruba on Wikipedia](reports.md#wikipedia-on-aruba-aruba-on-wikipedia-project) project
  * [Nordic European countries](#nordic-european-countries) 
    * [Norway](#norway)
    * [Finland](#finland)
@@ -117,6 +117,8 @@ Currently, reports are available for the following GLAM institutions, countries 
 
 ## Kingdom of the Netherlands
 
+https://kbnlwikimedia.github.io/GLAMorousToHTML/reports/reports.html#kingdom-of-the-netherlands
+
 <image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/flags/flag_netherlands.png" width="100" hspace="10" align="right"/>
 
 ### Selected institutions
@@ -144,7 +146,7 @@ See also this [LinkedIn post](https://www.linkedin.com/posts/olafjanssen_wikiped
 
 *  See the [dedicated page with NDE reports](reports_nde.md) for the [partners](https://netwerkdigitaalerfgoed.nl/activiteiten/manifest-netwerk-digitaal-erfgoed/) of the [Netwerk Digitaal Erfgoed (NDE)](https://netwerkdigitaalerfgoed.nl/), the Dutch network for digital heritage.
 
-### The Wikipedia on Aruba | Aruba on Wikipedia project
+### The Wikipedia on Aruba - Aruba on Wikipedia project
 <image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/logos/icon_wponarub.png" width="200" hspace="10" align="right"/>
 
 * Input: Commons category = [Wikipedia on Aruba](https://commons.wikimedia.org/wiki/Category:Wikipedia%20on%20Aruba)
