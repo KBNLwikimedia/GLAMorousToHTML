@@ -111,7 +111,7 @@ option, select {
   left: 50px;
   display: flex;
   flex-direction: row; /* vertical stack on wide screens */
-  gap: 20px;
+  gap: 30px;
 }
 
 .top-text-block {
@@ -515,7 +515,7 @@ margin-bottom: 4px;
     position: static;       /* no longer absolute, flows with content */
     flex-direction: row;    /* logos side by side */
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     order: -1;              /* move block above text */
     margin: 10px auto 0px; /* breathing room below logos */
   }

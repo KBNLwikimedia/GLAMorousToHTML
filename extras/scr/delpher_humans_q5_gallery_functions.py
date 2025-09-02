@@ -518,8 +518,8 @@ def build_html(
           <div class="top-banner-flex">
             <!-- Logos on the left -->
             <div class="top-logo-block">
-              <img src="media/delpher_logo.svg" alt="Delpher logo" class="logo" title="Delpher logo"/>
               <img src="media/icon_wp.svg" alt="Wikipedia logo" class="logo" title="Wikipedia logo"/>
+              <img src="media/delpher_logo.svg" alt="Delpher logo" class="logo" title="Delpher logo"/>
             </div>
             <!-- Title + subtitle centered -->
             <div class="top-text-block">

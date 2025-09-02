@@ -97,7 +97,7 @@ from delpher_humans_q5_gallery_functions import *
 
 
 # ====================== Config ======================
-TITLE = "Delpher ❤️ Wikipedia - Portrait explorer"
+TITLE = "Wikipedia ❤️ Delpher - Portrait explorer"
 SUBTITLE = "A visual exploration of notable individuals in Wikipedia, illustrated by Delpher"
 DEFAULT_OCCUPATION = "Person"
 MAX_OCCUPATIONS = 5
