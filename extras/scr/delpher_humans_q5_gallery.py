@@ -107,7 +107,7 @@ PLACEHOLDER_IMAGE = "media/portrait_placeholder.png"
 CSS_FILE = "css/delpher_humans_q5_gallery.css"
 JS_FILE = "js/delpher_humans_q5_gallery.js"
 OUTPUT_FILE = Path("../delpher_humans_q5_gallery.html")
-LATEST_UPDATE = "1 September 2025"
+LATEST_UPDATE = "2 September 2025"
 
 # ====================== Data loading ======================
 try:
