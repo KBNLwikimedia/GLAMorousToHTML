@@ -406,6 +406,10 @@ def build_footer_html(latest_update: str) -> str:
                        Wikimedia coordinator of the KB</a> - olaf.janssen@kb.nl</p>
                     <p><i>Disclaimer: This app is not part of the official Delpher ecosystem. 
                         It is a 'labs' proof-of-concept designed to provide insight into which Delpher images are being reused on Wikipedia.</i></p>
+                    <div class="github-block">
+                      <img src="media/GitHub_Logo_White.png" alt="Github logo" title="Github logo" class="github-logo" /> 
+                      <p><a href="https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/extras" target="_blank">Source code on Github</a></p>
+                    </div>   
                 </div>
             </div>
         </div>

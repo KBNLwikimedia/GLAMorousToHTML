@@ -57,9 +57,10 @@ h4 {
 }
 
 option, select {
-    line-height: 0.4em;
-    padding: 0px 0px 0px 0px;
+    line-height: 1.4em;
+    padding: 0px; /* top, right, bottom, left */
 }
+
 
 /* ====== Loading Spinner ====== */
 #loading-spinner {
@@ -178,6 +179,7 @@ option, select {
 #occFilter, #genderFilter, #countryFilter, #dobFilter, #dodFilter, #pcFilter, #sortOrder {
   padding: 6px 8px;
   font-size: 0.9em;
+  line-height: 1.2em;
   color: var(--bodytext);
   background: var(--button-background);
   border: 1px solid var(--delpherdarkblue);
@@ -214,13 +216,13 @@ option, select {
   background-image: url("../media/magnifying_glass_icon.svg");
   background-size: 22px;
   background-repeat: no-repeat;
-  background-position: 10px center;
+  background-position: 20px center;
   font-size: 1.3em;
   border: 1px solid var(--delpherdarkblue);
   border-radius: 0px;
   min-width: 400px;
   padding-right: 2em;       /* add space so text doesn’t overlap X */
-  padding-left: 2.3em;
+  padding-left: 2.5em;
   height: 2.5em;
 }
 
@@ -474,13 +476,29 @@ margin-bottom: 4px;
   margin: 0 auto;                /* center within banner */
 }
 
-/* Logo: scales down on smaller screens */
+/* Footer Logos: scale down on smaller screens */
 .footer-logo {
   height: clamp(64px, 8vw, 120px);
   width: auto;
   object-fit: contain;
   flex: 0 0 auto;
   margin-right: 20px;
+}
+
+.github-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* vertically center logo + text */
+  gap: 5px;           /* space between them */
+  margin-top: 25px;
+  margin-left: -14px;
+}
+
+.github-logo {
+  height: clamp(25px, 4vw, 40px);
+  width: auto;
+  object-fit: contain;
+  margin: 0 10px 0 10px;
 }
 
 /* Text column grows/shrinks as space allows */
@@ -578,6 +596,10 @@ margin-bottom: 4px;
   }
   .footer-text {
     flex-basis: 100%;            /* stack under the logo */
+  }
+  .github-block {
+    justify-content: center;
+    text-align: center;          /* center text on tablets/phones */
   }
 }
 
