@@ -577,7 +577,7 @@ margin-bottom: 4px;
   }
 
   #occFilter, #genderFilter, #countryFilter,
-  #dobFilter, #dodFilter, #pcFilter, #clearFilter {
+  #dobFilter, #dodFilter, #pcFilter, #clearFilter, #sortOrder {
     font-size: 0.85em;
     padding: 4px 6px;
   }
