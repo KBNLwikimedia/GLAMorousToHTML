@@ -1,0 +1,596 @@
+/* ====== Theme tokens ====== */
+:root {
+  --bg: #F7F3EF;
+  --bodytext: #333;
+  --delpherdarkblue: #01415b;   /* Delpher dark blue */
+  --delpherpink: #ef6079;       /* Delpher pink color */
+  --delphermint: #9cdbd9;       /* Delpher mint color */
+  --linkcolor: #00857b;         /* brand teal accent */
+  --subtitlecolor: #666;        /* optional, can fallback to bodytext */
+  --border: #ccc;
+  --shadow: 8px 8px 10px rgba(0,0,0,0.1);
+  --search-highlight: #ffeb3b; /* bright yellow for search hits */
+  --button-background: #fff; /*  basic light blue for button background */
+  --x-button-red: #b71c1c;  /* red for little "clear" buttons in result summaries*/
+}
+
+/* ====== Base ====== */
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Roboto","Nunito", "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--bodytext);
+  min-height: 100vh;         /* full viewport height */
+  margin: 0;                 /* remove default body margin */
+}
+
+/* Links */
+a {
+  color: var(--linkcolor);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+h1, h3, h4 {
+  text-align: center;
+  line-height: 1.4;
+  margin: 0; /* reset, set specific below */
+}
+
+h1 {
+  color: var(--delpherdarkblue);
+  padding: 0 20px;
+}
+h3 {
+  color: var(--delpherpink);
+  margin: 15px 0 4px;
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+h4 {
+  color: var(--delpherdarkblue);
+  font-size: 1em;
+  font-weight: 400;
+  margin: 10px 0px 12px;
+}
+
+option, select {
+    line-height: 0.4em;
+    padding: 0px 0px 0px 0px;
+}
+
+/* ====== Loading Spinner ====== */
+#loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;                 /* ensure it’s on top */
+}
+
+.spinner {
+  border: 6px solid var(--border);     /* Light grey */
+  border-top: 6px solid var(--delpherdarkblue); /* Your brand blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ====== Header (top banner) ====== */
+.top-banner {
+  background-color: var(--delphermint);
+  padding: clamp(16px, 4vw, 30px) clamp(20px, 6vw, 60px) clamp(16px, 4vw, 20px);
+  position: relative;
+}
+
+/* Flex wrapper for logos + text */
+.top-banner-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* space between logo block and text block */
+}
+
+/* Logo block: desktop = pinned top-left, mobile = stacked above */
+.top-logo-block {
+  position: absolute;
+  top: 44px;
+  left: 50px;
+  display: flex;
+  flex-direction: row; /* vertical stack on wide screens */
+  gap: 20px;
+}
+
+.top-text-block {
+  text-align: center;
+  margin: 12px auto 0;      /* adds breathing room above title */
+  max-width: 900px;         /* limit width so text doesn't stretch too wide */
+  padding: 0 20px 0 20px;          /* small side padding for mobile */
+}
+
+.top-banner h1 {
+  margin: 0;
+  color: var(--delpherdarkblue);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: var(--subtitlecolor);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+
+.logo {
+  height: clamp(30px, 10vw, 60px);
+  width: auto;
+}
+
+/* ====== Facets / Filters ====== */
+.center-wrap {
+  display: flex;
+  align-items: center;   /* vertical center */
+  justify-content: center; /* horizontal center */
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.filters-container {
+  width: 100%;
+  padding: 10px 20px 10px 10px;
+  background-color: var(--delpherdarkblue);
+  color: var(--button-background);
+}
+
+.filters-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0 12px;
+  border: 0;
+}
+
+/* keep label + select together */
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;               /* space between label and dropdown */
+  white-space: nowrap;    /* prevent wrapping inside */
+}
+
+/* Select styling */
+#occFilter, #genderFilter, #countryFilter, #dobFilter, #dodFilter, #pcFilter, #sortOrder {
+  padding: 6px 8px;
+  font-size: 0.9em;
+  color: var(--bodytext);
+  background: var(--button-background);
+  border: 1px solid var(--delpherdarkblue);
+  border-radius: 6px;
+}
+
+/* Reset button */
+#clearFilter {
+  padding: 6px 12px;
+  font-size: 1.0em;
+  color: var(--bodytext);
+  background: var(--delphermint);
+  border: 1px solid var(--delpherdarkblue);
+  border-radius: 6px;
+  white-space: nowrap; /* also prevent breaking here */
+}
+
+
+/* Search box */
+.search {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.search-box-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+#searchBox {
+  background-color: var(--bg);
+  background-image: url("../media/magnifying_glass_icon.svg");
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  font-size: 1.1em;
+  border: 1px solid var(--delpherdarkblue);
+  border-radius: 6px;
+  min-width: 300px;
+  padding-right: 2em;       /* add space so text doesn’t overlap X */
+  padding-left: 2.0em;
+  height: 2.1em;
+}
+
+/* Hide the X by default */
+#clearSearch {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  border-radius: 50%;   /* makes the hover background circular */
+  font-size: 1.2em;
+  opacity: 0.5;
+}
+
+#clearSearch:hover {
+  color: #000;
+  opacity: 1;
+  background-color: rgba(0,0,0,0.1); /* subtle gray circle */
+}
+
+/* Focus via keyboard tab*/
+#clearSearch:focus {
+    outline: 1px solid var(--delpherdarkblue);
+    outline-offset: 0px;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.1);
+}
+
+
+
+/* Highlight for query matches */
+mark.search-hit {
+  background: var(--search-highlight);
+  padding: 0 2px;
+}
+
+/* ======Results summary -- Showing results 1–50 of 820 ====== */
+
+/* ====== Paginator ====== */
+/* Line 1: results + page, single row */
+.paginator {
+text-align: center;
+margin-bottom: 4px;
+ }
+
+.paginator-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.paginator-status .results-summary,
+.paginator-status .page-status {
+  font-size: 0.95em;
+  color: var(--muted);
+}
+
+/* Insert the pipe only between results and page */
+.paginator-status .page-status::before {
+  content: " | ";
+  color: var(--muted);
+}
+
+/* Lines 2–4: each on its own line; auto-hide when empty */
+.results-extras-wrapper {
+  display: flex;
+  justify-content: flex-begin;  /* push contents to the left */
+  width: 100%;                /* span full row */
+  padding-left: 20px
+}
+
+.results-extras {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;     /* items inside the box align left */
+  gap: 6px;
+  border: 0px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+}
+
+.results-extras > div {
+  display: flex;              /* keep cross + text together */
+  align-items: flex-start;    /* align cross to top if text wraps */
+  gap: 4px;                   /* space between cross and text */
+  font-size: 0.95em;
+  color: var(--subtitlecolor);
+  max-width: 100%;            /* allow wrapping */
+  word-break: break-word;     /* long text can wrap, but not under cross */
+}
+
+.results-extras > div:empty {
+  display: none;
+}
+
+
+/* Tiny red clear buttons that sit before each summary line */
+.clear-chip {
+  flex-shrink: 0;             /* don’t shrink */
+  background: var(--delpherpink);   /* red */
+  border: 0;
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 6px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.clear-chip:hover { background: var(--x-button-red); }
+.clear-chip:focus { outline: 1px solid var(--delpherdarkblue); outline-offset: 0px; }
+.clear-chip[disabled] { opacity: .4; cursor: default; }
+
+
+
+/*  "First", "Prev", page numbers, "Next", "Last"  */
+.paginator-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0px 0 20px;
+  border: 0px solid var(--border);
+}
+.paginator a { color: var(--linkcolor); }
+.paginator .current-page {
+  font-weight: 700;
+  color: var(--delpherdarkblue);
+}
+.paginator .ellipsis,
+.paginator .dots,
+.paginator .disabled { color: var(--subtitlecolor); }
+
+/* ====== Grid person blocks (CSS columns) ====== */
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+  padding: 10px 50px 30px 50px; /* top, right, bottom, left */
+}
+
+.person-block {
+  display: block;               /* grid item */
+  margin: 0px;             /* equal spacing all around */
+  background: var(--button-background);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+
+/* ====== Swiper (image carousel) ====== */
+.swiper { width: 100%; height: auto; margin-bottom: 20px; }
+.swiper-wrapper { padding: 0; }
+.swiper-slide img {
+  width: 95%;
+  display: block;
+  margin: 0 auto 10px;
+  border-radius: 6px;
+}
+
+.swiper-pagination {
+  position: relative;
+  margin-top: 5px;
+  text-align: center;
+  }
+
+/* Default (inactive) bullets */
+.swiper-pagination-bullet {
+  background: var(--subtitlecolor);   /* your default color */
+  opacity: 1;         /* make sure it's not faded */
+  width: 10px;
+  height: 10px;
+  margin: 0 0px;
+  border-radius: 50%;
+}
+
+/* Active bullet */
+.swiper-pagination-bullet-active {
+  background: var(--delpherpink);  /* brand color */
+}
+
+
+/* ====== Wikipedia links row ====== */
+.article-links-flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-bottom: 20px
+}
+.article-text p { margin: 0; font-size: 0.95em; }
+
+.wikipedia-logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-top:5px
+}
+
+/* ====== Credit line ====== */
+.credit-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.8em;
+  margin-top: -10px;
+  margin-bottom: 8px;
+}
+.credit-line img {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+/* ====== Responsive footer ====== */
+.bottom-banner {
+  background-color: var(--delpherdarkblue);
+  color: var(--button-background);
+  /* Responsive spacing + type size */
+  padding: clamp(16px, 3vw, 32px);
+  margin-top: 50px;
+  font-size: clamp(1.0rem, 1.1vw, 1.1rem);
+  font-weight: 400;
+}
+
+/* Layout wrapper for footer content */
+.footer-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;       /* center block as a whole */
+  gap: 20px 24px;                /* row/column gap */
+  text-align: left;
+  max-width: 1200px;             /* keep line-length reasonable */
+  margin: 0 auto;                /* center within banner */
+}
+
+/* Logo: scales down on smaller screens */
+.footer-logo {
+  height: clamp(64px, 8vw, 120px);
+  width: auto;
+  object-fit: contain;
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+/* Text column grows/shrinks as space allows */
+.footer-text {
+  flex: 1 1 480px;               /* grow, shrink, preferred width */
+  min-width: 260px;              /* avoid too-narrow columns */
+}
+
+.footer-text p {
+  margin: 8px 0;
+}
+
+.footer-text a {
+  color: var(--delphermint);
+  text-decoration: none;
+}
+.footer-text a:hover,
+.footer-text a:focus {
+  text-decoration: underline;
+}
+
+
+/* ====== Responsive ====== */
+/* If you prefer explicit counts at breakpoints, you can force them here.
+   Otherwise, column-width above already handles responsiveness. */
+
+@media (max-width: 1400px) {
+  .top-logo-block {
+    position: static;       /* no longer absolute, flows with content */
+    flex-direction: row;    /* logos side by side */
+    justify-content: center;
+    gap: 20px;
+    order: -1;              /* move block above text */
+    margin: 10px auto 0px; /* breathing room below logos */
+  }
+
+  .top-text-block {
+    margin: 0px auto 0px;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .gallery-container { column-count: 3; }
+
+  .top-banner-flex {
+    align-items: center;
+  }
+
+  .top-text-block {
+    text-align: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .filters-bar {
+    justify-content: flex-start;
+    padding-left: 15px;
+  }
+
+  .filters-bar label {
+    font-size: 0.85em;
+  }
+
+  .filters-bar select {
+    font-size: 0.85em;
+    padding: 4px 6px;
+    line-height: 0.8em;   /* tighten inside the box */
+  }
+
+  .filters-bar select option {
+    padding: 2px 6px;
+    line-height: 0.8em;
+    font-size: 0.85em;
+  }
+
+  #occFilter, #genderFilter, #countryFilter,
+  #dobFilter, #dodFilter, #pcFilter, #clearFilter {
+    font-size: 0.85em;
+    padding: 4px 6px;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .gallery-container { column-count: 2; }
+
+  .footer-flex {
+    justify-content: center;
+    text-align: center;          /* center text on tablets/phones */
+  }
+  .footer-logo {
+    margin: 0;                   /* no side margin when stacked */
+    height: 100px;
+  }
+  .footer-text {
+    flex-basis: 100%;            /* stack under the logo */
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-container { column-count: 1; }
+
+  .bottom-banner {
+    padding: 16px;               /* tighter padding on small screens */
+  }
+  .footer-logo {
+    height: 80px;                /* keep logo readable but compact */
+  }
+}

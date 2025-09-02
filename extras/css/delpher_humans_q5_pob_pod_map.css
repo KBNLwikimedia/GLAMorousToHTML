@@ -1,0 +1,249 @@
+/* ====== Theme tokens ====== */
+:root {
+  --bg: #F7F3EF;
+  --text: #333;
+  --brand: #01415b;
+  --accent: #00857b;
+  --muted: #666;
+  --muted-2: #9cdbd9;
+  --border: #ccc;
+  --shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  --button-color: #145471; /* dark blue for button text */
+  --button-background: #fff; /*  basic light blue for button background */
+  --button-border-color: #5ac3bf; /* light blue for button background */
+}
+
+/* ====== Base ====== */
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 20px;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+h1, h3, h4 {
+  text-align: center;
+  line-height: 1.4;
+  margin: 0; /* reset, set specific below */
+}
+
+h1 {
+  color: var(--brand);
+  padding: 0 20px;
+}
+
+h3 {
+  color: #ef6079;
+  margin: 15px 0 4px;
+  font-size: 1.6em;
+}
+h4 {
+  color: var(--brand);
+  font-size: 1em;
+  font-weight: 400;
+  margin: 10px 0 12px;
+}
+
+/* ====== Header (top banner) ====== */
+.top-banner {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  background-color: #9cdbd9;
+  border-bottom: 1px solid #ddd;
+}
+.top-banner-flex {
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.top-banner h1 {
+  margin: 0;
+  color: var(--brand);
+  font-size: 2.8em;
+}
+.logo {
+  height: 50px;
+  width: auto;
+  vertical-align: middle;
+  object-fit: contain;
+  margin: 20px 20px 6px 0;
+}
+.subtitle {
+  font-size: 1.4em;
+  color: var(--muted);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+
+
+/* ====== Iframe with map ====== */
+/* Centered & responsive iframe wrapper */
+.map-container {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  padding: 0px;
+  border: 0px solid var(--border); /* fallback if --border is missing */
+}
+
+.map-shell {
+  width: 100%;
+  max-width: 1400px;         /* cap the map width on huge screens */
+  padding: 0px;           /* side breathing room on narrow screens */
+  margin: 0 auto;
+}
+
+/* Aspect-ratio based responsive iframe (16:9) */
+.iframe-aspect {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* The iframe itself fills the aspect box */
+.iframe-aspect .map-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border: 2px solid var(--border, #ddd); /* fallback if --border is missing */
+}
+
+/* Optional: fallback for browsers that don't support aspect-ratio */
+@supports not (aspect-ratio: 1 / 1) {
+  .iframe-aspect {
+    height: 0;
+    padding-top: 56.25%;     /* 16:9 */
+  }
+  .iframe-aspect .map-iframe {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+  }
+}
+
+
+/* ====== Popup person blocks ====== */
+
+.person-block {
+  display: inline-block;
+  width: calc(100% - 10px); /* shrink width to account for margins */
+  margin: 5px;             /* equal spacing all around */
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  /* cross-engine column break safety */
+  break-inside: avoid;
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+.person-block p {
+  margin: 20px 0 10px;
+  line-height: 1.1;
+}
+
+
+/* ====== Swiper (image carousel) ====== */
+.swiper { width: 100%; height: auto; margin-bottom: 10px; }
+.swiper-wrapper { padding: 0; }
+.swiper-slide img {
+  width: 95%;
+  display: block;
+  margin: 0 auto 30px;
+  border-radius: 4px;
+}
+.swiper-pagination {
+  position: relative;
+  margin-top: 5px;
+  text-align: center;
+}
+.swiper-pagination-bullet { background: var(--accent); }
+
+/* ====== Wikipedia links row ====== */
+.article-links-flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.article-text p { margin: 0; font-size: 0.95em; }
+.wikipedia-logo img {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* ====== Credit line ====== */
+.credit-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.8em;
+  margin: 30px 0 8px;
+}
+.credit-line img {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+/* ====== Footer ====== */
+.bottom-banner {
+  background-color: #01415b;
+  border-top: 1px solid var(--border);
+  padding: 20px;
+  font-size: 0.9em;
+  color: var(--muted-2);
+}
+
+.footer-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+.footer-text p { margin: 4px 0; }
+.footer-logo {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ====== Responsive ====== */
+/* If you prefer explicit counts at breakpoints, you can force them here.
+   Otherwise, column-width above already handles responsiveness. */
+@media (max-width: 1200px) {
+  .gallery-container { column-count: 3; }
+}
+@media (max-width: 900px) {
+  .gallery-container { column-count: 2; }
+}
+@media (max-width: 600px) {
+  .gallery-container { column-count: 1; }
+  .footer-logo { height: 60px; }
+}
