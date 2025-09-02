@@ -512,7 +512,7 @@ for i, row in enumerate(df.itertuples(index=False)):
 
         person_subtitle = f"{formatted_occs} from {formatted_cocs}" if formatted_cocs else formatted_occs
         person_subtitle_block = (
-            f"<h4>{person_subtitle}<br/><i>{yob_yod}</i></h4>"
+            f"<h4>{person_subtitle}<br/>{yob_yod}</h4>"
             if person_subtitle or yob_yod else ""
         )
 
@@ -558,7 +558,7 @@ for i, row in enumerate(df.itertuples(index=False)):
             <h3>{name}</h3>
             {person_subtitle_block}
             <div class="article-links-flex">
-                <div class="wikipedia-logo"><img src="media/icon_wp.svg" alt="Wikipedia logo" /></div>
+                <div>. . . </div>
                 <div class="article-text"><p>Read more on Wikipedia in {formatted_article_links}</p></div>
             </div>
             {img_carousel_html}

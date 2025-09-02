@@ -151,9 +151,21 @@ def build_filters_html(
 
         return f"""
         <section class="center-wrap">
-            <div class="filters-container">
+              <div class="filters-container">
                 <div class="filters-bar">
-                
+                 
+                  <div class="filter-item">
+                    <label for="sortOrder">Sort by</label>
+                    <select id="sortOrder">
+                      <option value="name_asc">Default (Name A–Z)</option>
+                      <option value="name_desc">Name Z–A</option>
+                      <option value="yob_asc">Year of birth (0-9)</option>
+                      <option value="yob_desc">Year of birth (9-0)</option>
+                      <option value="yod_asc">Year of death (0-9)</option>
+                      <option value="yod_desc">Year of death (9-0)</option>
+                    </select>
+                  </div>
+                 
                   <div class="filter-item">
                     <label for="occFilter">Occupation</label>
                     <select id="occFilter">
@@ -201,17 +213,7 @@ def build_filters_html(
                       {pc_options_html}
                     </select>
                   </div>
-                  <div class="filter-item">
-                    <label for="sortOrder">Sort by</label>
-                    <select id="sortOrder">
-                      <option value="name_asc">Default (Name A–Z)</option>
-                      <option value="name_desc">Name Z–A</option>
-                      <option value="yob_asc">Year of birth (0-9)</option>
-                      <option value="yob_desc">Year of birth (9-0)</option>
-                      <option value="yod_asc">Year of death (0-9)</option>
-                      <option value="yod_desc">Year of death (9-0)</option>
-                    </select>
-                  </div>
+                  
                   <button id="clearFilter" type="button">Reset all</button>
 
                 </div>
@@ -529,7 +531,7 @@ def build_html(
             <!-- Search box -->
             <div class="search">
               <div class="search-box-wrapper">
-                <input id="searchBox" type="search" aria-label="Search" placeholder="Search (type 2 or more)..." />
+                <input id="searchBox" type="search" aria-label="Search" placeholder="Search (type 2 or more) ..." />
                 <button id="clearSearch" type="button" aria-label="Clear search">×</button>
               </div>
             </div>
