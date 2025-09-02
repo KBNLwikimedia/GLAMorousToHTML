@@ -155,26 +155,33 @@ function debounce(fn, wait = 250) {
 // We’ll combine with your facet filtering. To speed up, we cache each card’s lower-cased text in data-index on first use.
 function cardIndexText(card) {
   if (!card.dataset.index) {
-    // Only index these tags (no <span>, etc.) - Only index content of the <h3> and <h4> tags
     const ALLOWED_SELECTORS = ["h3", "h4"];
-
     const parts = [];
+
     ALLOWED_SELECTORS.forEach(sel => {
       card.querySelectorAll(sel).forEach(el => {
-        const t = (el.textContent || "").trim();
-        if (t) parts.push(t);
+        // Only collect direct text nodes (ignore <br>, <span>, etc.)
+        const nodeTexts = Array.from(el.childNodes)
+          .filter(node => node.nodeType === Node.TEXT_NODE) // only plain text
+          .map(node => node.textContent.trim())
+          .filter(Boolean);
+
+        if (nodeTexts.length) {
+          parts.push(nodeTexts.join(" "));
+        }
       });
     });
 
     const txt = parts.join(" ")
-      .replace(/\s+/g, " ")  // collapse whitespace
+      .replace(/\s+/g, " ") // collapse whitespace
       .trim()
       .toLowerCase();
 
-    card.dataset.index = txt;   // memoize
+    card.dataset.index = txt; // memoize
   }
   return card.dataset.index;
 }
+
 
 
 function getFilteredCards(state) {
@@ -234,16 +241,69 @@ function getFilteredCards(state) {
 // (e.g., title <h3>, subtitle <h4>, article links). We also keep original HTML in data-orig so we can unhighlight cleanly.
 function highlightWithin(el, q) {
   if (!el) return;
-  // restore original HTML once
+
+  // Keep the original HTML so we can reset cleanly
   if (!el.dataset.orig) el.dataset.orig = el.innerHTML;
-  // clear previous highlight
   el.innerHTML = el.dataset.orig;
 
   if (!q) return;
+
+  // Escape the query for literal match and build a case-insensitive regex
   const safeQ = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const re = new RegExp(`(${safeQ})`, "ig");
-  el.innerHTML = el.innerHTML.replace(re, '<mark class="search-hit">$1</mark>');
+  const re = new RegExp(safeQ, "gi");
+
+  // Walk only text nodes so we never touch markup like <br>
+  const walker = document.createTreeWalker(
+    el,
+    NodeFilter.SHOW_TEXT,
+    {
+      acceptNode(node) {
+        // Skip empty/whitespace-only text nodes
+        return node.nodeValue.trim()
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      }
+    }
+  );
+
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+  textNodes.forEach(node => {
+    const text = node.nodeValue;
+    let match;
+    let lastIndex = 0;
+    const frag = document.createDocumentFragment();
+
+    // reset regex state per node
+    re.lastIndex = 0;
+
+    while ((match = re.exec(text)) !== null) {
+      const start = match.index;
+      const end = start + match[0].length;
+
+      if (start > lastIndex) {
+        frag.appendChild(document.createTextNode(text.slice(lastIndex, start)));
+      }
+
+      const mark = document.createElement("mark");
+      mark.className = "search-hit";
+      mark.textContent = text.slice(start, end);
+      frag.appendChild(mark);
+
+      lastIndex = end;
+    }
+
+    if (lastIndex === 0) return; // no matches in this node
+
+    if (lastIndex < text.length) {
+      frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+    }
+
+    node.parentNode.replaceChild(frag, node);
+  });
 }
+
 
 function applyHighlightsToCard(card, q) {
   // pick targets that are mostly text (avoid the whole card to prevent breaking Swiper markup)
