@@ -399,16 +399,20 @@ def build_footer_html(latest_update: str) -> str:
                     and <a href="https://www.delpher.nl" target="_blank" title="Go to the Delpher website">Delpher</a>,
                        a service of the KB national library of the Netherlands. It extends the
                         <a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromDelpher_Wikipedia_NS0_01072025.html" target="_blank">output of the GLAMorousToHTML tool</a> 
-                       with data from Wikidata, and renders it as a interactive portrait gallery.</p>
-                    <p>Latest update: {latest_update}</p>
+                       with data about persons from Wikidata, and renders it as a interactive portrait gallery.</p>
                     <p>Contact: Olaf Janssen,
-                       <a href="https://www.kb.nl/over-ons/experts/olaf-janssen" target="_blank">
+                       <a href="https://www.kb.nl/over-ons/experts/olaf-janssen" target="_blank" title="Go to expert page of Olaf Janssen on the KB website">
                        Wikimedia coordinator of the KB</a> - olaf.janssen@kb.nl</p>
                     <p><i>Disclaimer: This app is not part of the official Delpher ecosystem. 
                         It is a 'labs' proof-of-concept designed to provide insight into which Delpher images are being reused on Wikipedia.</i></p>
+                    <p>Latest update: {latest_update}</p>
                     <div class="github-block">
                       <img src="media/GitHub_Logo_White.png" alt="Github logo" title="Github logo" class="github-logo" /> 
-                      <p><a href="https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/extras" target="_blank">Source code on Github</a></p>
+                      <p>
+                      <a href="https://github.com/KBNLwikimedia/GLAMorousToHTML/tree/main/extras" target="_blank" title="Source code on Github">Source code on Github</a> --- 
+                      <a href="https://github.com/KBNLwikimedia/GLAMorousToHTML/issues?q=state%3Aopen%20label%3A%22Wikipedia%20Loves%20Delpher%20Portrait%20gallery%22"
+                       target="_blank" title="Report a bug or make a feature request">Report a bug or feature request</a>                  
+                      </p>
                     </div>   
                 </div>
             </div>

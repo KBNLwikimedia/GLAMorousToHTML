@@ -107,7 +107,7 @@ PLACEHOLDER_IMAGE = "media/portrait_placeholder.png"
 CSS_FILE = "css/delpher_humans_q5_gallery.css"
 JS_FILE = "js/delpher_humans_q5_gallery.js"
 OUTPUT_FILE = Path("../delpher_humans_q5_gallery.html")
-LATEST_UPDATE = "2 September 2025"
+LATEST_UPDATE = "3 September 2025"
 
 # ====================== Data loading ======================
 try:
@@ -418,7 +418,7 @@ try:
           <label>Born in</label>
           <select id="dobFilter" disabled><option>Unavailable</option></select>
           <label>Died in</label>
-          <select  id="dodFilter" disabled><option>Unavailable</option></select>
+          <select id="dodFilter" disabled><option>Unavailable</option></select>
           <label>Wikipedia language:</label>
           <select id="pcFilter" disabled><option>Unavailable</option></select>
           
@@ -527,7 +527,7 @@ for i, row in enumerate(df.itertuples(index=False)):
         # Article links
         if langs and urls and len(langs) == len(urls):
             article_links_list = [
-                f'<a href="{u}" target="_blank" title="View Wikipedia article in {l}">{l}</a>'
+                f'<a href="{u}" target="_blank" title="Read Wikipedia article in {l}">{l}</a>'
                 for l, u in zip(langs, urls)
             ]
             formatted_article_links = format_list_with_separator(article_links_list, ", ")
