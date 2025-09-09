@@ -52,6 +52,7 @@ Currently, reports are available for the following GLAM institutions, countries 
 
 * Input: Commons category = [Media contributed by Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_Koninklijke_Bibliotheek)
 * Reports for : 
+  * [09-09-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_09092025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_09092025.xlsx)
   * [07-05-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_07052025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_07052025.xlsx)
   * [15-01-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_15012025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_15012025.xlsx)
   * [04-09-2024](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/nde/MediacontributedbyKoninklijkeBibliotheek_Wikipedia_NS0_04092024.xlsx)
@@ -71,6 +72,7 @@ Currently, reports are available for the following GLAM institutions, countries 
 
 * Input: Commons category = [Media from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher)
 * Reports for : 
+  * [09-09-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromDelpher_Wikipedia_NS0_09092025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/MediafromDelpher_Wikipedia_NS0_09092025.xlsx)
   * [01-07-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromDelpher_Wikipedia_NS0_01072025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/MediafromDelpher_Wikipedia_NS0_01072025.xlsx), related to the article *[Public outreach and reuse of Delpher images via Wikipedia and Wikimedia Commons, July 2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/stories/Public%20outreach%20and%20reuse%20of%20Delpher%20images%20via%20Wikipedia%20and%20Wikimedia%20Commons%2C%20July%202025.html)*
   * [07-05-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromDelpher_Wikipedia_NS0_07052025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/MediafromDelpher_Wikipedia_NS0_07052025.xlsx)
   * [15-03-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromDelpher_Wikipedia_NS0_15032025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/MediafromDelpher_Wikipedia_NS0_15032025.xlsx)
@@ -81,6 +83,7 @@ Currently, reports are available for the following GLAM institutions, countries 
 
 * Input: Commons category = [Portraits from Koninklijke Bibliotheek](https://commons.wikimedia.org/wiki/Category:Portraits_from_Koninklijke_Bibliotheek)
 * Reports for : 
+   * [09-09-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/PortraitsfromKoninklijkeBibliotheek_Wikipedia_NS0_09092025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/PortraitsfromKoninklijkeBibliotheek_Wikipedia_NS0_09092025.xlsx)
   * [01-07-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/PortraitsfromKoninklijkeBibliotheek_Wikipedia_NS0_01072025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/PortraitsfromKoninklijkeBibliotheek_Wikipedia_NS0_01072025.xlsx)
   * [07-05-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/PortraitsfromKoninklijkeBibliotheek_Wikipedia_NS0_07052025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/PortraitsfromKoninklijkeBibliotheek_Wikipedia_NS0_07052025.xlsx)
   * [15-03-2025](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/PortraitsfromKoninklijkeBibliotheek_Wikipedia_NS0_15032025.html), together with this [Excel file](https://kbnlwikimedia.github.io/GLAMorousToHTML/data/PortraitsfromKoninklijkeBibliotheek_Wikipedia_NS0_15032025.xlsx)
