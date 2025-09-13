@@ -9,7 +9,7 @@
 
 *Creates a datestamped HTML report and a corresponding Excel file listing all Wikipedia articles (in all languages) in which (one or more) images from a given category tree on Wikimedia Commons are used.*
 
-*Latest update*: 9 September 2025
+*Latest update*: 13 September 2025
 
 --------------
 
@@ -74,8 +74,17 @@ When interpreting these reports, take note of
 * [image thumbnails & template contamination](reports/reports.md#image-thumbnails-in-templates-template-contamination). 
 
 ## Publications
-* A first article about the NDE reports will be published a.s.a.p. (September 2024)
+* An article about the public outreach and reuse of [Delpher images](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) via Wikipedia and Wikimedia Commons will be added a.s.a.p. (autumn 2025) 
+* A first article about the NDE reports will be published a.s.a.p. (autumn 2025)
 * [Public outreach and reuse of KB images via Wikipedia, 2014-2022](stories/Public%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.html) (December 2022). This article is also available [as a PDF](stories%2FPublic%20outreach%20and%20reuse%20of%20KB%20images%20via%20Wikipedia%2C%202014-2022.pdf).
+
+## Products & prototypes
+
+<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/extras/delpher_humans_q5_gallery.html" target="_blank"><image src="wikipedia-delpher-portrait-explorer_20250912.jpg" hspace="0" align="left"/></a>
+<br clear="all"/>
+
+* [Wikipedia ❤️ Delpher - Portrait explorer](https://kbnlwikimedia.github.io/GLAMorousToHTML/extras/delpher_humans_q5_gallery.html), a visual exploration of notable individuals in Wikipedia, illustrated by Delpher.<br/>
+The [01-07-2025 report](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromDelpher_Wikipedia_NS0_01072025.html) for [Media from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) has been extended with data from Wikidata (limited [humans/Q5](https://www.wikidata.org/wiki/Q5) only), and rendered into an interactive portrait gallery.
 
 ## Technical notes
 
