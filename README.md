@@ -80,10 +80,9 @@ When interpreting these reports, take note of
 
 ## Products & prototypes
 
-<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/extras/delpher_humans_q5_gallery.html" target="_blank"><image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/extras/media/wikipedia-delpher-portrait-explorer_20250912.jpg" hspace="0" align="left"/></a>
-<br clear="all"/>
+<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/extras/delpher_humans_q5_gallery.html" target="_blank"><image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/extras/media/wikipedia-delpher-portrait-explorer_20250912.jpg" hspace="0" align="right" width=50%/></a>
 
-* [Wikipedia ❤️ Delpher - Portrait explorer](https://kbnlwikimedia.github.io/GLAMorousToHTML/extras/delpher_humans_q5_gallery.html), a visual exploration of notable individuals in Wikipedia, illustrated by Delpher.<br/>
+[Wikipedia ❤️ Delpher - Portrait explorer](https://kbnlwikimedia.github.io/GLAMorousToHTML/extras/delpher_humans_q5_gallery.html), a visual exploration of notable individuals in Wikipedia, illustrated by Delpher.<br/>
 The [01-07-2025 report](https://kbnlwikimedia.github.io/GLAMorousToHTML/site/MediafromDelpher_Wikipedia_NS0_01072025.html) for [Media from Delpher](https://commons.wikimedia.org/wiki/Category:Media_from_Delpher) has been extended with data from Wikidata (limited [humans/Q5](https://www.wikidata.org/wiki/Q5) only), and rendered into an interactive portrait gallery.
 
 ## Technical notes
