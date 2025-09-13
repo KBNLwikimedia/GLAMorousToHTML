@@ -80,7 +80,7 @@ When interpreting these reports, take note of
 
 ## Products & prototypes
 
-<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/extras/delpher_humans_q5_gallery.html" target="_blank"><image src="wikipedia-delpher-portrait-explorer_20250912.jpg" hspace="0" align="left"/></a>
+<a href="https://kbnlwikimedia.github.io/GLAMorousToHTML/extras/delpher_humans_q5_gallery.html" target="_blank"><image src="https://kbnlwikimedia.github.io/GLAMorousToHTML/extras/media/wikipedia-delpher-portrait-explorer_20250912.jpg" hspace="0" align="left"/></a>
 <br clear="all"/>
 
 * [Wikipedia ❤️ Delpher - Portrait explorer](https://kbnlwikimedia.github.io/GLAMorousToHTML/extras/delpher_humans_q5_gallery.html), a visual exploration of notable individuals in Wikipedia, illustrated by Delpher.<br/>
