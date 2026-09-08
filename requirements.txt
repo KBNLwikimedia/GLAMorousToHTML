@@ -1,0 +1,28 @@
+# Python dependencies for GLAMorousToHTML.
+#
+# Install with:
+#     pip install -r requirements.txt
+#
+# Version floors are the versions this project is currently developed and tested against
+# (Python 3.14). Later releases are expected to work; pin exact versions here if you need
+# fully reproducible runs.
+
+# --- Core pipeline -----------------------------------------------------------
+# Needed by GLAMorousToHTML.py and the modules it calls (GLAMorousToHTML_functions.py,
+# general.py, build_html.py, build_excel.py, combine_excel_files.py).
+
+pandas>=2.3.3            # DataFrames underpinning every report
+openpyxl>=3.1.5          # Excel engine used by pandas to read/write .xlsx reports
+urllib3>=2.6.3           # HTTP requests to the GLAMorous tool
+xmltodict>=1.0.2         # Parses the GLAMorous XML response into dictionaries
+SPARQLWrapper>=2.0.0     # Queries the Wikidata Query Service for Wikipedia language names
+python-dotenv>=1.2.1     # Reads GLAMOROUS_USER_AGENT from the .env file (see .env.example)
+
+# --- Optional: follow-up analysis scripts in extras/scr/ ---------------------
+# Only needed for the modules listed at the bottom of GLAMorousToHTML.py:
+# add_wikidata.py, analytics.py and the place-of-birth/place-of-death map.
+# Leave these commented out if you only run the main report pipeline.
+
+#requests>=2.32.5        # Wikidata lookups in extras/scr/wikidata_functions.py
+#numpy>=2.4.1            # Statistics in extras/scr/analytics.py
+#folium>=0.17.0          # Geographic maps in extras/scr/delpher_humans_q5_pob_pod_map.py
